@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 178581201}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourNumber: 1
 --- !u!58 &192243606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -520,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourNumber: 2
 --- !u!58 &680629166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -655,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourNumber: 3
 --- !u!58 &959319515
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -758,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colourNumber: 0
 --- !u!58 &979770306
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,9 +5,13 @@ using UnityEngine;
 public class buttonController : MonoBehaviour {
 
     SpriteRenderer thisRenderer;
-	// Use this for initialization
+    private gameManager GM;
+
+    public int colourNumber;
+
 	void Start () {
         thisRenderer = gameObject.GetComponent<SpriteRenderer>();
+        GM = GameObject.FindWithTag("GameManager").GetComponent<gameManager>();
 	}
 	
 	// Update is called once per frame
@@ -31,5 +35,7 @@ public class buttonController : MonoBehaviour {
             thisRenderer.color.g,
             thisRenderer.color.b,
             0.5f);
+
+        GM.ColourPressed(colourNumber);
     }
 }
