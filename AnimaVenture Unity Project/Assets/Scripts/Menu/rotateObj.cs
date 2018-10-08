@@ -13,7 +13,7 @@ public class rotateObj : MonoBehaviour {
    //public Vector3 force;
    //public Vector3 currentPos;
    //public Vector3 targetPos;
-    //public float maxSpeed = 1;
+    public float maxSpeed = 1;
     
 	void OnMouseDown()
 	{
@@ -34,10 +34,10 @@ public class rotateObj : MonoBehaviour {
         
 	}
 
-    /*void OnMouseUp()
+    void OnMouseUp()
     {
-        GetComponent<Rigidbody>().AddForce(Vector3.forward * maxSpeed);
-    }*/
+		GetComponent<Rigidbody>().AddForce(Vector3.forward * maxSpeed, ForceMode.VelocityChange);
+    }
 
     void Start()
     {
