@@ -113,148 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &150991135
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 150991136}
-  - component: {fileID: 150991139}
-  - component: {fileID: 150991138}
-  - component: {fileID: 150991137}
-  - component: {fileID: 150991140}
-  m_Layer: 5
-  m_Name: RestartButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &150991136
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 150991135}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 918276531}
-  m_Father: {fileID: 649660880}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278, y: 490}
-  m_SizeDelta: {x: 153, y: 104.4}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &150991137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 150991135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 0.50835735, b: 0.4292453, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 150991138}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 178581201}
-        m_MethodName: RestartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &150991138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 150991135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &150991139
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 150991135}
-  m_CullTransparentMesh: 0
---- !u!95 &150991140
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 150991135}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &178581200
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,22 +137,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 178581200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f6ee9086c797545b6a9f6971b4359b, type: 3}
+  m_Script: {fileID: 11500000, guid: 002adadeb8ae65f4bbc1507388d8ba92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartDelay: 2
-  maxSequenceLength: 10
+  startDelayTime: 1
+  colours:
+  - {fileID: 1766245106}
+  - {fileID: 1721941317}
+  - {fileID: 262575408}
+  - {fileID: 1721226020}
+  stayLitFor: 2
+  delayBetweenLights: 1
   colourSequence: 
-  telegraphs:
-  - {fileID: 1766245107}
-  - {fileID: 1721941318}
-  - {fileID: 262575409}
-  - {fileID: 1721226021}
-  buttons:
-  - {fileID: 979770307}
-  - {fileID: 192243607}
-  - {fileID: 680629167}
-  - {fileID: 959319516}
 --- !u!4 &178581202
 Transform:
   m_ObjectHideFlags: 0
@@ -319,7 +173,6 @@ GameObject:
   - component: {fileID: 192243603}
   - component: {fileID: 192243606}
   - component: {fileID: 192243605}
-  - component: {fileID: 192243607}
   m_Layer: 0
   m_Name: blueButton
   m_TagString: Untagged
@@ -386,24 +239,18 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &192243605
-Animator:
-  serializedVersion: 3
+--- !u!114 &192243605
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192243602}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourNumber: 1
 --- !u!58 &192243606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -419,17 +266,6 @@ CircleCollider2D:
   m_Offset: {x: -0.000000014901161, y: 0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.07999999
---- !u!114 &192243607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 192243602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &262575406
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +275,6 @@ GameObject:
   m_Component:
   - component: {fileID: 262575407}
   - component: {fileID: 262575408}
-  - component: {fileID: 262575409}
   m_Layer: 0
   m_Name: yellowTelegraph
   m_TagString: Untagged
@@ -506,18 +341,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &262575409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 262575406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpForSeconds: 2
 --- !u!1 &649660876
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +427,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2009001338}
-  - {fileID: 150991136}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -624,7 +446,6 @@ GameObject:
   - component: {fileID: 680629163}
   - component: {fileID: 680629166}
   - component: {fileID: 680629165}
-  - component: {fileID: 680629167}
   m_Layer: 0
   m_Name: yellowtButton
   m_TagString: Untagged
@@ -691,24 +512,18 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &680629165
-Animator:
-  serializedVersion: 3
+--- !u!114 &680629165
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680629162}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourNumber: 2
 --- !u!58 &680629166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -724,17 +539,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07999999
---- !u!114 &680629167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680629162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &823132729
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823132730}
   m_Layer: 0
-  m_Name: InputButtons
+  m_Name: inputButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,81 +571,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &918276530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 918276531}
-  - component: {fileID: 918276533}
-  - component: {fileID: 918276532}
-  m_Layer: 5
-  m_Name: text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &918276531
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 918276530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 150991136}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &918276532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 918276530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 126
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Restart
---- !u!222 &918276533
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 918276530}
-  m_CullTransparentMesh: 0
 --- !u!1 &959319511
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +582,6 @@ GameObject:
   - component: {fileID: 959319512}
   - component: {fileID: 959319515}
   - component: {fileID: 959319514}
-  - component: {fileID: 959319516}
   m_Layer: 0
   m_Name: greenButton
   m_TagString: Untagged
@@ -920,24 +648,18 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &959319514
-Animator:
-  serializedVersion: 3
+--- !u!114 &959319514
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959319511}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourNumber: 3
 --- !u!58 &959319515
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -953,17 +675,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.07999999
---- !u!114 &959319516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 959319511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &979770302
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +686,6 @@ GameObject:
   - component: {fileID: 979770303}
   - component: {fileID: 979770306}
   - component: {fileID: 979770305}
-  - component: {fileID: 979770307}
   m_Layer: 0
   m_Name: redButton
   m_TagString: Untagged
@@ -1036,30 +746,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979770302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.99, z: 0.07617188}
+  m_LocalPosition: {x: -0.03, y: 0.99, z: 0.076171875}
   m_LocalScale: {x: 6.8353634, y: 6.8353634, z: 6.8353634}
   m_Children: []
   m_Father: {fileID: 823132730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &979770305
-Animator:
-  serializedVersion: 3
+--- !u!114 &979770305
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979770302}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315a3d2fc451f424db5996ede17c8a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourNumber: 0
 --- !u!58 &979770306
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1075,17 +779,6 @@ CircleCollider2D:
   m_Offset: {x: 2.3283064e-10, y: 0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.07999999
---- !u!114 &979770307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 979770302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1273789114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1290301552}
   m_Layer: 0
-  m_Name: Telegraphs
+  m_Name: telegraphs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,7 +884,7 @@ GameObject:
   - component: {fileID: 1446661242}
   - component: {fileID: 1446661241}
   m_Layer: 5
-  m_Name: text
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: Restart
 --- !u!222 &1446661242
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1288,7 +981,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1341,7 +1034,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1721226019}
   - component: {fileID: 1721226020}
-  - component: {fileID: 1721226021}
   m_Layer: 0
   m_Name: greenTelegraph
   m_TagString: Untagged
@@ -1408,18 +1100,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1721226021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1721226018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpForSeconds: 2
 --- !u!1 &1721941315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1109,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1721941316}
   - component: {fileID: 1721941317}
-  - component: {fileID: 1721941318}
   m_Layer: 0
   m_Name: blueTelegraph
   m_TagString: Untagged
@@ -1496,18 +1175,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1721941318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1721941315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpForSeconds: 2
 --- !u!1 &1766245104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1184,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1766245105}
   - component: {fileID: 1766245106}
-  - component: {fileID: 1766245107}
   m_Layer: 0
   m_Name: redTelegraph
   m_TagString: Untagged
@@ -1532,7 +1198,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1766245104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.0400002, z: 0.076171875}
+  m_LocalPosition: {x: 0, y: 1.0400002, z: 0.076171875}
   m_LocalScale: {x: 2.6502156, y: 2.6502156, z: 2.6502156}
   m_Children: []
   m_Father: {fileID: 1290301552}
@@ -1584,18 +1250,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1766245107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1766245104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpForSeconds: 2
 --- !u!1 &1945102736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1337,7 @@ GameObject:
   - component: {fileID: 2009001340}
   - component: {fileID: 2009001339}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,7 +1359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -27}
+  m_AnchoredPosition: {x: -305.1, y: 346}
   m_SizeDelta: {x: 153, y: 104.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009001339
@@ -1727,7 +1381,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.8962264, g: 0.85932744, b: 0.40161088, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1748,7 +1402,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 178581201}
-        m_MethodName: StartGame
+        m_MethodName: RandomStartColour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
