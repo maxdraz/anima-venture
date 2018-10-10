@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Telegraph_Simon : MonoBehaviour {
-    [SerializeField] float lightUpTime = 2f;
+    [SerializeField] float lightUpForSeconds = 2f;
     //Sprite renderer reference (only for prototype)
     SpriteRenderer sRenderer;
 
@@ -28,7 +28,7 @@ public class Telegraph_Simon : MonoBehaviour {
             sRenderer.color.b,
             1.0f);
 
-        Invoke("ResetTelegraph", lightUpTime);
+        Invoke("ResetTelegraph", lightUpForSeconds);
     }
 
     public void ResetTelegraph()

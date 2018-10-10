@@ -282,14 +282,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f6ee9086c797545b6a9f6971b4359b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0.5
-  maxSequenceLength: 0
+  gameStartDelay: 2
+  maxSequenceLength: 10
+  colourSequence: 
   telegraphs:
   - {fileID: 1766245107}
   - {fileID: 1721941318}
   - {fileID: 262575409}
   - {fileID: 1721226021}
-  colourSequence: 
+  buttons:
+  - {fileID: 979770307}
+  - {fileID: 192243607}
+  - {fileID: 680629167}
+  - {fileID: 959319516}
 --- !u!4 &178581202
 Transform:
   m_ObjectHideFlags: 0
@@ -314,6 +319,7 @@ GameObject:
   - component: {fileID: 192243603}
   - component: {fileID: 192243606}
   - component: {fileID: 192243605}
+  - component: {fileID: 192243607}
   m_Layer: 0
   m_Name: blueButton
   m_TagString: Untagged
@@ -380,18 +386,24 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &192243605
-MonoBehaviour:
+--- !u!95 &192243605
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192243602}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpTime: 2
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &192243606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -407,6 +419,17 @@ CircleCollider2D:
   m_Offset: {x: -0.000000014901161, y: 0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.07999999
+--- !u!114 &192243607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192243602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &262575406
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 2
+  lightUpForSeconds: 2
 --- !u!1 &649660876
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +624,7 @@ GameObject:
   - component: {fileID: 680629163}
   - component: {fileID: 680629166}
   - component: {fileID: 680629165}
+  - component: {fileID: 680629167}
   m_Layer: 0
   m_Name: yellowtButton
   m_TagString: Untagged
@@ -667,18 +691,24 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &680629165
-MonoBehaviour:
+--- !u!95 &680629165
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680629162}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpTime: 2
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &680629166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -694,6 +724,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07999999
+--- !u!114 &680629167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 680629162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823132729
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823132730}
   m_Layer: 0
-  m_Name: inputButtons
+  m_Name: InputButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,6 +853,7 @@ GameObject:
   - component: {fileID: 959319512}
   - component: {fileID: 959319515}
   - component: {fileID: 959319514}
+  - component: {fileID: 959319516}
   m_Layer: 0
   m_Name: greenButton
   m_TagString: Untagged
@@ -878,18 +920,24 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &959319514
-MonoBehaviour:
+--- !u!95 &959319514
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959319511}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpTime: 2
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &959319515
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -905,6 +953,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.07999999
+--- !u!114 &959319516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 959319511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &979770302
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +975,7 @@ GameObject:
   - component: {fileID: 979770303}
   - component: {fileID: 979770306}
   - component: {fileID: 979770305}
+  - component: {fileID: 979770307}
   m_Layer: 0
   m_Name: redButton
   m_TagString: Untagged
@@ -976,24 +1036,30 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979770302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.99, z: 0.076171875}
+  m_LocalPosition: {x: -0.03, y: 0.99, z: 0.07617188}
   m_LocalScale: {x: 6.8353634, y: 6.8353634, z: 6.8353634}
   m_Children: []
   m_Father: {fileID: 823132730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &979770305
-MonoBehaviour:
+--- !u!95 &979770305
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979770302}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightUpTime: 2
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &979770306
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1009,6 +1075,17 @@ CircleCollider2D:
   m_Offset: {x: 2.3283064e-10, y: 0.000000029802322}
   serializedVersion: 2
   m_Radius: 0.07999999
+--- !u!114 &979770307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 979770302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1273789114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1290301552}
   m_Layer: 0
-  m_Name: telegraphs
+  m_Name: Telegraphs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,7 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 2
+  lightUpForSeconds: 2
 --- !u!1 &1721941315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 2
+  lightUpForSeconds: 2
 --- !u!1 &1766245104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931403bc871134c479080d042106f9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 2
+  lightUpForSeconds: 2
 --- !u!1 &1945102736
 GameObject:
   m_ObjectHideFlags: 0

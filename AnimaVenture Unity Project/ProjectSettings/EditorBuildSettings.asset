@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/1_MainMenu.unity
     guid: 8a53704eb758d4647be0f31f44f40f89
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/2_SimonGamePrototype.unity
     guid: bde7de2ce3b2ee146b02b028882390fc
+  - enabled: 1
+    path: Assets/Scenes/Testing or Personal/SimonGamePrototype_test.unity
+    guid: 6b694b2dedda494419d63eaacf95bb77
   m_configObjects: {}
