@@ -102,7 +102,8 @@ public class GameManager_Simon : MonoBehaviour {
         //disable colliders on buttons to prevent player input
         for (int cnt = 0; cnt < buttons.Length; cnt++)
         {
-            buttons[cnt].gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            GameObject buttonRef = buttons[cnt].gameObject;
+            buttonRef.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
 
@@ -110,7 +111,8 @@ public class GameManager_Simon : MonoBehaviour {
     {
         for (int cnt = 0; cnt < buttons.Length; cnt++)
         {
-            buttons[cnt].gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            GameObject buttonRef = buttons[cnt].gameObject;
+            buttonRef.GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 

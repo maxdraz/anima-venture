@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class Timer_Simon : MonoBehaviour {
 
-    Text timerText;
+    [SerializeField]Text timerText;
     public float time = 120;
 
-    private void Awake()
-    {
-        timerText = GetComponent<Text>();
-    }
+    
 
     private void Update()
     {

@@ -8,10 +8,6 @@ public class Score_Simon : MonoBehaviour {
     public int currentScore = 0;
     [SerializeField] Text scoreText;
 
-    private void Awake()
-    {
-        scoreText = GameObject.Find("Score").GetComponent<Text>();
-    }
 
     public void Add(int amount)
     {

@@ -1,10 +1,10 @@
 
-	HIGHEST SEQUENCE RECORD
+	(complete) CORRECT SEQUENCES SCORE 
  - Display the number of sequence you've gotten to.
 If wrong, save curret sequence number, replay sequence. 
 If right, add one to sequence as normal, if wrong repeat above.
 
- 	TIMER
+ 	(complete) TIMER
  - Counts down from 2mins. Everytime you get sequence right subtract x 
  - when timer is finished, 'keep playing' or 'meditate', 
 	(now leaves are spawning instead of stars)
