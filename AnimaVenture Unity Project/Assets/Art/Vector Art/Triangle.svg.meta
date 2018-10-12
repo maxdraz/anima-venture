@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 96b4ec05ff56e4045bbaed60c4e0a5a7
+guid: da0ffda796a450d4d99b9b89f1527f01
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/Hexagon
-    400000: gameObject/Hexagon/Transform
-    21200000: gameObject/Hexagon/SpriteRenderer
+    100000: gameObject/Triangle
+    400000: gameObject/Triangle/Transform
+    21200000: gameObject/Triangle/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -51,5 +51,5 @@ ScriptedImporter:
         y: 0
         width: 0
         height: 0
-      spriteID: 3c457e0b5c396344ca1e4607f5a734f5
+      spriteID: 472107ead15d6154babff935c0a8dfc7
     PhysicsOutlines: []
