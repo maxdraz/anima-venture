@@ -8,13 +8,14 @@ public class Timer_Simon : MonoBehaviour {
     [SerializeField]Text timerText;
     public float time = 120;
 
-    
 
     private void Update()
     {
         StartTimer();
         DisplayTimer();
 
+        if (time <= 0)
+            time = 0;
     }
 
     void StartTimer()
@@ -25,6 +26,11 @@ public class Timer_Simon : MonoBehaviour {
     void DisplayTimer()
     {
         timerText.text = Mathf.RoundToInt(time).ToString();
+    }
+
+   public void SubtractTime(float t)
+    {
+        time -= t;
     }
 
 }
