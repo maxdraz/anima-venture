@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
     [SerializeField] float gameStartDelay = 2f;
-    [SerializeField] float delayBetweenTelegraphs=2f;
-    [SerializeField] int maxSequenceLength;
+    [SerializeField] float delayBetweenTelegraphs=2f; 
+    [SerializeField] float timerTime;
+    [SerializeField] float timeToSubtract;
 
     [Space(30)]
     [Header("Sequence, Telegraphs, Buttons")]
@@ -22,7 +23,10 @@ public class GameManager_Simon : MonoBehaviour {
 
     GameObject startButton;
     GameObject restartButton;
-   public  Score_Simon score;   
+
+    [Space(15)]
+    [SerializeField] Score_Simon score;
+    [SerializeField] Timer_Simon timer;
 
 
     private void Awake()
@@ -38,7 +42,8 @@ public class GameManager_Simon : MonoBehaviour {
 
     void Start () {
         Debug.Log(gameObject.name + ": Welcome! Press 'Start' to play");
-        
+        //Set the timer 
+        timer.time = timerTime;
         //Assign each button its index in the array
         SetButtonIndex();
     }
@@ -46,9 +51,9 @@ public class GameManager_Simon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (colourSequence.Count > maxSequenceLength)
+        if (timer.time <= 0)
         {
-            // Restart Game
+            GameEnd();
         }
 	}
 
@@ -167,6 +172,8 @@ public class GameManager_Simon : MonoBehaviour {
             {
                 //Add one to score
                 score.Add(1);
+                //Subtract time from timer
+                timer.SubtractTime(timeToSubtract);
                 //replay sequence and add a new colour to the end
                 DisableButtons();
                 StartCoroutine(PlayGame());
@@ -184,7 +191,27 @@ public class GameManager_Simon : MonoBehaviour {
             score.Set(score.currentScore);
             //Play back sequence
             StartCoroutine(PlayBackSequence());
-        }
+        }       
         
+    }
+
+    void GameEnd()
+    {
+        // if timer reaches 0:
+        // - enable menu object
+
+        // disable buttons
+        DisableButtons();
+
+        //disable telegraphs
+        DisableTelegraphs();
+    }
+
+    void DisableTelegraphs()
+    {
+        for(int cnt = 0; cnt < telegraphs.Length; cnt ++)
+        {
+            telegraphs[cnt].ResetTelegraph();
+        }
     }
 }
