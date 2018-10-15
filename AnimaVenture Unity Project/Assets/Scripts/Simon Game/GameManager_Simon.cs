@@ -22,7 +22,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     GameObject startButton;
     GameObject restartButton;
-    Score_Simon score;   
+   public  Score_Simon score;   
 
 
     private void Awake()
@@ -31,7 +31,7 @@ public class GameManager_Simon : MonoBehaviour {
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
         restartButton.SetActive(false);
-        score = GameObject.Find("Score").GetComponent<Score_Simon>();
+        //score = GameObject.Find("Score").GetComponent<Score_Simon>();
 
         //colourSequence.Count = colourSequenceLength;
     }
@@ -66,6 +66,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     IEnumerator PlayGame()
     {
+        Debug.Log("play game function called");
         //make start button disappear       
         startButton.SetActive(false);
         //make restart button appear        
@@ -82,11 +83,15 @@ public class GameManager_Simon : MonoBehaviour {
         }
         //pick a new random colour and add it to the list
         PickRandomColour();
+
     }
 
     IEnumerator PlayBackSequence()
     {
         yield return new WaitForSeconds(delayBetweenTelegraphs);
+
+        positionInSequence = 0;
+
         foreach(int colourIndex in colourSequence)
         {
             //whatever colour is stored in the list, display the corresponding telegraph
@@ -99,20 +104,22 @@ public class GameManager_Simon : MonoBehaviour {
 
     void DisableButtons()
     {
+        Debug.Log("Disable buttons method called  " + buttons.Length);
         //disable colliders on buttons to prevent player input
         for (int cnt = 0; cnt < buttons.Length; cnt++)
         {
-            GameObject buttonRef = buttons[cnt].gameObject;
-            buttonRef.GetComponent<CircleCollider2D>().enabled = false;
+            buttons[cnt].GetComponent<CircleCollider2D>().enabled = false;
+           
+
         }
     }
 
     void EnableButtons()
     {
+        Debug.Log("Enable buttons called");
         for (int cnt = 0; cnt < buttons.Length; cnt++)
         {
-            GameObject buttonRef = buttons[cnt].gameObject;
-            buttonRef.GetComponent<CircleCollider2D>().enabled = true;
+            buttons[cnt].GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 
@@ -131,6 +138,9 @@ public class GameManager_Simon : MonoBehaviour {
         telegraphs[randomColourIndex].DisplayTelegraph();
         
         colourSequence.Add(randomColourIndex);
+
+        //Enable Buttons here
+        EnableButtons();
     }
 
     public void RestartGame()
@@ -158,6 +168,7 @@ public class GameManager_Simon : MonoBehaviour {
                 //Add one to score
                 score.Add(1);
                 //replay sequence and add a new colour to the end
+                DisableButtons();
                 StartCoroutine(PlayGame());
             }
         }

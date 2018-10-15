@@ -296,6 +296,7 @@ MonoBehaviour:
   - {fileID: 192243607}
   - {fileID: 680629167}
   - {fileID: 959319516}
+  score: {fileID: 649660881}
 --- !u!4 &178581202
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +395,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192243602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
   m_CullingMode: 0
@@ -880,7 +881,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680629162}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
   m_CullingMode: 0
@@ -925,6 +926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823132730}
+  - component: {fileID: 823132731}
   m_Layer: 0
   m_Name: InputButtons
   m_TagString: Untagged
@@ -949,6 +951,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &823132731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823132729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9dfe67e36024c2f41a50511bc282fc4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &914399077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1204,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959319511}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
   m_CullingMode: 0
@@ -1306,7 +1326,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979770302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
   m_CullingMode: 0
