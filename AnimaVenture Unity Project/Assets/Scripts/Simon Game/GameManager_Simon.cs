@@ -35,6 +35,7 @@ public class GameManager_Simon : MonoBehaviour {
     [Header("Animations")]
     //Animations
     [SerializeField] Animator animator;
+    public bool continueBool;
 
 
     private void Awake()
@@ -63,7 +64,7 @@ public class GameManager_Simon : MonoBehaviour {
 
         if (timer.time <= 0)
         {
-            GameEnd();
+           // GameEnd();
         }
 	}
 
@@ -95,11 +96,11 @@ public class GameManager_Simon : MonoBehaviour {
         foreach (int colourIndex in colourSequence)
         {
             //if timer is 0, stop playing sequence if it's in progress
-            if(timer.time <= 0)
-            {
-                yield break;
+           // if(timer.time <= 0)
+           // {
+              //  yield break;
 
-            }
+           // }
             //whatever colour is stored in the list, display the corresponding telegraph
             StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
@@ -118,11 +119,11 @@ public class GameManager_Simon : MonoBehaviour {
         foreach(int colourIndex in colourSequence)
         {
             //if timer is 0, stop playing sequence if it's in progress
-            if (timer.time <=0)
-            {
-                yield break;
+            //if (timer.time <=0)
+            //{
+            //    yield break;
 
-            }
+            //}
             //display that stored number's telegraph
             StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
@@ -256,4 +257,12 @@ public class GameManager_Simon : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
+
+   // public void ContinueGame()
+    //{
+      //  endGameMenu.SetActive(false);
+        //timer.time = timerTime;
+        //timer.gameObject.SetActive(false);
+        //StartCoroutine(PlayBackSequence());
+    //}
 }

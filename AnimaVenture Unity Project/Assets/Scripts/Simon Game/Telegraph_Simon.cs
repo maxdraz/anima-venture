@@ -6,9 +6,15 @@ public class Telegraph_Simon : MonoBehaviour {
     [SerializeField] float lightUpForSeconds = 2f;
     //Sprite renderer reference (only for prototype)
     SpriteRenderer sRenderer;
+    Animation animation;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        animation = GetComponent<Animation>();
+    }
+
+    // Use this for initialization
+    void Start () {
         sRenderer = gameObject.GetComponent<SpriteRenderer>();
         //(Prototype) set alpha value to half
         ResetTelegraph();
@@ -28,6 +34,8 @@ public class Telegraph_Simon : MonoBehaviour {
             sRenderer.color.g,
             sRenderer.color.b,
             1.0f);
+        animation.clip = animation.GetClip("TelegraphAnimation");
+        animation.Play();
         yield return new WaitForSeconds(t);
 
         ResetTelegraph();
@@ -39,6 +47,8 @@ public class Telegraph_Simon : MonoBehaviour {
             sRenderer.color.g,
             sRenderer.color.b,
             0.5f);
+        animation.clip = animation.GetClip("TelegraphAnimationShrink");
+        animation.Play();
     }
 
 }
