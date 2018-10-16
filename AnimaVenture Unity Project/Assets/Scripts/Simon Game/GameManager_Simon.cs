@@ -145,6 +145,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     void PickRandomColour()
     {
+        
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
         StartCoroutine(telegraphs[randomColourIndex].DisplayTelegraph(lightUpForSeconds));
@@ -152,7 +153,8 @@ public class GameManager_Simon : MonoBehaviour {
         colourSequence.Add(randomColourIndex);
 
         //Enable Buttons here
-        EnableButtons();
+        //I envoke for visual purposes only, so that the collider enables only after telegraph animation is finished
+        Invoke("EnableButtons", lightUpForSeconds);
     }
 
     public void RestartGame()
