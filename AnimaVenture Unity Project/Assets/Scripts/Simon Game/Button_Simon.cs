@@ -7,7 +7,7 @@ public class Button_Simon : MonoBehaviour {
     [SerializeField] float lightUpTime;
 
     GameManager_Simon gm;
-    Animator animator;
+    Animator animator;   
     SpriteRenderer sRenderer;
 
     //assign the same index as in the array on gm
@@ -16,7 +16,7 @@ public class Button_Simon : MonoBehaviour {
     private void Awake()
     {
         //References to objects / components
-        animator = gameObject.GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager_Simon>();
         sRenderer = GetComponent<SpriteRenderer>();
     }
@@ -24,7 +24,7 @@ public class Button_Simon : MonoBehaviour {
     private void OnMouseDown()
     {
         //animate
-        animator.SetBool("tapBool", true);
+        
 
         //display button colour
         DisplayButton();
@@ -36,7 +36,7 @@ public class Button_Simon : MonoBehaviour {
     private void OnMouseUp()
     {
         //animate
-        animator.SetBool("tapBool", false);
+        
         //reset button colour
         StartCoroutine(ResetButton(lightUpTime));
     }
