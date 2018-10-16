@@ -625,7 +625,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: No
+  m_Text: Not yet
 --- !u!222 &219607166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -755,8 +755,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149, y: -112.79997}
-  m_SizeDelta: {x: 142.5, y: 119.6}
+  m_AnchoredPosition: {x: 125.25, y: -112.79997}
+  m_SizeDelta: {x: 190, y: 119.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273235105
 MonoBehaviour:
@@ -1046,6 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 2094366215}
   time: 5
+  startTimerBool: 0
 --- !u!1 &680629162
 GameObject:
   m_ObjectHideFlags: 0
