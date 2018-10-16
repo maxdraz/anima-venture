@@ -424,6 +424,7 @@ MonoBehaviour:
   score: {fileID: 649660881}
   timer: {fileID: 649660882}
   endGameMenu: {fileID: 1951444747}
+  animator: {fileID: 823132731}
 --- !u!4 &178581202
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +448,6 @@ GameObject:
   - component: {fileID: 192243604}
   - component: {fileID: 192243603}
   - component: {fileID: 192243606}
-  - component: {fileID: 192243605}
   - component: {fileID: 192243607}
   m_Layer: 0
   m_Name: blueButton
@@ -509,30 +509,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192243602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.02, y: -0.109999895, z: 0.076171875}
+  m_LocalPosition: {x: 1.02, y: -0.1099999, z: 0.07617188}
   m_LocalScale: {x: 6.8353634, y: 6.8353634, z: 6.8353634}
   m_Children: []
   m_Father: {fileID: 823132730}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &192243605
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 192243602}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &192243606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1059,7 +1041,6 @@ GameObject:
   - component: {fileID: 680629164}
   - component: {fileID: 680629163}
   - component: {fileID: 680629166}
-  - component: {fileID: 680629165}
   - component: {fileID: 680629167}
   m_Layer: 0
   m_Name: yellowtButton
@@ -1121,30 +1102,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680629162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.049999997, y: -1.01, z: 0.076171875}
+  m_LocalPosition: {x: -0.05, y: -1.01, z: 0.07617188}
   m_LocalScale: {x: 6.8353634, y: 6.8353634, z: 6.8353634}
   m_Children: []
   m_Father: {fileID: 823132730}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &680629165
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 680629162}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &680629166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1383,7 +1346,6 @@ GameObject:
   - component: {fileID: 959319513}
   - component: {fileID: 959319512}
   - component: {fileID: 959319515}
-  - component: {fileID: 959319514}
   - component: {fileID: 959319516}
   m_Layer: 0
   m_Name: greenButton
@@ -1445,30 +1407,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959319511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.05, y: -0.109999895, z: 0.076171875}
+  m_LocalPosition: {x: -1.05, y: -0.1099999, z: 0.07617188}
   m_LocalScale: {x: 6.8353634, y: 6.8353634, z: 6.8353634}
   m_Children: []
   m_Father: {fileID: 823132730}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &959319514
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 959319511}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &959319515
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1506,7 +1450,6 @@ GameObject:
   - component: {fileID: 979770304}
   - component: {fileID: 979770303}
   - component: {fileID: 979770306}
-  - component: {fileID: 979770305}
   - component: {fileID: 979770307}
   m_Layer: 0
   m_Name: redButton
@@ -1574,24 +1517,6 @@ Transform:
   m_Father: {fileID: 823132730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &979770305
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 979770302}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 06df9e9ffb4a0fb4f8039a198850abd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &979770306
 CircleCollider2D:
   m_ObjectHideFlags: 0

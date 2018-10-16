@@ -11,7 +11,7 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] float timeToSubtract;
     [SerializeField] float lightUpForSeconds = 1.5f;
 
-    [Space(30)]
+    [Space(15)]
     [Header("Sequence, Telegraphs, Buttons")]
     //create a list to store colour sequence
     [SerializeField]
@@ -27,9 +27,14 @@ public class GameManager_Simon : MonoBehaviour {
     GameObject restartButton;
 
     [Space(15)]
+    [Header("Score and Timer")]
     [SerializeField] Score_Simon score;
     [SerializeField] Timer_Simon timer;
     [SerializeField] GameObject endGameMenu;
+    [Space(15)]
+    [Header("Animations")]
+    //Animations
+    [SerializeField] Animator animator;
 
 
     private void Awake()
@@ -44,7 +49,7 @@ public class GameManager_Simon : MonoBehaviour {
     }
 
     void Start () {
-        Debug.Log(gameObject.name + ": Welcome! Press 'Start' to play");
+        
         //Disable end game menu object
         endGameMenu.SetActive(false);
         //Set the timer 
@@ -78,7 +83,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     IEnumerator PlayGame()
     {
-        Debug.Log("play game function called");
+       
         //make start button disappear       
         startButton.SetActive(false);
         //make restart button appear        
@@ -116,7 +121,9 @@ public class GameManager_Simon : MonoBehaviour {
 
     void DisableButtons()
     {
-        Debug.Log("Disable buttons method called  " + buttons.Length);
+        //animation
+        animator.SetBool("enabledBool", false);
+        
         //disable colliders on buttons to prevent player input
         for (int cnt = 0; cnt < buttons.Length; cnt++)
         {
@@ -128,7 +135,9 @@ public class GameManager_Simon : MonoBehaviour {
 
     void EnableButtons()
     {
-        Debug.Log("Enable buttons called");
+        // play animation
+        animator.SetBool("enabledBool", true);
+      
         for (int cnt = 0; cnt < buttons.Length; cnt++)
         {
             buttons[cnt].GetComponent<CircleCollider2D>().enabled = true;
@@ -174,11 +183,11 @@ public class GameManager_Simon : MonoBehaviour {
 
     public void ButtonPressed(int buttonIndex)
     {
-        Debug.Log("Button " + buttonIndex + " was pressed");
+       
 
         if (colourSequence[positionInSequence] == buttonIndex)
         {
-            Debug.Log("Correct button pressed!");
+           
             //add 1 to the current position in the sequence
             positionInSequence++;
             
@@ -199,7 +208,7 @@ public class GameManager_Simon : MonoBehaviour {
             //disable buttons
             DisableButtons();
 
-            Debug.Log("Wrong! Try again");
+            
             //restart game
             //RestartGame();
             //set score to be current score
