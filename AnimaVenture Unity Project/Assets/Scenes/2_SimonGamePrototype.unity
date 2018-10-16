@@ -407,8 +407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartDelay: 2
   delayBetweenTelegraphs: 2
-  timerTime: 10
+  timerTime: 120
   timeToSubtract: 10
+  lightUpForSeconds: 1.5
   colourSequence: 
   telegraphs:
   - {fileID: 1766245107}

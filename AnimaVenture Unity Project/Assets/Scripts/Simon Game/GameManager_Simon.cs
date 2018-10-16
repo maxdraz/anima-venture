@@ -9,6 +9,7 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] float delayBetweenTelegraphs=2f; 
     [SerializeField] float timerTime;
     [SerializeField] float timeToSubtract;
+    [SerializeField] float lightUpForSeconds = 1.5f;
 
     [Space(30)]
     [Header("Sequence, Telegraphs, Buttons")]
@@ -89,7 +90,7 @@ public class GameManager_Simon : MonoBehaviour {
         foreach (int colourIndex in colourSequence)
         {
             //whatever colour is stored in the list, display the corresponding telegraph
-            telegraphs[colourIndex].DisplayTelegraph();
+            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(lightUpForSeconds));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //pick a new random colour and add it to the list
@@ -106,7 +107,7 @@ public class GameManager_Simon : MonoBehaviour {
         foreach(int colourIndex in colourSequence)
         {
             //whatever colour is stored in the list, display the corresponding telegraph
-            telegraphs[colourIndex].DisplayTelegraph();
+            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(lightUpForSeconds));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //enable buttons again
@@ -146,7 +147,7 @@ public class GameManager_Simon : MonoBehaviour {
     {
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
-        telegraphs[randomColourIndex].DisplayTelegraph();
+        StartCoroutine(telegraphs[randomColourIndex].DisplayTelegraph(lightUpForSeconds));
         
         colourSequence.Add(randomColourIndex);
 

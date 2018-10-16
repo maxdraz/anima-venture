@@ -20,15 +20,17 @@ public class Telegraph_Simon : MonoBehaviour {
 	}
 
     //method for what happens when time to telegraph colour
-    public void DisplayTelegraph()
+    public IEnumerator DisplayTelegraph(float t)
     {
+        
         //this will be changed later to fit our flying stars
         sRenderer.color = new Color(sRenderer.color.r,
             sRenderer.color.g,
             sRenderer.color.b,
             1.0f);
+        yield return new WaitForSeconds(t);
 
-        Invoke("ResetTelegraph", lightUpForSeconds);
+        ResetTelegraph();
     }
 
     public void ResetTelegraph()
