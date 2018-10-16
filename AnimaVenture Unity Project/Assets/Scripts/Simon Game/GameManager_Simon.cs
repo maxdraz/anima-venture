@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
@@ -27,6 +28,7 @@ public class GameManager_Simon : MonoBehaviour {
     [Space(15)]
     [SerializeField] Score_Simon score;
     [SerializeField] Timer_Simon timer;
+    [SerializeField] GameObject endGameMenu;
 
 
     private void Awake()
@@ -34,7 +36,7 @@ public class GameManager_Simon : MonoBehaviour {
         //initialize all references
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
-        restartButton.SetActive(false);
+        
         //score = GameObject.Find("Score").GetComponent<Score_Simon>();
 
         //colourSequence.Count = colourSequenceLength;
@@ -42,6 +44,8 @@ public class GameManager_Simon : MonoBehaviour {
 
     void Start () {
         Debug.Log(gameObject.name + ": Welcome! Press 'Start' to play");
+        //Disable end game menu object
+        endGameMenu.SetActive(false);
         //Set the timer 
         timer.time = timerTime;
         //Assign each button its index in the array
@@ -61,8 +65,10 @@ public class GameManager_Simon : MonoBehaviour {
     {        
         //make start button disappear       
         startButton.SetActive(false);
+        //call start timer function
+        timer.startTimerBool = true;
         //make restart button appear        
-        restartButton.SetActive(true);
+       // restartButton.SetActive(true);
         // invoke pick random colour method
         Invoke("PickRandomColour", gameStartDelay);
         
@@ -75,7 +81,7 @@ public class GameManager_Simon : MonoBehaviour {
         //make start button disappear       
         startButton.SetActive(false);
         //make restart button appear        
-        restartButton.SetActive(true);
+        //restartButton.SetActive(true);
         //reset the current input position in sequence
         positionInSequence = 0;
         yield return new WaitForSeconds(delayBetweenTelegraphs);
@@ -152,9 +158,15 @@ public class GameManager_Simon : MonoBehaviour {
     {
         //delete previous colour sequence
         colourSequence.Clear();
+        //stop timer 
+        timer.startTimerBool = false;
         //call start game function
-        restartButton.SetActive(false);
-        startButton.SetActive(true);        
+        //restartButton.SetActive(false);
+        startButton.SetActive(true);
+        //disable end game menu 
+        endGameMenu.SetActive(false);
+        //Reset timer
+        timer.time = timerTime;
     }
 
     public void ButtonPressed(int buttonIndex)
@@ -198,13 +210,14 @@ public class GameManager_Simon : MonoBehaviour {
     void GameEnd()
     {
         // if timer reaches 0:
-        // - enable menu object
-
         // disable buttons
         DisableButtons();
 
         //disable telegraphs
         DisableTelegraphs();
+        // - enable menu object
+        endGameMenu.SetActive(true);
+        
     }
 
     void DisableTelegraphs()
@@ -213,5 +226,10 @@ public class GameManager_Simon : MonoBehaviour {
         {
             telegraphs[cnt].ResetTelegraph();
         }
+    }
+
+    public void LoadNewScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
 }

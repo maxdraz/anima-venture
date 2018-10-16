@@ -7,20 +7,27 @@ public class Timer_Simon : MonoBehaviour {
 
     [SerializeField]Text timerText;
     public float time = 120;
+    public bool startTimerBool;
 
 
     private void Update()
     {
-        StartTimer();
+        
         DisplayTimer();
+
+        if(startTimerBool)
+        {
+            StartTimer();
+        }
+
+    }
+
+    public void StartTimer()
+    {
+        time -= Time.deltaTime;
 
         if (time <= 0)
             time = 0;
-    }
-
-    void StartTimer()
-    {
-        time -= Time.deltaTime;        
     }
 
     void DisplayTimer()
