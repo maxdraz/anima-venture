@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
     [SerializeField] float gameStartDelay = 2f;
-    [SerializeField] float delayBetweenTelegraphs=1.5f; 
-    [SerializeField] float timerTime;
-    [SerializeField] float timeToSubtract;
+    [SerializeField] float delayBetweenTelegraphs=1.5f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
+    [SerializeField] float speedBoostMultiplier;
+    [SerializeField] float speedBoostTime;
+    float timerTime;
+    float timeToSubtract;
+    
 
     [Space(15)]
     [Header("Sequence, Telegraphs, Buttons")]
@@ -27,10 +30,11 @@ public class GameManager_Simon : MonoBehaviour {
     GameObject restartButton;
 
     [Space(15)]
-    [Header("Score and Timer")]
+    [Header("Score, Timer, Dolmen")]
     [SerializeField] Score_Simon score;
     [SerializeField] Timer_Simon timer;
     [SerializeField] GameObject endGameMenu;
+    [SerializeField] Dolmen_Simon dolmen;
     [Space(15)]
     [Header("Animations")]
     //Animations
@@ -55,6 +59,7 @@ public class GameManager_Simon : MonoBehaviour {
         endGameMenu.SetActive(false);
         //Set the timer 
         timer.time = timerTime;
+                
         //Assign each button its index in the array
         SetButtonIndex();
     }
@@ -74,6 +79,8 @@ public class GameManager_Simon : MonoBehaviour {
         startButton.SetActive(false);
         //call start timer function
         timer.startTimerBool = true;
+        //start moving dolmen
+        dolmen.moveDolmenBool = true;
         //make restart button appear        
        // restartButton.SetActive(true);
         // invoke pick random colour method
@@ -210,7 +217,10 @@ public class GameManager_Simon : MonoBehaviour {
                 //Add one to score
                 score.Add(1);
                 //Subtract time from timer
-                timer.SubtractTime(timeToSubtract);
+                // timer.SubtractTime(timeToSubtract);
+
+                //add speed boost
+                StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));
                 //replay sequence and add a new colour to the end
                 DisableButtons();
                 StartCoroutine(PlayGame());

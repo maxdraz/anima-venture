@@ -530,9 +530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartDelay: 2
   delayBetweenTelegraphs: 1
-  timerTime: 10
-  timeToSubtract: 10
   telegraphLightUpTime: 0.5
+  speedBoostMultiplier: 15
+  speedBoostTime: 0.5
   colourSequence: 
   telegraphs:
   - {fileID: 1766245107}
@@ -547,6 +547,7 @@ MonoBehaviour:
   score: {fileID: 649660881}
   timer: {fileID: 649660882}
   endGameMenu: {fileID: 1951444747}
+  dolmen: {fileID: 294645836}
   animator: {fileID: 823132731}
   continueBool: 0
 --- !u!4 &178581202
@@ -560,7 +561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192243602
 GameObject:
@@ -722,10 +723,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 55
+    m_FontSize: 39
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 63
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -733,7 +734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Not yet
+  m_Text: Meditate
 --- !u!222 &219607166
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -858,12 +859,12 @@ GameObject:
   - component: {fileID: 273235106}
   - component: {fileID: 273235105}
   m_Layer: 5
-  m_Name: NoButton
+  m_Name: ToMeditationButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &273235104
 RectTransform:
   m_ObjectHideFlags: 0
@@ -875,13 +876,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 219607164}
-  m_Father: {fileID: 1951444748}
-  m_RootOrder: 1
+  m_Father: {fileID: 649660880}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125.25, y: -112.79997}
-  m_SizeDelta: {x: 190, y: 119.6}
+  m_AnchoredPosition: {x: -15, y: -79}
+  m_SizeDelta: {x: 154.7, y: 97.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273235105
 MonoBehaviour:
@@ -902,7 +903,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.3986994, g: 1, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -923,12 +924,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 178581201}
-        m_MethodName: ContinueGame
-        m_Mode: 1
+        m_MethodName: LoadNewScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1064,6 +1065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294645835}
   - component: {fileID: 294645834}
+  - component: {fileID: 294645836}
   m_Layer: 0
   m_Name: Dolmen
   m_TagString: Untagged
@@ -1128,8 +1130,26 @@ Transform:
   m_LocalScale: {x: 0.557, y: 0.557, z: 0.557}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &294645836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294645833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d54b1f2eff18f342bdc5fdd8075df8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 120
+  distance: 0
+  distanceToTarget: 0
+  speed: 0
+  moveDolmenBool: 0
+  meditationButton: {fileID: 273235103}
+  targetTransform: {fileID: 1697531438}
 --- !u!1 &401848439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1223,7 @@ Transform:
   m_LocalScale: {x: 52.004757, y: 28.167173, z: 7.7255}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569448038
 GameObject:
@@ -1278,7 +1298,7 @@ Transform:
   m_LocalScale: {x: 0.701088, y: 0.701088, z: 0.701088}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649660876
 GameObject:
@@ -1372,9 +1392,10 @@ RectTransform:
   - {fileID: 150991136}
   - {fileID: 1418202316}
   - {fileID: 1951444748}
+  - {fileID: 273235104}
   - {fileID: 2094366214}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1586,7 +1607,7 @@ Transform:
   m_LocalScale: {x: 1.08, y: 1.08, z: 1.08}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823132729
 GameObject:
@@ -1619,7 +1640,7 @@ Transform:
   - {fileID: 680629164}
   - {fileID: 959319513}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &823132731
 Animator:
@@ -1982,7 +2003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290301551
 GameObject:
@@ -2014,7 +2035,7 @@ Transform:
   - {fileID: 262575407}
   - {fileID: 1721226019}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418202315
 GameObject:
@@ -2345,7 +2366,7 @@ Transform:
   m_LocalScale: {x: 0.557, y: 0.557, z: 0.557}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721226018
 GameObject:
@@ -2753,7 +2774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1951444748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2765,7 +2786,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 60502414}
-  - {fileID: 273235104}
   m_Father: {fileID: 649660880}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2953,7 +2973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2094366214
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2965,7 +2985,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 649660880}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
