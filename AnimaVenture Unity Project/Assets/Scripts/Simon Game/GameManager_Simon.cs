@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
     [SerializeField] float gameStartDelay = 2f;
-    [SerializeField] float delayBetweenTelegraphs=2f; 
+    [SerializeField] float delayBetweenTelegraphs=1.5f; 
     [SerializeField] float timerTime;
     [SerializeField] float timeToSubtract;
-    [SerializeField] float lightUpForSeconds = 1.5f;
+    [SerializeField] float telegraphLightUpTime = 1.5f;
 
     [Space(15)]
     [Header("Sequence, Telegraphs, Buttons")]
@@ -94,8 +94,14 @@ public class GameManager_Simon : MonoBehaviour {
         //Play back sequence
         foreach (int colourIndex in colourSequence)
         {
+            //if timer is 0, stop playing sequence if it's in progress
+            if(timer.time <= 0)
+            {
+                yield break;
+
+            }
             //whatever colour is stored in the list, display the corresponding telegraph
-            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(lightUpForSeconds));
+            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //pick a new random colour and add it to the list
@@ -108,11 +114,17 @@ public class GameManager_Simon : MonoBehaviour {
         yield return new WaitForSeconds(delayBetweenTelegraphs);
 
         positionInSequence = 0;
-
+        //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
-            //whatever colour is stored in the list, display the corresponding telegraph
-            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(lightUpForSeconds));
+            //if timer is 0, stop playing sequence if it's in progress
+            if (timer.time <=0)
+            {
+                yield break;
+
+            }
+            //display that stored number's telegraph
+            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //enable buttons again
@@ -157,13 +169,13 @@ public class GameManager_Simon : MonoBehaviour {
         
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
-        StartCoroutine(telegraphs[randomColourIndex].DisplayTelegraph(lightUpForSeconds));
+        StartCoroutine(telegraphs[randomColourIndex].DisplayTelegraph(telegraphLightUpTime));
         
         colourSequence.Add(randomColourIndex);
 
         //Enable Buttons here
         //I envoke for visual purposes only, so that the collider enables only after telegraph animation is finished
-        Invoke("EnableButtons", lightUpForSeconds);
+        Invoke("EnableButtons", telegraphLightUpTime);
     }
 
     public void RestartGame()

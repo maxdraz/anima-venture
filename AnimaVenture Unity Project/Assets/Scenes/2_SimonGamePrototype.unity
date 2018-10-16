@@ -532,7 +532,7 @@ MonoBehaviour:
   delayBetweenTelegraphs: 2
   timerTime: 120
   timeToSubtract: 10
-  lightUpForSeconds: 1.5
+  telegraphLightUpTime: 1.5
   colourSequence: 
   telegraphs:
   - {fileID: 1766245107}
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 1
+  lightUpTime: 0.25
 --- !u!1 &219607163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,8 +1117,8 @@ RectTransform:
   - {fileID: 2009001338}
   - {fileID: 150991136}
   - {fileID: 1418202316}
-  - {fileID: 2094366214}
   - {fileID: 1951444748}
+  - {fileID: 2094366214}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 1
+  lightUpTime: 0.25
 --- !u!1 &800284859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 1
+  lightUpTime: 0.25
 --- !u!1 &979770302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,7 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fc12433cb29fb48b8db97f3c219b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightUpTime: 0.5
+  lightUpTime: 0.25
 --- !u!1 &1273789114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,7 +2490,7 @@ GameObject:
   - component: {fileID: 1951444750}
   - component: {fileID: 1951444749}
   m_Layer: 5
-  m_Name: EndGameText
+  m_Name: EndGameMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2509,7 +2509,7 @@ RectTransform:
   - {fileID: 60502414}
   - {fileID: 273235104}
   m_Father: {fileID: 649660880}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2707,7 +2707,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 649660880}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
