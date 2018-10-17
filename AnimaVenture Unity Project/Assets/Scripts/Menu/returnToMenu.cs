@@ -2,38 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class returnToMenu : MonoBehaviour {
+public class SetActiveOrInactive : MonoBehaviour {
 
-	public Camera main;
+    public bool deactivateThisObj = false;
 
-    public GameObject node;
-    //public GameObject journeySelect;
-    public GameObject menu;
-    public GameObject background1;
-    public GameObject background2;
-	public GameObject back;
-	public GameObject simon;
-    public GameObject botNode;
+    [Space(5)]
+    [Header("Lists of Game Objects to set Active/ Inactive")]
+    [Space(5)]
+    public List<GameObject> toSetActive;
+    public List<GameObject> toSetInactive;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void Execute()
+    { 
+        SetAllActive();
+        SetAllInactive();
 
-	private void OnMouseDown()
+        //set this object to Inactive
+        if (deactivateThisObj)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+            return;
+
+    }
+
+    void SetAllActive()
     {
-        //journeySelect.SetActive(false);
-        background1.SetActive(false);
-        background2.SetActive(true);
-        menu.SetActive(true);
-        node.SetActive(true);
-		back.SetActive(false);
-		simon.SetActive(true);
-        botNode.SetActive(false);
+        if (toSetActive != null)
+        {
+            foreach (GameObject objectRef in toSetActive)
+            {
+                if (objectRef != null)
+                {
+                   objectRef.SetActive(true);
+                }
+                else break;
+            }
+        }
+        else
+            return;
+    }
+
+    void SetAllInactive()
+    {
+        if (toSetActive != null)
+        {
+            foreach (GameObject objectRef in toSetInactive)
+            {
+                if (objectRef != null)
+                {
+                    objectRef.SetActive(false);
+                }
+                else break;
+            }
+        }
+        else
+            return;
     }
 }
