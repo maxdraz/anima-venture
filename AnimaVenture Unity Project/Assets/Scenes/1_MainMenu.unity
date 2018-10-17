@@ -4850,6 +4850,7 @@ GameObject:
   - component: {fileID: 1732599281}
   - component: {fileID: 1732599279}
   - component: {fileID: 1732599280}
+  - component: {fileID: 1732599282}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4881,7 +4882,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.054441
+  orthographic size: 4.05
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4917,6 +4918,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1732599282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732599278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c0d66f9f422ba4b93897c7ce1f84aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSize: 0
+  targetSize: 0.9
+  kingdomSelectSize: 4.05
+  journeySelectSize: 0.9
+  isLerping: 0
 --- !u!1 &1767816966
 GameObject:
   m_ObjectHideFlags: 0
@@ -5885,6 +5902,7 @@ MonoBehaviour:
   back: {fileID: 699074311}
   simon: {fileID: 344887817}
   botNode: {fileID: 622355530}
+  camera: {fileID: 1732599279}
 --- !u!4 &1993707351
 Transform:
   m_ObjectHideFlags: 0
