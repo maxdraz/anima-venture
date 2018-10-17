@@ -15,6 +15,7 @@ public class centralNode : MonoBehaviour {
 	public GameObject background2;
 	public GameObject back;
 	public GameObject simon;
+    public GameObject botNode;
 
 	private void Start()
 	{
@@ -33,6 +34,7 @@ public class centralNode : MonoBehaviour {
             node.SetActive(false);
 			back.SetActive(true);
 			simon.SetActive(true);
+
         }
 	}
 
@@ -45,6 +47,7 @@ public class centralNode : MonoBehaviour {
 		node.SetActive(false);
 		back.SetActive(true);
 		simon.SetActive(true);
+        botNode.SetActive(true);
 	}
 }
 

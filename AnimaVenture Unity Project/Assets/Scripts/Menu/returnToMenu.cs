@@ -13,6 +13,7 @@ public class returnToMenu : MonoBehaviour {
     public GameObject background2;
 	public GameObject back;
 	public GameObject simon;
+    public GameObject botNode;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,6 @@ public class returnToMenu : MonoBehaviour {
         node.SetActive(true);
 		back.SetActive(false);
 		simon.SetActive(true);
-
+        botNode.SetActive(false);
     }
 }
