@@ -7,7 +7,8 @@ public class Dolmen_Simon : MonoBehaviour {
     public float time;
     [SerializeField] float distance;
     [SerializeField] float distanceToTarget;
-    [SerializeField] float speed;    
+    [SerializeField] float speed;
+    public bool pauseGameBool;
     
     public bool moveDolmenBool;
     [SerializeField] GameObject meditationButton;
@@ -27,7 +28,7 @@ public class Dolmen_Simon : MonoBehaviour {
     {
         distanceToTarget = CalculateDistance(targetTransform.position.y, transform.position.y);
         
-        if ( distanceToTarget >= 0 && moveDolmenBool)
+        if (moveDolmenBool)
         { 
             MoveDolmen();
         }
@@ -35,6 +36,8 @@ public class Dolmen_Simon : MonoBehaviour {
         if(distanceToTarget <= 0)
         {
             meditationButton.SetActive(true);
+            moveDolmenBool = false;
+            pauseGameBool = true;
         }
        
         

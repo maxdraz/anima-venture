@@ -1225,6 +1225,9 @@ GameObject:
   m_Component:
   - component: {fileID: 395042259}
   - component: {fileID: 395042260}
+  - component: {fileID: 395042263}
+  - component: {fileID: 395042262}
+  - component: {fileID: 395042261}
   m_Layer: 0
   m_Name: Nebula Concept 2
   m_TagString: Untagged
@@ -1291,6 +1294,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &395042261
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395042258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d0a10458fa9f284cbc576f29239a540, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &395042262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395042258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3bd717fa82a924b83de28a76ff490f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centralNode: {fileID: 1993707348}
+  menu: {fileID: 1931298206}
+  backButton: {fileID: 699074311}
+  simonStartButton: {fileID: 344887817}
+  orangeNode: {fileID: 622355530}
+  journeyAnim: {fileID: 762861041}
+--- !u!111 &395042263
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395042258}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7f28a0220dc2fd94fab3a076467459d5, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &459070314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,13 +2542,14 @@ GameObject:
   m_Component:
   - component: {fileID: 762861039}
   - component: {fileID: 762861040}
+  - component: {fileID: 762861041}
   m_Layer: 0
   m_Name: Background Concept 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &762861039
 Transform:
   m_ObjectHideFlags: 0
@@ -2546,7 +2599,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c333160b406f7459fa9e2f8f28557840, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2556,6 +2609,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &762861041
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762861038}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a1f88592c0308aa41b4f3eec70274d92, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 93705d589321578468c45b3e7113e237, type: 2}
+  - {fileID: 7400000, guid: a1f88592c0308aa41b4f3eec70274d92, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &778043698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,6 +4998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c0d66f9f422ba4b93897c7ce1f84aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FadeAnimation: {fileID: 395042261}
+  camera: {fileID: 1732599279}
   cameraSize: 0
   targetSize: 0.9
   kingdomSelectSize: 4.05

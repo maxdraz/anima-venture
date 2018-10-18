@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraFovLerp : MonoBehaviour {
 
-	Camera camera;
+	public Animator FadeAnimation;
+
+	public Camera camera;
 	public float cameraSize;
 	public float targetSize;
 
@@ -17,9 +19,9 @@ public class CameraFovLerp : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
+		
 		isLerping = false;
 		isReadyForInput = true;
-		camera = GetComponent<Camera> ();
 		cameraSize = camera.orthographicSize;
 
 	}
@@ -37,19 +39,7 @@ public class CameraFovLerp : MonoBehaviour {
 					ToggleTargetSize ();
 					ToggleLerpBool ();
 					
-				}
-//			}
-			//this one is fine
-//			if (cameraSize < journeySelectSize) {
-//				cameraSize = Mathf.Lerp (cameraSize, targetSize, .02f);
-//				camera.orthographicSize = cameraSize;
-//
-//				if (camera.orthographicSize > 3.95f) {
-//
-//					ChangeTargetSizeToJourney ();
-//					ToggleLerpBool ();
-//				}
-//			}
+			}
 		}
 	}
 
@@ -74,6 +64,17 @@ public class CameraFovLerp : MonoBehaviour {
 		if (isLerping == false) {
 			
 			isLerping = true;
+				if (camera.orthographicSize < .91f) {
+
+					FadeAnimation.SetBool ("Wait" ,false);
+					FadeAnimation.SetBool ("FadeToKingdom" ,true);
+				}
+
+				if (camera.orthographicSize > 4f) {
+
+					FadeAnimation.SetBool ("Wait" ,false);
+					FadeAnimation.SetBool ("FadeToKingdom" ,false);
+				}
 
 		} else {
 		
