@@ -14,7 +14,7 @@ public class AudioManagerTest : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            AM.PlayClip(0,1);
+            AM.PlayClip(0);
         }
     }
 }
