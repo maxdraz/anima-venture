@@ -102,12 +102,14 @@ public class GameManager_Simon : MonoBehaviour {
         //Play back sequence
         foreach (int colourIndex in colourSequence)
         {
-            //if timer is 0, stop playing sequence if it's in progress
-           // if(timer.time <= 0)
-           // {
-              //  yield break;
-
-           // }
+            //if dolmen is finished moving
+            if (dolmen.pauseGameBool)
+            {
+                positionInSequence = 0;
+                DisableButtons();
+                dolmen.pauseGameBool = false;
+                yield break;
+            }
             //whatever colour is stored in the list, display the corresponding telegraph
             StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
@@ -125,13 +127,6 @@ public class GameManager_Simon : MonoBehaviour {
         //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
-            //if timer is 0, stop playing sequence if it's in progress
-            //if (timer.time <=0)
-            //{
-            //    yield break;
-
-            //}
-            //display that stored number's telegraph
             StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
