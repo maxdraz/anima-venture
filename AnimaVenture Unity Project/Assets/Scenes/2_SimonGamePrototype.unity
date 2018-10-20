@@ -1147,6 +1147,7 @@ MonoBehaviour:
   distance: 0
   distanceToTarget: 0
   speed: 0
+  pauseGameBool: 0
   moveDolmenBool: 0
   meditationButton: {fileID: 273235103}
   targetTransform: {fileID: 1697531438}
@@ -1373,7 +1374,7 @@ Transform:
   m_LocalScale: {x: 0.701088, y: 0.701088, z: 0.701088}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649660876
 GameObject:
@@ -1440,9 +1441,9 @@ Canvas:
   m_GameObject: {fileID: 649660876}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1464285318}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1450,7 +1451,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!224 &649660880
 RectTransform:
@@ -2272,6 +2273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1464285319}
   - component: {fileID: 1464285318}
+  - component: {fileID: 1464285320}
   - component: {fileID: 1464285317}
   m_Layer: 0
   m_Name: Main Camera
@@ -2340,6 +2342,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464285320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464285316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adefe161dd9925409819dc331e2510d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  widthRatio: 2
+  heightRatio: 3
 --- !u!1 &1529212695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2456,7 @@ Transform:
   m_LocalScale: {x: 0.557, y: 0.557, z: 0.557}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721226018
 GameObject:
@@ -3059,6 +3074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eb2ea8c22383a409a48590eba198ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips: []
 --- !u!4 &2037823609
 Transform:
   m_ObjectHideFlags: 0
