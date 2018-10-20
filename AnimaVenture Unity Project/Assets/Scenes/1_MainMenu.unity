@@ -660,7 +660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858863944992166, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4858863944992166, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
       propertyPath: m_LocalPosition.z
@@ -697,6 +697,10 @@ Prefab:
     - target: {fileID: 4858863944992166, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.84586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052914694562920, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
@@ -1980,7 +1984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &344887818
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2007,7 +2011,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &344887820
 MonoBehaviour:
@@ -2278,10 +2282,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centralNode: {fileID: 1993707348}
-  menu: {fileID: 1931298206}
+  kingdomMenu: {fileID: 0}
+  kingdomLines: {fileID: 0}
+  kingdomDots: {fileID: 0}
   backButton: {fileID: 699074311}
   simonStartButton: {fileID: 344887817}
-  orangeNode: {fileID: 622355530}
+  journeyLines: {fileID: 0}
+  journey1: {fileID: 0}
+  journey2: {fileID: 0}
   journeyAnim: {fileID: 762861041}
 --- !u!111 &395042263
 Animation:
@@ -2905,6 +2913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560048024}
   - component: {fileID: 560048025}
+  - component: {fileID: 560048026}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -2961,7 +2970,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e1c140c3c92eca841b246b00fb8f087a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2971,6 +2980,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &560048026
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 560048023}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a1f88592c0308aa41b4f3eec70274d92, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 93705d589321578468c45b3e7113e237, type: 2}
+  - {fileID: 7400000, guid: a1f88592c0308aa41b4f3eec70274d92, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &570122579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,11 +3433,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centralNode: {fileID: 1993707348}
-  menu: {fileID: 1931298206}
+  kingdomMenu: {fileID: 946936364}
+  kingdomLines: {fileID: 1579156244}
+  kingdomDots: {fileID: 769706991}
   backButton: {fileID: 699074311}
   simonStartButton: {fileID: 344887817}
-  orangeNode: {fileID: 622355530}
-  journeyAnim: {fileID: 762861041}
+  journeyLines: {fileID: 1511754365}
+  journey1: {fileID: 1695005795}
+  journey2: {fileID: 1869712619}
+  journeyAnim: {fileID: 560048026}
 --- !u!111 &674154714
 Animation:
   m_ObjectHideFlags: 0
@@ -3500,7 +3529,7 @@ RectTransform:
   m_GameObject: {fileID: 699074311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.052748}
   m_Children:
   - {fileID: 1383748062}
   m_Father: {fileID: 4094163}
@@ -3508,7 +3537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264, y: 445}
+  m_AnchoredPosition: {x: -60, y: 58}
   m_SizeDelta: {x: 156.8, y: 85.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699074313
@@ -3550,17 +3579,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 699074316}
-        m_MethodName: Execute
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1732599282}
         m_MethodName: ToggleLerpBool
         m_Mode: 1
@@ -4269,7 +4287,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 769706991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 770326524}
@@ -5036,6 +5054,11 @@ Transform:
   m_Father: {fileID: 134893633}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &946936364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1052914694562920, guid: aa5d85d1781f89440b4f0ba81315bc87,
+    type: 2}
+  m_PrefabInternal: {fileID: 109762449}
 --- !u!1 &957787590
 GameObject:
   m_ObjectHideFlags: 0
@@ -5586,8 +5609,9 @@ Transform:
   - {fileID: 769706992}
   - {fileID: 674154711}
   - {fileID: 1579156245}
+  - {fileID: 1993707351}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178410559
 GameObject:
@@ -5748,7 +5772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1192808442}
   m_Layer: 0
-  m_Name: Background Ideas
+  m_Name: 'Background Ideas '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6687,7 +6711,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460032202
 GameObject:
@@ -6854,7 +6878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1511754366
 Transform:
   m_ObjectHideFlags: 0
@@ -7162,7 +7186,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1579156244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0.06, y: -0.19, z: 0}
   m_LocalScale: {x: 0.51221824, y: 0.51221824, z: 0.51221824}
   m_Children: []
   m_Father: {fileID: 1137972937}
@@ -7453,7 +7477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1695005796
 Transform:
   m_ObjectHideFlags: 0
@@ -7817,7 +7841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c0d66f9f422ba4b93897c7ce1f84aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeAnimation: {fileID: 395042261}
+  FadeAnimation: {fileID: 674154712}
   camera: {fileID: 1732599279}
   cameraSize: 0
   targetSize: 0.9
@@ -8213,7 +8237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1869712620
 Transform:
   m_ObjectHideFlags: 0
@@ -8351,7 +8375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1883866497
 Transform:
   m_ObjectHideFlags: 0
@@ -8367,7 +8391,7 @@ Transform:
   - {fileID: 560048024}
   - {fileID: 1511754366}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888820156
 GameObject:
@@ -8894,25 +8918,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1732599279}
-  node: {fileID: 1993707348}
-  menu: {fileID: 1931298206}
-  background1: {fileID: 762861038}
-  background2: {fileID: 395042258}
-  back: {fileID: 699074311}
-  simon: {fileID: 344887817}
-  botNode: {fileID: 622355530}
-  camera: {fileID: 1732599279}
 --- !u!4 &1993707351
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1993707348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1137972937}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067970618
