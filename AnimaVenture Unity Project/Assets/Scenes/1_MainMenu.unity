@@ -8063,6 +8063,7 @@ GameObject:
   - component: {fileID: 1732599279}
   - component: {fileID: 1732599280}
   - component: {fileID: 1732599282}
+  - component: {fileID: 1732599283}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8149,6 +8150,19 @@ MonoBehaviour:
   journeySelectSize: 0.9
   isLerping: 0
   centralNodeGlow: {fileID: 567746611}
+--- !u!114 &1732599283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732599278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ed878f86e7e034c876043176b14b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resWidth: 540
+  resHeight: 960
 --- !u!1 &1752962859
 GameObject:
   m_ObjectHideFlags: 0
