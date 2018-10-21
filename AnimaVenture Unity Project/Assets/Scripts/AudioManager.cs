@@ -57,5 +57,10 @@ public class AudioManager : MonoBehaviour {
         audioObject.GetComponent<AudioSource>().volume = volume;
         
         audioObject.GetComponent<AudioSource>().Play();
+
+        if (!loop)
+        {
+            audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length); 
+        }
     }
 }
