@@ -311,7 +311,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 540, y: 960}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -531,8 +531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -195, y: 458}
-  m_SizeDelta: {x: 297.6, y: 112.6}
+  m_AnchoredPosition: {x: -116.2, y: 363.3}
+  m_SizeDelta: {x: 274.37, y: 103.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1722408428
 MonoBehaviour:
@@ -656,14 +656,14 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930944817}
-  m_Text: "Close your eyes \nand follow the journey..."
+  m_Text: "Close your eyes \nand follow the journey...\n\n(Journey mp3 plays)"
   m_OffsetZ: 0
   m_CharacterSize: 0.015
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 368
+  m_FontSize: 296
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930944817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.8226296, z: -0.6395099}
+  m_LocalPosition: {x: -0.11, y: 0.8226296, z: -0.6395099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
