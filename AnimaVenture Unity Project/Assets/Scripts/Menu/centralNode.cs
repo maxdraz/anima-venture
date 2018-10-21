@@ -6,11 +6,17 @@ public class centralNode : MonoBehaviour {
 	
 	public Camera main;
 
-   
+    AudioManager AM;
 
-	private void OnMouseDown()
+   private void Awake()
+    {
+        AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
+    private void OnMouseDown()
 	{
-		main.GetComponent<CameraFovLerp>(). ToggleLerpBool ();
-	}
+        AM.PlayClip(0, 0.1f, false);
+        main.GetComponent<CameraFovLerp>(). ToggleLerpBool ();
+    }
 }
 

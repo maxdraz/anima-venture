@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFovLerp : MonoBehaviour {
 
 	public Animator FadeAnimation;
+    AudioManager AM;
 
 	public Camera camera;
 	public float cameraSize;
@@ -19,23 +20,30 @@ public class CameraFovLerp : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
-		
+
 		isLerping = false;
 		isReadyForInput = true;
 		cameraSize = camera.orthographicSize;
 
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void Awake()
+    {
+        AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		
 		if (isLerping == true) {
-				cameraSize = Mathf.Lerp (cameraSize, targetSize, .02f);
+            
+                cameraSize = Mathf.Lerp (cameraSize, targetSize, .02f);
 				camera.orthographicSize = cameraSize;
 				isReadyForInput = false;
 
 				if (camera.orthographicSize < .91f || camera.orthographicSize > 4f) {
-					ReadyForPlayerInput ();
+                AM.PlayClip(1, 0.1f, false);
+                ReadyForPlayerInput ();
 					ToggleTargetSize ();
 					ToggleLerpBool ();
 					
