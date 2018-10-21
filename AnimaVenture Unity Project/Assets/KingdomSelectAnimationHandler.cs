@@ -23,7 +23,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomMenu.SetActive (false);
 		kingdomDots.SetActive (false);
 		kingdomLines.SetActive (false);
-		centralNodeGlow.SetActive (false);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = false;
 		journeyAnim.clip = journeyAnim.GetClip ("JourneyFadeIn");	
 		journeyAnim.Play ();

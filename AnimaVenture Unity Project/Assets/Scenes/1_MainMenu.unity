@@ -8148,6 +8148,7 @@ MonoBehaviour:
   kingdomSelectSize: 4.05
   journeySelectSize: 0.9
   isLerping: 0
+  centralNodeGlow: {fileID: 567746611}
 --- !u!1 &1752962859
 GameObject:
   m_ObjectHideFlags: 0

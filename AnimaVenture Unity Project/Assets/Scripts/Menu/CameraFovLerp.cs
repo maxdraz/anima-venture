@@ -16,6 +16,7 @@ public class CameraFovLerp : MonoBehaviour {
 
 	public bool isLerping;
 	bool isReadyForInput;
+	public GameObject centralNodeGlow;
 
 	// Use this for initialization
 
@@ -83,6 +84,7 @@ public class CameraFovLerp : MonoBehaviour {
 					FadeAnimation.SetBool ("Wait" ,false);
 					FadeAnimation.SetBool ("FadeToKingdom" ,false);
 				}
+				centralNodeGlow.SetActive (false);
 
 		} else {
 		
