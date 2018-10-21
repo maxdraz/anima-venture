@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KingdomSelectAnimationHandler : MonoBehaviour {
-	
+	//kingdom assets
 	public GameObject centralNode;
 	public GameObject kingdomMenu;
 	public GameObject kingdomLines;
 	public GameObject kingdomDots;
+	public GameObject centralNodeGlow;
+	//journey assets
 	public GameObject backButton;
 	public GameObject simonStartButton;
 	public GameObject journeyLines;
@@ -21,6 +23,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomMenu.SetActive (false);
 		kingdomDots.SetActive (false);
 		kingdomLines.SetActive (false);
+		centralNodeGlow.SetActive (false);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = false;
 		journeyAnim.clip = journeyAnim.GetClip ("JourneyFadeIn");	
 		journeyAnim.Play ();
@@ -29,7 +32,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 
 	public void ArriveAtKingdom () {
 		Debug.Log ("arrive at kingdom");
-
+		centralNodeGlow.SetActive (true);
 		kingdomMenu.SetActive (true);
 		kingdomDots.SetActive (true);
 		kingdomLines.SetActive (true);

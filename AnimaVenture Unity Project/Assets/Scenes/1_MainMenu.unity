@@ -2227,6 +2227,7 @@ MonoBehaviour:
   kingdomMenu: {fileID: 0}
   kingdomLines: {fileID: 0}
   kingdomDots: {fileID: 0}
+  centralNodeGlow: {fileID: 0}
   backButton: {fileID: 699074311}
   simonStartButton: {fileID: 344887817}
   journeyLines: {fileID: 0}
@@ -3513,7 +3514,7 @@ GameObject:
   - component: {fileID: 674154713}
   - component: {fileID: 674154712}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Kingdom Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3565,6 +3566,7 @@ MonoBehaviour:
   kingdomMenu: {fileID: 946936364}
   kingdomLines: {fileID: 1579156244}
   kingdomDots: {fileID: 769706991}
+  centralNodeGlow: {fileID: 567746611}
   backButton: {fileID: 699074311}
   simonStartButton: {fileID: 344887817}
   journeyLines: {fileID: 1511754365}
