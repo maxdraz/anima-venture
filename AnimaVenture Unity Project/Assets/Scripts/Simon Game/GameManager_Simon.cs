@@ -40,6 +40,7 @@ public class GameManager_Simon : MonoBehaviour {
     //Animations
     [SerializeField] Animator animator;
     public bool continueBool;
+    AudioManager AM;
 
 
     private void Awake()
@@ -47,6 +48,7 @@ public class GameManager_Simon : MonoBehaviour {
         //initialize all references
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
+        AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         
         //score = GameObject.Find("Score").GetComponent<Score_Simon>();
 
@@ -203,8 +205,9 @@ public class GameManager_Simon : MonoBehaviour {
         if (colourSequence[positionInSequence] == buttonIndex)
         {
            
-            //add 1 to the current position in the sequence
+            //add 1 to the current position in the sequence            
             positionInSequence++;
+            AM.PlayClip(buttonIndex);
             
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
@@ -213,6 +216,9 @@ public class GameManager_Simon : MonoBehaviour {
                 score.Add(1);
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
+
+                //play sound
+                AM.PlayClip(4);
 
                 //add speed boost
                 StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));
