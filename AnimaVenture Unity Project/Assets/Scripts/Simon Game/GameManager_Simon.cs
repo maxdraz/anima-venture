@@ -40,6 +40,7 @@ public class GameManager_Simon : MonoBehaviour {
     //Animations
     [SerializeField] Animator animator;
     public bool continueBool;
+    AudioManager AM;
 
 
     private void Awake()
@@ -47,6 +48,7 @@ public class GameManager_Simon : MonoBehaviour {
         //initialize all references
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
+        AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         
         //score = GameObject.Find("Score").GetComponent<Score_Simon>();
 
@@ -102,12 +104,14 @@ public class GameManager_Simon : MonoBehaviour {
         //Play back sequence
         foreach (int colourIndex in colourSequence)
         {
-            //if timer is 0, stop playing sequence if it's in progress
-           // if(timer.time <= 0)
-           // {
-              //  yield break;
-
-           // }
+            //if dolmen is finished moving
+            if (dolmen.pauseGameBool)
+            {
+                positionInSequence = 0;
+                DisableButtons();
+                dolmen.pauseGameBool = false;
+                yield break;
+            }
             //whatever colour is stored in the list, display the corresponding telegraph
             StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
@@ -125,13 +129,6 @@ public class GameManager_Simon : MonoBehaviour {
         //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
-            //if timer is 0, stop playing sequence if it's in progress
-            //if (timer.time <=0)
-            //{
-            //    yield break;
-
-            //}
-            //display that stored number's telegraph
             StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
@@ -208,8 +205,9 @@ public class GameManager_Simon : MonoBehaviour {
         if (colourSequence[positionInSequence] == buttonIndex)
         {
            
-            //add 1 to the current position in the sequence
+            //add 1 to the current position in the sequence            
             positionInSequence++;
+            AM.PlayClip(buttonIndex);
             
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
@@ -218,6 +216,9 @@ public class GameManager_Simon : MonoBehaviour {
                 score.Add(1);
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
+
+                //play sound
+                AM.PlayClip(4);
 
                 //add speed boost
                 StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));

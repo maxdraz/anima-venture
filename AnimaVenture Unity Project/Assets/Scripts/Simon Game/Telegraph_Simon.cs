@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Telegraph_Simon : MonoBehaviour {
+    [SerializeField] int audioIndex;
     [SerializeField] float lightUpForSeconds = 2f;
     //Sprite renderer reference (only for prototype)
     SpriteRenderer sRenderer;
     Animation animation;
+    AudioManager AM;
 
     private void Awake()
     {
         animation = GetComponent<Animation>();
+        AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     // Use this for initialization
@@ -34,6 +37,8 @@ public class Telegraph_Simon : MonoBehaviour {
             sRenderer.color.g,
             sRenderer.color.b,
             1.0f);
+        //play sound and animation
+        AM.PlayClip(audioIndex);
         animation.clip = animation.GetClip("TelegraphAnimation");
         animation.Play();
         yield return new WaitForSeconds(t);
