@@ -55,15 +55,11 @@ public class rotation : MonoBehaviour
         //Debug.Log("Angle is " + angle);
     }
 
+
     void OnMouseDrag()
     {
         RotateObj();
-        //Disable Instructional text       
-        if (instructionalText.activeInHierarchy)
-        {
-            instructionalText.SetActive(false);
-        }
-        
+       
     }
 
     void RotateObj()
@@ -96,6 +92,12 @@ public class rotation : MonoBehaviour
 
     void OnMouseUp()
     {
+        //Disable Instructional text       
+        if (instructionalText.activeInHierarchy)
+        {
+            instructionalText.SetActive(false);
+        }
+
         endPos = Input.mousePosition;
         endX = endPos.x;
         endY = endPos.y;

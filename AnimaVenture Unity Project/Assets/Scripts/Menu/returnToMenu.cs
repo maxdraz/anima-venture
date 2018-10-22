@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SetActiveOrInactive : MonoBehaviour {
 
-    public bool deactivateThisObj = false;
+    public bool deactivateThisObjToo = false;
+    public bool onEnable = false;
+    public bool onMouseDown = false;
 
     [Space(5)]
     [Header("Lists of Game Objects to set Active/ Inactive")]
@@ -18,7 +20,7 @@ public class SetActiveOrInactive : MonoBehaviour {
         SetAllInactive();
 
         //set this object to Inactive
-        if (deactivateThisObj)
+        if (deactivateThisObjToo)
         {
             gameObject.SetActive(false);
         }
@@ -59,5 +61,23 @@ public class SetActiveOrInactive : MonoBehaviour {
         }
         else
             return;
+    }
+
+    private void OnMouseDown()
+    {
+        if(onMouseDown)
+        Execute();
+    }
+
+    private void OnEnable()
+    {
+        if (onEnable)
+            SetAllActive();
+    }
+
+    private void OnDisable()
+    {
+        if (onEnable)
+            SetAllInactive();
     }
 }

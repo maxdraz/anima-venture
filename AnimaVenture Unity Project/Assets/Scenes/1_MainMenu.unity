@@ -2072,6 +2072,7 @@ GameObject:
   - component: {fileID: 344887819}
   - component: {fileID: 344887818}
   - component: {fileID: 344887820}
+  - component: {fileID: 344887821}
   m_Layer: 0
   m_Name: Simon Begin
   m_TagString: Untagged
@@ -2101,7 +2102,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 344887817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.72, z: 0}
+  m_LocalPosition: {x: 0.003, y: -0.558, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2118,6 +2119,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a252ce661ae4ab4bcb419194367098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &344887821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344887817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34ce657eff444502983685c6d2a147a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactivateThisObjToo: 0
+  onEnable: 1
+  onMouseDown: 0
+  toSetActive:
+  - {fileID: 1332510628}
+  toSetInactive:
+  - {fileID: 1332510628}
 --- !u!1 &370678753
 GameObject:
   m_ObjectHideFlags: 0
@@ -4040,7 +4059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34ce657eff444502983685c6d2a147a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deactivateThisObj: 1
+  deactivateThisObjToo: 0
+  onEnable: 0
+  onMouseDown: 0
   toSetActive:
   - {fileID: 395042258}
   - {fileID: 1931298206}
@@ -6711,7 +6732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1332510629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9774,6 +9795,8 @@ GameObject:
   - component: {fileID: 1993707351}
   - component: {fileID: 1993707350}
   - component: {fileID: 1993707349}
+  - component: {fileID: 1993707352}
+  - component: {fileID: 1993707353}
   m_Layer: 0
   m_Name: Center Node
   m_TagString: Untagged
@@ -9821,6 +9844,40 @@ Transform:
   m_Father: {fileID: 1137972937}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993707352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993707348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef28eeab895c4e42a4930185287ba1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactivateThisObj: 0
+  toSetActive: []
+  toSetInactive:
+  - {fileID: 1051508818}
+  - {fileID: 1979203988}
+--- !u!114 &1993707353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993707348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34ce657eff444502983685c6d2a147a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactivateThisObjToo: 0
+  onEnable: 1
+  onMouseDown: 0
+  toSetActive:
+  - {fileID: 1979203988}
+  - {fileID: 1051508818}
+  toSetInactive: []
 --- !u!1 &2066721524
 GameObject:
   m_ObjectHideFlags: 0
