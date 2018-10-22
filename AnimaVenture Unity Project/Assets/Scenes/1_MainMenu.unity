@@ -5885,7 +5885,7 @@ GameObject:
   - component: {fileID: 1051508821}
   - component: {fileID: 1051508820}
   m_Layer: 5
-  m_Name: Enter Kingdom Instructions
+  m_Name: EnterKingdomInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6706,7 +6706,7 @@ GameObject:
   - component: {fileID: 1332510631}
   - component: {fileID: 1332510630}
   m_Layer: 5
-  m_Name: Play Simon Instructions
+  m_Name: PlaySimonInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9667,7 +9667,7 @@ GameObject:
   - component: {fileID: 1979203991}
   - component: {fileID: 1979203990}
   m_Layer: 5
-  m_Name: Rotation Instructions
+  m_Name: RotationInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
