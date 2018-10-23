@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 192243603}
   - component: {fileID: 192243606}
   - component: {fileID: 192243607}
+  - component: {fileID: 192243605}
   m_Layer: 0
   m_Name: blueButton
   m_TagString: Untagged
@@ -641,6 +642,21 @@ Transform:
   m_Father: {fileID: 626569678}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &192243605
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192243602}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 5f551a905e339304aa46bdd6725532a5, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!58 &192243606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1674,6 +1690,7 @@ GameObject:
   - component: {fileID: 680629163}
   - component: {fileID: 680629166}
   - component: {fileID: 680629167}
+  - component: {fileID: 680629165}
   m_Layer: 0
   m_Name: yellowtButton
   m_TagString: Untagged
@@ -1741,6 +1758,21 @@ Transform:
   m_Father: {fileID: 626569678}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &680629165
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 680629162}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 5f551a905e339304aa46bdd6725532a5, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!58 &680629166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2124,6 +2156,7 @@ GameObject:
   - component: {fileID: 959319512}
   - component: {fileID: 959319515}
   - component: {fileID: 959319516}
+  - component: {fileID: 959319514}
   m_Layer: 0
   m_Name: greenButton
   m_TagString: Untagged
@@ -2191,6 +2224,21 @@ Transform:
   m_Father: {fileID: 626569678}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &959319514
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 959319511}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 5f551a905e339304aa46bdd6725532a5, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!58 &959319515
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2229,6 +2277,7 @@ GameObject:
   - component: {fileID: 979770303}
   - component: {fileID: 979770306}
   - component: {fileID: 979770307}
+  - component: {fileID: 979770305}
   m_Layer: 0
   m_Name: redButton
   m_TagString: Untagged
@@ -2296,6 +2345,21 @@ Transform:
   m_Father: {fileID: 626569678}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &979770305
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 979770302}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 5f551a905e339304aa46bdd6725532a5, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!58 &979770306
 CircleCollider2D:
   m_ObjectHideFlags: 0
