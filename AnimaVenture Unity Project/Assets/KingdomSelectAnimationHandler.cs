@@ -13,10 +13,12 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 	public GameObject backButton;
 	public GameObject simonStartButton;
 	public GameObject journeyLines;
+	public GameObject journeyDots;
 	public GameObject journey1;
 	public GameObject journey2;
-	public Animation journeyAnim;
 
+	public Animation journeyFadeAnim;
+	public Animation KingdomSelectScaleAnim;
 
 	public void LeaveKingdom () {
 		Debug.Log ("Leave kingdom");
@@ -24,15 +26,14 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomDots.SetActive (false);
 		kingdomLines.SetActive (false);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = false;
-		journeyAnim.clip = journeyAnim.GetClip ("JourneyFadeIn");	
-		journeyAnim.Play ();
+		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
+		journeyFadeAnim.Play ();
 	}
 
 
 	public void ArriveAtKingdom () {
 		Debug.Log ("arrive at kingdom");
 		centralNodeGlow.SetActive (true);
-		kingdomMenu.SetActive (true);
 		kingdomDots.SetActive (true);
 		kingdomLines.SetActive (true);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = true;
@@ -45,9 +46,10 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		simonStartButton.SetActive (false);
 		journey1.SetActive (false);
 		journey2.SetActive (false);
+		journeyDots.SetActive (false);
 		journeyLines.SetActive (false);
-		journeyAnim.clip = journeyAnim.GetClip ("JourneyFadeOut");
-		journeyAnim.Play ();
+		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeOut");
+		journeyFadeAnim.Play ();
 	}
 
 	public void ArriveAtJourney () {
@@ -56,8 +58,22 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		backButton.SetActive (true);
 		simonStartButton.SetActive (true);
 		journeyLines.SetActive (true);
+		journeyDots.SetActive (true);
 		journey1.SetActive (true);
 		journey2.SetActive (true);
+
+	}
+
+	public void ScaleUpKingdomSelect () {
+		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleUp");	
+		KingdomSelectScaleAnim.Play ();
+
+	}
+
+	public void ScaleDownKingdomSelect () {
+		kingdomMenu.SetActive (true);
+		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleDown");	
+		KingdomSelectScaleAnim.Play ();
 
 	}
 }
