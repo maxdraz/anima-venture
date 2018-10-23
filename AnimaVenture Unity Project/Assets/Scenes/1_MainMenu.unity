@@ -1964,9 +1964,11 @@ MonoBehaviour:
   backButton: {fileID: 699074311}
   simonStartButton: {fileID: 344887817}
   journeyLines: {fileID: 0}
+  journeyDots: {fileID: 0}
   journey1: {fileID: 0}
   journey2: {fileID: 0}
-  journeyAnim: {fileID: 762861041}
+  journeyFadeAnim: {fileID: 0}
+  KingdomSelectScaleAnim: {fileID: 0}
 --- !u!111 &395042263
 Animation:
   m_ObjectHideFlags: 0
@@ -2533,7 +2535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &560048024
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,7 +2544,7 @@ Transform:
   m_GameObject: {fileID: 560048023}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10645291, y: 0.10645291, z: 0.10645291}
+  m_LocalScale: {x: 0.3, y: 0.48, z: 0.10645291}
   m_Children: []
   m_Father: {fileID: 1883866497}
   m_RootOrder: 3
@@ -3171,6 +3173,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4858863944992166, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.84586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858863944992166, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.84586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858863944992166, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.84586
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
   m_IsPrefabAsset: 0
@@ -3243,9 +3257,11 @@ MonoBehaviour:
   backButton: {fileID: 699074311}
   simonStartButton: {fileID: 344887817}
   journeyLines: {fileID: 1511754365}
+  journeyDots: {fileID: 2111658701}
   journey1: {fileID: 1695005795}
   journey2: {fileID: 1869712619}
-  journeyAnim: {fileID: 560048026}
+  journeyFadeAnim: {fileID: 560048026}
+  KingdomSelectScaleAnim: {fileID: 946936373}
 --- !u!111 &674154714
 Animation:
   m_ObjectHideFlags: 0
@@ -4877,6 +4893,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1052914694562920, guid: aa5d85d1781f89440b4f0ba81315bc87,
     type: 2}
   m_PrefabInternal: {fileID: 656532101}
+--- !u!111 &946936373
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946936364}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: b023de314e57df449938225f94deb983, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: b023de314e57df449938225f94deb983, type: 2}
+  - {fileID: 7400000, guid: d925337ec5e625f4aa6b1a867f0ee61a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &957787590
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,7 +5395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1137972937
 Transform:
   m_ObjectHideFlags: 0
@@ -6841,7 +6873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1511754366
 Transform:
   m_ObjectHideFlags: 0
@@ -9189,7 +9221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2111658702
 Transform:
   m_ObjectHideFlags: 0

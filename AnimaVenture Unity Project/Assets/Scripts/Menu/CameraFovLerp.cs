@@ -41,8 +41,8 @@ public class CameraFovLerp : MonoBehaviour {
                 cameraSize = Mathf.Lerp (cameraSize, targetSize, .02f);
 				camera.orthographicSize = cameraSize;
 				isReadyForInput = false;
-
-				if (camera.orthographicSize < .91f || camera.orthographicSize > 4f) {
+			//Check for arrival
+			if (camera.orthographicSize < journeySelectSize + .01f || camera.orthographicSize > kingdomSelectSize - .05f) {
                 AM.PlayClip(1, 0.1f, false);
                 ReadyForPlayerInput ();
 					ToggleTargetSize ();
@@ -73,13 +73,14 @@ public class CameraFovLerp : MonoBehaviour {
 		if (isLerping == false) {
 			
 			isLerping = true;
-				if (camera.orthographicSize < .91f) {
+				//Check to animate from journey to kingdom select
+				if (camera.orthographicSize < journeySelectSize + .01f) {
 
 					FadeAnimation.SetBool ("Wait" ,false);
 					FadeAnimation.SetBool ("FadeToKingdom" ,true);
 				}
-
-				if (camera.orthographicSize > 4f) {
+				//Check to animate from kingdom to journey select
+				if (camera.orthographicSize > kingdomSelectSize - .05f) {
 
 					FadeAnimation.SetBool ("Wait" ,false);
 					FadeAnimation.SetBool ("FadeToKingdom" ,false);
