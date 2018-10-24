@@ -20,6 +20,21 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 	public Animation journeyFadeAnim;
 	public Animation KingdomSelectScaleAnim;
 
+	public CameraFOVLerpRework cameraScript;
+	public AudioManager AM;
+
+	public void ToggleCameraLerp() {
+	
+		cameraScript.ToggleLerpBool ();
+	
+	}
+
+	public void StartJourneyTransition () {
+	
+	
+	}
+
+
 	public void LeaveKingdom () {
 		Debug.Log ("Leave kingdom");
 		kingdomMenu.SetActive (false);
@@ -37,6 +52,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomDots.SetActive (true);
 		kingdomLines.SetActive (true);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = true;
+		AM.PlayClip(1, 0.1f, false);
 	}
 
 	public void LeaveJourney () {
@@ -61,7 +77,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		journeyDots.SetActive (true);
 		journey1.SetActive (true);
 		journey2.SetActive (true);
-
+		AM.PlayClip(1, 0.1f, false);
 	}
 
 	public void ScaleUpKingdomSelect () {

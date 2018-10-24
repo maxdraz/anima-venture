@@ -1969,6 +1969,8 @@ MonoBehaviour:
   journey2: {fileID: 0}
   journeyFadeAnim: {fileID: 0}
   KingdomSelectScaleAnim: {fileID: 0}
+  cameraScript: {fileID: 0}
+  AM: {fileID: 0}
 --- !u!111 &395042263
 Animation:
   m_ObjectHideFlags: 0
@@ -3262,6 +3264,8 @@ MonoBehaviour:
   journey2: {fileID: 1869712619}
   journeyFadeAnim: {fileID: 560048026}
   KingdomSelectScaleAnim: {fileID: 946936373}
+  cameraScript: {fileID: 1732599284}
+  AM: {fileID: 1683195671}
 --- !u!111 &674154714
 Animation:
   m_ObjectHideFlags: 0
@@ -3399,8 +3403,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1732599282}
-        m_MethodName: ToggleLerpBool
+      - m_Target: {fileID: 1993707350}
+        m_MethodName: StartAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7412,6 +7416,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1683195671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114176759873965520, guid: 48368c383b3b15a438ece8d80f0bd648,
+    type: 2}
+  m_PrefabInternal: {fileID: 565489717}
+  m_Script: {fileID: 11500000, guid: 15eb2ea8c22383a409a48590eba198ec, type: 3}
 --- !u!1 &1695005795
 GameObject:
   m_ObjectHideFlags: 0
@@ -7710,6 +7720,7 @@ GameObject:
   - component: {fileID: 1732599280}
   - component: {fileID: 1732599282}
   - component: {fileID: 1732599283}
+  - component: {fileID: 1732599284}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7783,7 +7794,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732599278}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26c0d66f9f422ba4b93897c7ce1f84aa, type: 3}
   m_Name: 
@@ -7809,6 +7820,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resWidth: 540
   resHeight: 960
+--- !u!114 &1732599284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732599278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad511df9014bbf249a8b034d26adfc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeAnimation: {fileID: 674154712}
+  camera: {fileID: 1732599279}
+  cameraSize: 0
+  targetSize: 0.9
+  kingdomSelectSize: 4.05
+  journeySelectSize: 0.9
+  isLerping: 0
+  centralNodeGlow: {fileID: 567746611}
 --- !u!1 &1767816966
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,6 +9018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1732599279}
+  KingdomFadeAnim: {fileID: 674154712}
+  ReadyForInput: 0
 --- !u!4 &1993707351
 Transform:
   m_ObjectHideFlags: 0
