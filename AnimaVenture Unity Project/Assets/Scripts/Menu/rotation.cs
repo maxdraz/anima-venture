@@ -28,11 +28,13 @@ public class rotation : MonoBehaviour
     float timeStart;
     float timeEnd;
 
+    GameObject instructionalText;
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         angle1 = transform.eulerAngles.z;
+        instructionalText = GameObject.Find("RotationInstructions");
     }
 
     // Update is called once per frame
@@ -53,9 +55,11 @@ public class rotation : MonoBehaviour
         //Debug.Log("Angle is " + angle);
     }
 
+
     void OnMouseDrag()
     {
         RotateObj();
+       
     }
 
     void RotateObj()
@@ -88,6 +92,12 @@ public class rotation : MonoBehaviour
 
     void OnMouseUp()
     {
+        //Disable Instructional text       
+        if (instructionalText.activeInHierarchy)
+        {
+            instructionalText.SetActive(false);
+        }
+
         endPos = Input.mousePosition;
         endX = endPos.x;
         endY = endPos.y;

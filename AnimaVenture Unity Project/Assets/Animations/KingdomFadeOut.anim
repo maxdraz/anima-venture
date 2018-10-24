@@ -150,7 +150,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 3.5666666
+  - time: 2.4
+    functionName: ScaleUpKingdomSelect
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.5
     functionName: LeaveKingdom
     data: 
     objectReferenceParameter: {fileID: 0}

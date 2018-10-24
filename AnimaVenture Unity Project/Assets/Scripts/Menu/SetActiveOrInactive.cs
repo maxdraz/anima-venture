@@ -12,7 +12,14 @@ public class returnToMenu : MonoBehaviour {
     public List<GameObject> toSetActive;
     public List<GameObject> toSetInactive;
 
-	public void Execute()
+    private void OnMouseDown()
+    {
+        
+        SetAllInactive();
+        Debug.Log("Set inactive called");
+    }
+
+    public void Execute()
     { 
         SetAllActive();
         SetAllInactive();
@@ -60,4 +67,6 @@ public class returnToMenu : MonoBehaviour {
         else
             return;
     }
+
+   
 }
