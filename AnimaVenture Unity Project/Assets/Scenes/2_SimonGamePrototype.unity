@@ -510,6 +510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178581202}
   - component: {fileID: 178581201}
+  - component: {fileID: 178581203}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -563,6 +564,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &178581203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 178581200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f20bd7ecc22a74b862a9bb4221d6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  itemsToPool:
+  - shouldExpand: 1
+    objectToPool: {fileID: 1027393266067710, guid: fff0f86828e87754cb9145739d1066c9,
+      type: 2}
+    amountToPool: 1
 --- !u!1 &192243602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1411,7 @@ Transform:
   m_LocalScale: {x: 0.59962386, y: 0.59962386, z: 0.59962386}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626569677
 GameObject:
@@ -1692,7 +1710,7 @@ GameObject:
   - component: {fileID: 680629167}
   - component: {fileID: 680629165}
   m_Layer: 0
-  m_Name: yellowtButton
+  m_Name: yellowButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2115,7 +2133,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4318947494223442, guid: b3a7defb89c36df4c86677dca8b45039, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114110454994253364, guid: b3a7defb89c36df4c86677dca8b45039,
         type: 2}
