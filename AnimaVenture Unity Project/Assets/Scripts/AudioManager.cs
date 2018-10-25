@@ -89,4 +89,37 @@ public class AudioManager : MonoBehaviour {
             }
         }       
     }
+
+    //Overload 4
+    public void PlayClip(int clipIndex, float volume, bool loop, float pitch)
+    {
+        // get an audioObject from pooledObjects list
+        GameObject audioObject = ObjectPooler.SharedInstance.GetPooledObject("AudioObject");
+
+        //if an audioObject is available to use
+        if (audioObject != null)
+        {
+            //create a new gobj with an audio source and a destroy script
+            audioObject.transform.name = audioClips[clipIndex].name;
+
+
+            //set the audioObject to active
+            audioObject.SetActive(true);
+
+            //populate audio source
+            audioObject.GetComponent<AudioSource>().clip = audioClips[clipIndex];
+            audioObject.GetComponent<AudioSource>().loop = loop;
+            audioObject.GetComponent<AudioSource>().pitch = pitch;
+            audioObject.GetComponent<AudioSource>().volume = volume;
+            
+
+            audioObject.GetComponent<AudioSource>().Play();
+
+            //Destroy after done playing
+            if (!loop)
+            {
+                StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
+            }
+        }
+    }
 }
