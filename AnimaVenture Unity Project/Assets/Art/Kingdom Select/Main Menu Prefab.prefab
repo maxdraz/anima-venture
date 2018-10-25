@@ -940,6 +940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 0.1
   Rotate: 0
+  z: 0
+  Torque: {x: 0, y: 0, z: 0}
 --- !u!135 &135034586752246796
 SphereCollider:
   m_ObjectHideFlags: 1
