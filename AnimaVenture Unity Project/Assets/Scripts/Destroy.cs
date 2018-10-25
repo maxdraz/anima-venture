@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour {
 
-	public void DestroySelf(float destroyTime = 0)
+	public IEnumerator DestroySelf(float destroyTime = 0)
     {
         //if destroy time has been specified
         if(destroyTime != 0)
         {
-            //destory after time
-            Destroy(this.gameObject, destroyTime);
+            if (gameObject.tag == "AudioObject")
+            {
+                yield return new WaitForSeconds(destroyTime);
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                //destory after time
+                Destroy(this.gameObject, destroyTime);
+            }
         }
         else
         {

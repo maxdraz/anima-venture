@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameManager
   - AudioManager
+  - PooledObject
+  - AudioObject
   layers:
   - Default
   - TransparentFX
