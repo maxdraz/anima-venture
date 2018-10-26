@@ -30,8 +30,7 @@ public class Telegraph_Simon : MonoBehaviour {
 
     //method for what happens when time to telegraph colour
     public IEnumerator DisplayTelegraph(float t)
-    {
-        
+    {        
         //this will be changed later to fit our flying stars
         sRenderer.color = new Color(sRenderer.color.r,
             sRenderer.color.g,
