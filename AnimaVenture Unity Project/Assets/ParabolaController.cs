@@ -79,6 +79,7 @@ public class ParabolaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         nextParbola = false;
 
         if (Animation && parabolaFly != null && animationTime < parabolaFly.GetDuration())

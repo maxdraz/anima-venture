@@ -18,12 +18,14 @@ public class TriggerParabolaTest : MonoBehaviour {
         }
 	}
 
-    void TriggerParabola(int colourIndex)
+   void TriggerParabola(int colourIndex)
     {
         for(int i = 0; i < trajectories.Count; i++)
         {
             trajectories[colourIndex].FollowParabola();
+           
         }
+        
     }
 
    
