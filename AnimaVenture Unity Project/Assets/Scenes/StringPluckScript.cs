@@ -5,24 +5,20 @@ using UnityEngine;
 public class StringPluckScript : MonoBehaviour {
 
 	Animation anim;
+	AudioSource audio;
 	public BoxCollider2D col1;
 	public BoxCollider2D col2;
 	public BoxCollider2D col3;
 
 	void Start () {
 		anim = GetComponent<Animation> ();
-
+		audio = GetComponent<AudioSource> ();
 	}
 
-	void OnMouseEnter () {
 
-		//PluckString ();
-		Debug.Log("Plucked");
-	}
-
-	void PluckString () {
-	
+	public void PluckString () {
 		anim.Play ();
+		audio.Play ();
 		Deactivate ();
 	}
 

@@ -10,47 +10,55 @@ public class ArrowScript : MonoBehaviour {
 	Rigidbody2D rb;
 	public bool invertedGravity;
 	Vector3 inputPos;
+	bool mouseOver;
 
 	// Use this for initialization
 	void Awake () {
-		rb = GetComponent<Rigidbody2D> ();
+		mouseOver = false;
 		startYPos = transform.position.y;
 		startXPos = transform.position.x;
 
 		if (invertedGravity) {
 			topLimit = startYPos;
+			bottomLimit = topLimit - .7f;
 
 		} else {
 		
 			bottomLimit = startYPos;
+			topLimit = bottomLimit + .7f;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		inputPos = Input.mousePosition;
-		inputPos.z = 10;
-		inputPos = Camera.main.ScreenToWorldPoint(inputPos);
+		if (mouseOver) {
+			
+			inputPos = Input.mousePosition;
+			inputPos = Camera.main.ScreenToWorldPoint(inputPos);
+			transform.position = new Vector3 (transform.position.x, inputPos.y, 0);
+			Debug.Log ("over" + transform.position);
+
+		}
 
 		if (transform.position.y >= topLimit) {
 
-			transform.position = new Vector3 (startXPos, topLimit, 0);
+			transform.position = new Vector3 (startXPos, topLimit, transform.position.z);
 		}
 
 		if (transform.position.y <= bottomLimit) {
 
-			transform.position = new Vector3 (startXPos, bottomLimit, 0);
+			transform.position = new Vector3 (startXPos, bottomLimit, transform.position.z);
 		}
 	}
 
-	void OnMouseOver() {
 
-		transform.position = inputPos;
-		Debug.Log ("dragging");
+
+	void OnMouseEnter() {
+		mouseOver = true;
 	}
 
 	void OnMouseExit () {
-
-		Debug.Log ("Gone");
+		mouseOver = false;
+		Debug.Log ("Gone" + transform.position);
 	}
 }
