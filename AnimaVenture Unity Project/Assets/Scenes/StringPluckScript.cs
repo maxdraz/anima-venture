@@ -6,11 +6,11 @@ public class StringPluckScript : MonoBehaviour {
 
 	Animation anim;
 	AudioSource audio;
-	public BoxCollider2D col1;
-	public BoxCollider2D col2;
-	public BoxCollider2D col3;
+	GameObject colliders;
+
 
 	void Start () {
+		colliders = transform.GetChild (0).transform.gameObject;
 		anim = GetComponent<Animation> ();
 		audio = GetComponent<AudioSource> ();
 	}
@@ -23,14 +23,10 @@ public class StringPluckScript : MonoBehaviour {
 	}
 
 	public void Activate() {
-		col1.enabled = true;
-		col2.enabled = true;
-		col3.enabled = true;
+		colliders.SetActive (true);
 	}
 
 	void Deactivate () {
-		col1.enabled = false;
-		col2.enabled = false;
-		col3.enabled = false;
+		colliders.SetActive (false);
 	}
 }

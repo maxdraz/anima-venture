@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowScript : MonoBehaviour {
+	Transform mousePos;
 	float startXPos;
 	public float startYPos;
 	public float topLimit;
 	public float bottomLimit;
-	Rigidbody2D rb;
+
 	public bool invertedGravity;
 	Vector3 inputPos;
 	bool mouseOver;
 
 	// Use this for initialization
 	void Awake () {
+		mousePos = GameObject.Find ("MouseTransform").transform;
 		mouseOver = false;
 		startYPos = transform.position.y;
 		startXPos = transform.position.x;
@@ -33,31 +35,34 @@ public class ArrowScript : MonoBehaviour {
 	void Update () {
 		if (mouseOver) {
 			
-			inputPos = Input.mousePosition;
-			inputPos = Camera.main.ScreenToWorldPoint(inputPos);
-			transform.position = new Vector3 (transform.position.x, inputPos.y, 0);
+//			inputPos = Input.mousePosition;
+//			inputPos = Camera.main.ScreenToWorldPoint(inputPos);
+//			transform.position = new Vector3 (transform.position.x, inputPos.y, 0);
+
 			Debug.Log ("over" + transform.position);
 
 		}
 
-		if (transform.position.y >= topLimit) {
-
-			transform.position = new Vector3 (startXPos, topLimit, transform.position.z);
-		}
-
-		if (transform.position.y <= bottomLimit) {
-
-			transform.position = new Vector3 (startXPos, bottomLimit, transform.position.z);
-		}
+//		if (transform.position.y >= topLimit) {
+//
+//			transform.position = new Vector3 (startXPos, topLimit, transform.position.z);
+//		}
+//
+//		if (transform.position.y <= bottomLimit) {
+//
+//			transform.position = new Vector3 (startXPos, bottomLimit, transform.position.z);
+//		}
 	}
 
 
 
 	void OnMouseEnter() {
+		transform.parent = mousePos;
 		mouseOver = true;
 	}
 
 	void OnMouseExit () {
+		transform.parent = null;
 		mouseOver = false;
 		Debug.Log ("Gone" + transform.position);
 	}

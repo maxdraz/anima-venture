@@ -8,6 +8,6 @@ public class StringColliderScript : MonoBehaviour {
 	void OnMouseEnter () {
 		//PluckString ();
 		Debug.Log("Plucked");
-		transform.parent.GetComponent<StringPluckScript> ().PluckString ();
+		transform.parent.GetComponentInParent<StringPluckScript> ().PluckString ();
 	}
 }
