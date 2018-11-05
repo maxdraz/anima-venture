@@ -1415,7 +1415,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.24
+  m_Radius: 0.4
   m_Center: {x: 0, y: -0.17, z: 0}
 --- !u!54 &147199258
 Rigidbody:
@@ -1427,7 +1427,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
@@ -1443,10 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startYPos: 0
-  topLimit: 0
-  bottomLimit: 0
-  invertedGravity: 0
+  botomLimit: 0
 --- !u!1 &156238505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,7 +4166,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.13, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &516109865
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,7 +4256,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516448877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029999984, y: -1.4410001, z: 0}
+  m_LocalPosition: {x: -0.029999984, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1849329028}
@@ -4543,7 +4540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &560048024
 Transform:
   m_ObjectHideFlags: 0
@@ -8473,7 +8470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1030917240
 Transform:
   m_ObjectHideFlags: 0
@@ -8481,7 +8478,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1030917239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029999984, y: -1.4410001, z: 0}
+  m_LocalPosition: {x: -0.029999984, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 715121707}
@@ -13455,7 +13452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1701059567
 Transform:
   m_ObjectHideFlags: 0
@@ -17694,7 +17691,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.24
+  m_Radius: 0.4
   m_Center: {x: 0, y: -0.17, z: 0}
 --- !u!54 &2122774421
 Rigidbody:
@@ -17722,10 +17719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startYPos: 0
-  topLimit: 0
-  bottomLimit: 0
-  invertedGravity: 0
+  botomLimit: 0
 --- !u!1 &2133914033
 GameObject:
   m_ObjectHideFlags: 0
