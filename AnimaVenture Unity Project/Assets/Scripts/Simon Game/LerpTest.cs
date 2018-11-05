@@ -18,10 +18,9 @@ public class LerpTest : MonoBehaviour {
     private void Update()
     {
 
-        if (boolo)
-        {
+        
             MoveObject(speed);
-        }
+       
         
         
     }
@@ -39,7 +38,7 @@ public class LerpTest : MonoBehaviour {
 
         if(toTarget.magnitude <= 0.1f)
         {
-            boolo = false;
+            transform.position = endTrans.position;
         }
     }
 }
