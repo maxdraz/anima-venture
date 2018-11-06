@@ -12,6 +12,7 @@ public class Telegraph : MonoBehaviour {
 
     [SerializeField] AnimationClip anim;
 
+    AudioManager AM;
     SpriteRenderer sr;
     public GameObject glow;
     public ParticleSystem ps;
@@ -19,7 +20,8 @@ public class Telegraph : MonoBehaviour {
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        
+        AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+
     }
 
     private void OnEnable()
@@ -28,7 +30,8 @@ public class Telegraph : MonoBehaviour {
         sr.sprite = symbolSprites[colourIndex];
         glow.GetComponent<SpriteRenderer>().color = glowColours[colourIndex];
         var main = ps.main;
-        main.startColor = glowColours[colourIndex];        
+        main.startColor = glowColours[colourIndex];
+        AM.PlayClip(colourIndex);
     }
 
     private void Update()
@@ -41,8 +44,4 @@ public class Telegraph : MonoBehaviour {
         }
     }
 
-    public void setColourIndex(int cIndex)
-    {
-        colourIndex = cIndex;
-    }
 }
