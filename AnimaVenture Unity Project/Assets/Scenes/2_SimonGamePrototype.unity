@@ -613,8 +613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f6ee9086c797545b6a9f6971b4359b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartDelay: 2
+  gameStartDelay: 0.5
   delayBetweenTelegraphs: 1
+  enableButtonsDelay: 2
   telegraphLightUpTime: 0.5
   shootingStarSpeed: 2
   speedBoostMultiplier: 15
@@ -789,7 +790,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.000000014901161, y: 0.000000029802322}
   serializedVersion: 2
-  m_Radius: 0.07999999
+  m_Radius: 0.5
 --- !u!114 &192243607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,7 +2035,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.07999999
+  m_Radius: 0.5
 --- !u!114 &680629167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,7 +2138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &786706704
 Transform:
   m_ObjectHideFlags: 0
@@ -2690,7 +2691,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.000000029802322}
   serializedVersion: 2
-  m_Radius: 0.07999999
+  m_Radius: 0.5
 --- !u!114 &959319516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2811,7 +2812,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 2.3283064e-10, y: 0.000000029802322}
   serializedVersion: 2
-  m_Radius: 0.07999999
+  m_Radius: 0.5
 --- !u!114 &979770307
 MonoBehaviour:
   m_ObjectHideFlags: 0

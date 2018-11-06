@@ -32,13 +32,9 @@ public class ShootingStar : MonoBehaviour {
         {
             Vector3 current = transform.position;
             Vector3 toTarget = endTrans.position - transform.position;
-
-            Debug.Log("I'm being called");
-
-
             transform.position = current + toTarget.normalized * speed * Time.deltaTime;
 
-            if (toTarget.magnitude <= 0.2f)
+            if (toTarget.magnitude <= 0.1f)
             {
                 transform.position = endTrans.position;
                 GameObject telegraphPrefab = ObjectPooler.SharedInstance.GetPooledObject("Telegraph");                

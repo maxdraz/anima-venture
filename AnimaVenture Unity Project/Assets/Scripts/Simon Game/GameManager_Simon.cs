@@ -8,6 +8,7 @@ public class GameManager_Simon : MonoBehaviour {
     
     [SerializeField] float gameStartDelay = 2f;
     [SerializeField] float delayBetweenTelegraphs=1.5f;
+    [SerializeField] float enableButtonsDelay = 2f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
     [SerializeField] float shootingStarSpeed = 2f;
     [SerializeField] float speedBoostMultiplier;
@@ -126,7 +127,7 @@ public class GameManager_Simon : MonoBehaviour {
             shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
             shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
             //set start trans to a random spawn point
-            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count - 1)]);
+            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
             //set object active
             shootingStar.SetActive(true);
             //set telegraph colour index
@@ -155,15 +156,18 @@ public class GameManager_Simon : MonoBehaviour {
             shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
             shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
             //set start trans to a random spawn point
-            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count - 1)]);
+            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
             //set object active
             shootingStar.SetActive(true);
             //set telegraph colour index
             shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
             // make the star move
             StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
-            yield return new WaitForSeconds(delayBetweenTelegraphs);
+
+            yield return new WaitForSeconds(enableButtonsDelay);
+
         }
+
         //enable buttons again
         EnableButtons();
     }
@@ -211,7 +215,7 @@ public class GameManager_Simon : MonoBehaviour {
         shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
         shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
         //set start trans to a random spawn point
-        shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count - 1)]);
+        shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
         //set object active
         shootingStar.SetActive(true);
         //set telegraph colour index
@@ -223,7 +227,7 @@ public class GameManager_Simon : MonoBehaviour {
 
         //Enable Buttons here
         //I envoke for visual purposes only, so that the collider enables only after telegraph animation is finished
-        Invoke("EnableButtons", telegraphLightUpTime);
+        Invoke("EnableButtons", enableButtonsDelay);
     }
 
     public void RestartGame()
