@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95852933916597186}
   m_Layer: 0
   m_Name: Telegraph
-  m_TagString: Untagged
+  m_TagString: Telegraph
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d829998d193a8548a886db6b14ba505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colourIndex: 2
+  colourIndex: 1
   symbolSprites:
   - {fileID: 21300000, guid: a4286a8b9dcf2f14a9599e9173d72d7d, type: 3}
   - {fileID: 21300000, guid: 1d00eaedaaf86114e82b8455c40b65be, type: 3}
@@ -143,6 +143,7 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.9226117, a: 1}
   - {r: 1, g: 0.96559095, b: 0, a: 1}
   - {r: 0, g: 1, b: 0.015245676, a: 1}
+  anim: {fileID: 7400000, guid: 65d22803d425e624a9c17717c61c71fd, type: 2}
   glow: {fileID: 1588226514154716}
   ps: {fileID: 198292942697262696}
 --- !u!198 &198292942697262696

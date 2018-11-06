@@ -8,6 +8,9 @@ TagManager:
   - AudioManager
   - PooledObject
   - AudioObject
+  - ShootingStar
+  - ShootingStarEnd
+  - Telegraph
   layers:
   - Default
   - TransparentFX

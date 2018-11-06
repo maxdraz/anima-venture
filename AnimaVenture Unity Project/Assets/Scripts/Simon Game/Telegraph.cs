@@ -8,6 +8,9 @@ public class Telegraph : MonoBehaviour {
     public int colourIndex;
     public List<Sprite> symbolSprites;
     public List<Color> glowColours;
+    float lifetime;
+
+    [SerializeField] AnimationClip anim;
 
     SpriteRenderer sr;
     public GameObject glow;
@@ -21,9 +24,25 @@ public class Telegraph : MonoBehaviour {
 
     private void OnEnable()
     {
+        lifetime = anim.length;
         sr.sprite = symbolSprites[colourIndex];
         glow.GetComponent<SpriteRenderer>().color = glowColours[colourIndex];
         var main = ps.main;
-        main.startColor = glowColours[colourIndex];
+        main.startColor = glowColours[colourIndex];        
+    }
+
+    private void Update()
+    {
+       lifetime -= Time.deltaTime;
+
+        if(lifetime <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void setColourIndex(int cIndex)
+    {
+        colourIndex = cIndex;
     }
 }

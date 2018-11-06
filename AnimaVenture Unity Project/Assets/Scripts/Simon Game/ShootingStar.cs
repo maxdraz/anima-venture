@@ -8,37 +8,56 @@ public class ShootingStar : MonoBehaviour {
     public Transform startTrans;
     public Transform endTrans;
     public GameObject telegraphToSpawn;
+    public int telegraphIndex;
 
+
+    private void OnEnable()
+    {
+       // MoveObject(speed);
+    }
 
     private void Start()
     {
-        transform.position = startTrans.position;
+        
     }
+    
 
-    private void Update()
-    {
-        MoveObject(speed);
-    }
-
-    private void MoveObject(float speed)
+    public IEnumerator MoveObject(float speed)
     {
         //1
         //transform.position = Vector3.Lerp(transform.position, endTrans.position, Time.deltaTime * speed);
 
         //2 
-        Vector3 current = transform.position;
-        Vector3 toTarget = endTrans.position - transform.position;
-
-        transform.position = current + toTarget.normalized * speed * Time.deltaTime;
-
-        if (toTarget.magnitude <= 0.1f)
+        while (true)
         {
-            transform.position = endTrans.position;
-            GameObject telegraphPrefab = (GameObject)Instantiate<GameObject>(telegraphToSpawn);
-            telegraphPrefab.transform.position = endTrans.position;
-            gameObject.SetActive(false);
+            Vector3 current = transform.position;
+            Vector3 toTarget = endTrans.position - transform.position;
+
+            Debug.Log("I'm being called");
+
+
+            transform.position = current + toTarget.normalized * speed * Time.deltaTime;
+
+            if (toTarget.magnitude <= 0.2f)
+            {
+                transform.position = endTrans.position;
+                GameObject telegraphPrefab = ObjectPooler.SharedInstance.GetPooledObject("Telegraph");                
+                telegraphPrefab.transform.position = endTrans.position;
+                telegraphPrefab.GetComponent<Telegraph>().colourIndex = telegraphIndex;
+                telegraphPrefab.SetActive(true);
+                gameObject.SetActive(false);
+
+                yield break;
+                
+            }
+
+            yield return null;
+
         }
-    }
+
+
+        } 
+    
 
     public void setStartPos(Transform start)
     {

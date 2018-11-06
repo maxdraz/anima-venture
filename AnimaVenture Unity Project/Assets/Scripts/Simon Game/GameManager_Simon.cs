@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
+    
     [SerializeField] float gameStartDelay = 2f;
     [SerializeField] float delayBetweenTelegraphs=1.5f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
+    [SerializeField] float shootingStarSpeed = 2f;
     [SerializeField] float speedBoostMultiplier;
     [SerializeField] float speedBoostTime;
     float timerTime;
@@ -25,6 +27,10 @@ public class GameManager_Simon : MonoBehaviour {
     Telegraph_Simon[] telegraphs;
     [SerializeField]
     Button_Simon[] buttons;
+    [SerializeField]
+    List<Transform> telegraphSpawnpoints;
+    [SerializeField]
+    List<Transform> telegraphEndTransforms;
 
     GameObject startButton;
     GameObject restartButton;
@@ -113,7 +119,22 @@ public class GameManager_Simon : MonoBehaviour {
                 yield break;
             }
             //whatever colour is stored in the list, display the corresponding telegraph
-            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
+            //StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
+
+            //get shooting star from pool and store in a reference
+            GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
+            shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
+            shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
+            //set start trans to a random spawn point
+            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count - 1)]);
+            //set object active
+            shootingStar.SetActive(true);
+            //set telegraph colour index
+            shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
+            // make the star move
+            StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
+            
+
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //pick a new random colour and add it to the list
@@ -129,7 +150,18 @@ public class GameManager_Simon : MonoBehaviour {
         //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
-            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
+            //get shooting star from pool and store in a reference
+            GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
+            shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
+            shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
+            //set start trans to a random spawn point
+            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count - 1)]);
+            //set object active
+            shootingStar.SetActive(true);
+            //set telegraph colour index
+            shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
+            // make the star move
+            StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //enable buttons again
@@ -174,8 +206,19 @@ public class GameManager_Simon : MonoBehaviour {
         
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
-        StartCoroutine(telegraphs[randomColourIndex].DisplayTelegraph(telegraphLightUpTime));
-        
+        //get shooting star from pool and store in a reference
+        GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
+        shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
+        shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
+        //set start trans to a random spawn point
+        shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count - 1)]);
+        //set object active
+        shootingStar.SetActive(true);
+        //set telegraph colour index
+        shootingStar.GetComponent<ShootingStar>().telegraphIndex = randomColourIndex;
+        // make the star move
+        StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
+
         colourSequence.Add(randomColourIndex);
 
         //Enable Buttons here
