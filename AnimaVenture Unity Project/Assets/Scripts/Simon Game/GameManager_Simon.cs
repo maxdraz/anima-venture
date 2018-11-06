@@ -8,6 +8,7 @@ public class GameManager_Simon : MonoBehaviour {
     
     [SerializeField] float gameStartDelay = 2f;
     [SerializeField] float delayBetweenTelegraphs=1.5f;
+    [SerializeField] float lastTelegraphDelay = 1f;
     [SerializeField] float enableButtonsDelay = 2f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
     [SerializeField] float shootingStarSpeed = 2f;
@@ -139,6 +140,8 @@ public class GameManager_Simon : MonoBehaviour {
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //pick a new random colour and add it to the list
+        // wait for seconds here to make new telegraph stand out more
+        yield return new WaitForSeconds(lastTelegraphDelay);
         PickRandomColour();
 
     }

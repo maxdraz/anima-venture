@@ -615,6 +615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStartDelay: 0.5
   delayBetweenTelegraphs: 1
+  lastTelegraphDelay: 0.5
   enableButtonsDelay: 2
   telegraphLightUpTime: 0.5
   shootingStarSpeed: 2
