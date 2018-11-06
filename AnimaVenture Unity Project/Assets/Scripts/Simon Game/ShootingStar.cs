@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LerpTest : MonoBehaviour {
+public class ShootingStar : MonoBehaviour {
 
     public float speed;
     public Transform startTrans;
     public Transform endTrans;
-    bool boolo = true;
-    
+    public GameObject telegraphToSpawn;
+
 
     private void Start()
     {
@@ -17,12 +17,7 @@ public class LerpTest : MonoBehaviour {
 
     private void Update()
     {
-
-        
-            MoveObject(speed);
-       
-        
-        
+        MoveObject(speed);
     }
 
     private void MoveObject(float speed)
@@ -36,9 +31,18 @@ public class LerpTest : MonoBehaviour {
 
         transform.position = current + toTarget.normalized * speed * Time.deltaTime;
 
-        if(toTarget.magnitude <= 0.1f)
+        if (toTarget.magnitude <= 0.1f)
         {
             transform.position = endTrans.position;
+            GameObject telegraphPrefab = (GameObject)Instantiate<GameObject>(telegraphToSpawn);
+            telegraphPrefab.transform.position = endTrans.position;
+            gameObject.SetActive(false);
         }
+    }
+
+    public void setStartPos(Transform start)
+    {
+        startTrans = start;
+        transform.position = startTrans.position;
     }
 }
