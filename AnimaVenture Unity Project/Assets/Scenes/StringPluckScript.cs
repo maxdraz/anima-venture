@@ -19,7 +19,7 @@ public class StringPluckScript : MonoBehaviour {
 	public void PluckString () {
 		anim.Play ();
 		audio.Play ();
-		Deactivate ();
+		//Deactivate ();
 	}
 
 	public void Activate() {

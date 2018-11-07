@@ -5,11 +5,12 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenu;
+    public float timeScaleSlowDown;
 
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = timeScaleSlowDown;
     }
 
     public void Resume()
