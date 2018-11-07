@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
 
@@ -120,6 +121,35 @@ public class AudioManager : MonoBehaviour {
             {
                 StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
             }
+        }
+    }
+
+    // Overloads with OUTPUT 
+    public void PlayClip(int clipIndex, string mixerToLoad, string mixerGroup)
+    {
+        // get an audioObject from pooledObjects list
+        GameObject audioObject = ObjectPooler.SharedInstance.GetPooledObject("AudioObject");
+
+        //if an audioObject is available to use
+        if (audioObject != null)
+        {
+            //create a new gobj with an audio source and a destroy script
+            audioObject.transform.name = audioClips[clipIndex].name;
+
+            //AudioMixer code
+            AudioMixer mixer = Resources.Load("Simon") as AudioMixer;
+
+            Debug.Log(mixer);
+            //set the audioObject to active
+            audioObject.SetActive(true);
+
+            audioObject.GetComponent<AudioSource>().outputAudioMixerGroup = mixer.FindMatchingGroups(mixerGroup)[0];
+            //populate audio source
+            audioObject.GetComponent<AudioSource>().clip = audioClips[clipIndex];            
+            audioObject.GetComponent<AudioSource>().Play();
+
+            //Destroy after done playing
+            StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
         }
     }
 }
