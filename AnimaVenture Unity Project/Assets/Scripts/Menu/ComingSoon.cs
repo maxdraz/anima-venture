@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ComingSoon : MonoBehaviour {
 
+    public GameObject comingSoon;
+    public GameObject rainforest;
     SpriteRenderer display;
     SpriteRenderer kingdom;
     SphereCollider detect;
@@ -19,6 +21,8 @@ public class ComingSoon : MonoBehaviour {
         c.a = 0f;
         display.material.color = c;
         detect = GetComponent<SphereCollider>();
+        comingSoon.SetActive(false);
+        rainforest.SetActive(false);
     }
 
     private void Awake()
@@ -43,7 +47,7 @@ public class ComingSoon : MonoBehaviour {
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
-            
+            comingSoon.SetActive(true);
         }
 
         if (other.gameObject.tag == "Rainforest")
@@ -51,13 +55,15 @@ public class ComingSoon : MonoBehaviour {
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
-            
+            rainforest.SetActive(true);
         }
+
         if (other.gameObject.tag == "Desert")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
+            comingSoon.SetActive(true);
         }
 
         if (other.gameObject.tag == "Mountain")
@@ -65,6 +71,7 @@ public class ComingSoon : MonoBehaviour {
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
+            comingSoon.SetActive(true);
         }
 
         if (other.gameObject.tag == "Polar")
@@ -72,6 +79,7 @@ public class ComingSoon : MonoBehaviour {
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
+            comingSoon.SetActive(true);
         }
 
         if (other.gameObject.tag == "Jungle")
@@ -79,6 +87,7 @@ public class ComingSoon : MonoBehaviour {
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
+            comingSoon.SetActive(true);
         }
     }
 
@@ -87,31 +96,37 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Forest")
         {
             StartCoroutine("FadeOut");
+            comingSoon.SetActive(false);
         }
 
-        if (other.gameObject.tag == "RainForest")
+        if (other.gameObject.tag == "Rainforest")
         {
             StartCoroutine("FadeOut");
+            rainforest.SetActive(false);
         }
 
         if (other.gameObject.tag == "Desert")
         {
             StartCoroutine("FadeOut");
+            comingSoon.SetActive(false);
         }
 
         if (other.gameObject.tag == "Mountain")
         {
             StartCoroutine("FadeOut");
+            comingSoon.SetActive(false);
         }
 
         if (other.gameObject.tag == "Polar")
         {
             StartCoroutine("FadeOut");
+            comingSoon.SetActive(false);
         }
 
         if (other.gameObject.tag == "Jungle")
         {
             StartCoroutine("FadeOut");
+            comingSoon.SetActive(false);
         }
     }
 

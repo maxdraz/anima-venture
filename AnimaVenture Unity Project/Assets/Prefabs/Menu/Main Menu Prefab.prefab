@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 135274027126524586}
   - component: {fileID: 135114342307415684}
   - component: {fileID: 111270911096664420}
+  - component: {fileID: 82475321416108954}
   m_Layer: 0
   m_Name: Main Menu Prefab
   m_TagString: Untagged
@@ -60,9 +61,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4954343826123984}
   - component: {fileID: 212754011931842270}
+  - component: {fileID: 135864314640511184}
   m_Layer: 0
   m_Name: Polar Icon PNG
-  m_TagString: Untagged
+  m_TagString: Polar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +126,7 @@ GameObject:
   - component: {fileID: 4397639019061002}
   - component: {fileID: 212394315157618928}
   m_Layer: 0
-  m_Name: Circle Thin Lines (6)
+  m_Name: Jungle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,9 +156,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4097151581614754}
   - component: {fileID: 212702561352047214}
+  - component: {fileID: 135861860270143704}
   m_Layer: 0
   m_Name: Forest Icon PNG1
-  m_TagString: Untagged
+  m_TagString: Forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,9 +204,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4885694554968764}
   - component: {fileID: 212322918348985304}
+  - component: {fileID: 135373543695233482}
   m_Layer: 0
   m_Name: Rainforest Icon PNG
-  m_TagString: Untagged
+  m_TagString: Jungle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,9 +221,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4717656974542984}
   - component: {fileID: 212100570296477480}
+  - component: {fileID: 135124289033955144}
   m_Layer: 0
   m_Name: DesertIcon PNG
-  m_TagString: Untagged
+  m_TagString: Desert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +239,7 @@ GameObject:
   - component: {fileID: 4573505061880232}
   - component: {fileID: 212763081765133988}
   m_Layer: 0
-  m_Name: Circle Thin Lines (2)
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +274,7 @@ GameObject:
   - component: {fileID: 4035287378139114}
   - component: {fileID: 212638489019675054}
   m_Layer: 0
-  m_Name: Circle Thin Lines (5)
+  m_Name: Polar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,9 +370,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4260519097855626}
   - component: {fileID: 212598621324920034}
+  - component: {fileID: 135283254261592108}
   m_Layer: 0
   m_Name: Rainforest Icon PNG1
-  m_TagString: Untagged
+  m_TagString: Rainforest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,9 +387,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4552781767936038}
   - component: {fileID: 212094070618037608}
+  - component: {fileID: 135600941667407526}
   m_Layer: 0
   m_Name: Mountain Icon PNG
-  m_TagString: Untagged
+  m_TagString: Mountain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +453,7 @@ GameObject:
   - component: {fileID: 4467019560118590}
   - component: {fileID: 212219856382710554}
   m_Layer: 0
-  m_Name: Circle Thin Lines (3)
+  m_Name: Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,7 +501,7 @@ GameObject:
   - component: {fileID: 4144460676335562}
   - component: {fileID: 212462525522561806}
   m_Layer: 0
-  m_Name: Circle Thin Lines (1)
+  m_Name: Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +517,7 @@ GameObject:
   - component: {fileID: 4299092137446438}
   - component: {fileID: 212212449366552100}
   m_Layer: 0
-  m_Name: Circle Thin Lines (4)
+  m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1008,6 +1015,101 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!82 &82475321416108954
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052914694562920}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!111 &111270911096664420
 Animation:
   m_ObjectHideFlags: 1
@@ -1055,6 +1157,7 @@ MonoBehaviour:
   toSetInactive:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114151707180749508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1067,8 +1170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   z: 0
-  spinSound: {fileID: 0}
-  spin: {fileID: 0}
+  spinSound: {fileID: 8300000, guid: 59c31eeb3779b2c4f8a387ae2b2e3ef1, type: 3}
+  spin: {fileID: 82475321416108954}
   volume: 0
 --- !u!114 &114515190437400292
 MonoBehaviour:
@@ -1116,6 +1219,7 @@ MonoBehaviour:
   toSetActive:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   toSetInactive: []
 --- !u!135 &135034586752246796
 SphereCollider:
@@ -1141,6 +1245,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.428566
   m_Center: {x: 1.9760833, y: 1.1428077, z: 0}
+--- !u!135 &135124289033955144
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296804107787928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4
+  m_Center: {x: -0.0000006556511, y: -0.00000047683716, z: 0}
 --- !u!135 &135274027126524586
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1153,6 +1269,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.428566
   m_Center: {x: 1.975777, y: -1.1321751, z: 0}
+--- !u!135 &135283254261592108
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691532301915222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.18
+  m_Center: {x: 0, y: -0.0000009536743, z: 0}
 --- !u!135 &135291796700077572
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1165,6 +1293,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.42856604
   m_Center: {x: 0, y: 2.3001578, z: 0}
+--- !u!135 &135373543695233482
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294457659625694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Center: {x: 0.000000059604645, y: 0.0000009536743, z: 0}
 --- !u!135 &135412846447194764
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1177,6 +1317,42 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.428566
   m_Center: {x: -1.9846989, y: 1.134114, z: 0}
+--- !u!135 &135600941667407526
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707300748369128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4
+  m_Center: {x: -0.000000059604645, y: -0.0000009536743, z: 0}
+--- !u!135 &135861860270143704
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1232460514790686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.8
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135864314640511184
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058001617694088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1
+  m_Center: {x: 0.0000002682209, y: -0.00000047683716, z: 0}
 --- !u!135 &135878368345286118
 SphereCollider:
   m_ObjectHideFlags: 1
