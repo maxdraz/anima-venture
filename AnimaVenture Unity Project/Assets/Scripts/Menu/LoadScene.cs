@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
-   
-    public void LoadThisScene(int sceneIndex)
+
+    public int sceneIndex;
+
+    public void LoadThisScene()
     {
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
