@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: da99de5bfef553644af72787b65dba16
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Roundo
+  fontNames:
+  - Roundo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6564f8175bf253b4385365f5a89d0b37, type: 3}
+  - {fileID: 12800000, guid: a3e8e1e9a30318a498c7d20acef62463, type: 3}
+  - {fileID: 12800000, guid: 3e718efcb4a26e34d9620eeda02baaf1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
