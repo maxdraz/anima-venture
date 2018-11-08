@@ -11,6 +11,12 @@ TagManager:
   - ShootingStar
   - ShootingStarEnd
   - Telegraph
+  - Forest
+  - Rainforest
+  - Desert
+  - Mountain
+  - Polar
+  - Jungle
   layers:
   - Default
   - TransparentFX
