@@ -43,9 +43,10 @@ public class SpinSound : MonoBehaviour {
 
         spin.volume = z;
 
-        if (volume <= 0)
+        if (z < 0)
         {
-            volume = -volume;
+            z = -z;
+            spin.volume = z;
         }
     }
 }

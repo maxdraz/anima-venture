@@ -6,8 +6,10 @@ public class ComingSoon : MonoBehaviour {
 
     SpriteRenderer display;
     SpriteRenderer kingdom;
+    SphereCollider detect;
     float speed = .1f;
     float alpha;
+    float yPos;
 
 	// Use this for initialization
 	void Start ()
@@ -16,29 +18,36 @@ public class ComingSoon : MonoBehaviour {
         Color c = display.material.color;
         c.a = 0f;
         display.material.color = c;
-;
+        detect = GetComponent<SphereCollider>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    private void Awake()
     {
-     
-	}
+      
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        if (detect.radius < 0.77f)
+        {
+            detect.radius = detect.radius + 0.01f;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
 
         if(other.gameObject.tag == "Forest")
         {
-            Debug.Log("Blyat");
             kingdom = other.GetComponent<SpriteRenderer>();
+            StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             
         }
 
         if (other.gameObject.tag == "Rainforest")
         {
-            Debug.Log("Blyat");
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
@@ -46,7 +55,6 @@ public class ComingSoon : MonoBehaviour {
         }
         if (other.gameObject.tag == "Desert")
         {
-            Debug.Log("Blyat");
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
@@ -54,7 +62,6 @@ public class ComingSoon : MonoBehaviour {
 
         if (other.gameObject.tag == "Mountain")
         {
-            Debug.Log("Blyat");
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
@@ -62,7 +69,6 @@ public class ComingSoon : MonoBehaviour {
 
         if (other.gameObject.tag == "Polar")
         {
-            Debug.Log("Blyat");
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
@@ -70,7 +76,6 @@ public class ComingSoon : MonoBehaviour {
 
         if (other.gameObject.tag == "Jungle")
         {
-            Debug.Log("Blyat");
             kingdom = other.GetComponent<SpriteRenderer>();
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
