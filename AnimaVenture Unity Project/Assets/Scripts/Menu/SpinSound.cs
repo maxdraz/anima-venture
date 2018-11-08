@@ -10,26 +10,30 @@ public class SpinSound : MonoBehaviour {
     Vector3 angVel;
     public float z;
 
+    public AudioClip spinSound;
+    public AudioSource spin;
     public float volume;
 
 	// Use this for initialization
 	void Start ()
     {
-        volume = 0;
-	}
+
+        volume = 0f;
+        spin.clip = spinSound;
+        spin.Play();
+    }
 
 
     private void Awake()
     {
         AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
         rb = GetComponent<Rigidbody>();
-        
     }
 
-    private void OnMouseUp()
+    /*private void OnMouseUp()
     {
         AM.PlayClip(2, volume, false);
-    }
+    }*/
 
     // Update is called once per frame
     void Update ()
@@ -37,11 +41,11 @@ public class SpinSound : MonoBehaviour {
         angVel = rb.angularVelocity;
         z = angVel.z;
 
-        volume = z;
+        spin.volume = z;
 
-        if(volume <= 0)
+        if (volume <= 0)
         {
             volume = -volume;
         }
-	}
+    }
 }

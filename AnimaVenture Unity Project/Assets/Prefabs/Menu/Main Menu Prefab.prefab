@@ -1067,6 +1067,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   z: 0
+  spinSound: {fileID: 0}
+  spin: {fileID: 0}
   volume: 0
 --- !u!114 &114515190437400292
 MonoBehaviour:
