@@ -2822,6 +2822,12 @@ Prefab:
       propertyPath: audioClips.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 640cf226e8584574886c711c34c059d3, type: 3}
+    - target: {fileID: 114110454994253364, guid: b3a7defb89c36df4c86677dca8b45039,
+        type: 2}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 2f8e2bb1266ff19469f5a526b666bf18,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a7defb89c36df4c86677dca8b45039, type: 2}
   m_IsPrefabAsset: 0

@@ -5,9 +5,11 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
 
+    public AudioMixer mixer;
 
     [Header("Add all sounds here")]
     public List <AudioClip> audioClips;
+    
     
 
     public void PlayClip(int clipIndex) 
@@ -125,7 +127,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     // Overloads with OUTPUT 
-    public void PlayClip(int clipIndex, string mixerToLoad, string mixerGroup)
+    public void PlayClip(int clipIndex, string mixerGroup)
     {
         // get an audioObject from pooledObjects list
         GameObject audioObject = ObjectPooler.SharedInstance.GetPooledObject("AudioObject");
@@ -136,10 +138,6 @@ public class AudioManager : MonoBehaviour {
             //create a new gobj with an audio source and a destroy script
             audioObject.transform.name = audioClips[clipIndex].name;
 
-            //AudioMixer code
-            AudioMixer mixer = Resources.Load("Simon") as AudioMixer;
-
-            Debug.Log(mixer);
             //set the audioObject to active
             audioObject.SetActive(true);
 
