@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1290102291796696
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288840984131196}
   m_LocalRotation: {x: -0, y: -0, z: 0.5834012, w: 0.8121842}
-  m_LocalPosition: {x: -0.5, y: 2.5100002, z: -0.068359375}
+  m_LocalPosition: {x: -3.8287582, y: -2.822526, z: -0.068359375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4558986406410810}
@@ -113,11 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30da1c85a8778d4ea04abedbfd8c813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 20
   startTrans: {fileID: 0}
   endTrans: {fileID: 0}
   telegraphToSpawn: {fileID: 1229507734458604, guid: 006a9df12f192ea4d9aaeaef8549e65c,
     type: 2}
+  telegraphIndex: 0
 --- !u!198 &198050702158162474
 ParticleSystem:
   m_ObjectHideFlags: 1
