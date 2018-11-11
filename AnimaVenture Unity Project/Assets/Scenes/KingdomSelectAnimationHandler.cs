@@ -6,7 +6,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 	//kingdom assets
 	public GameObject centralNode;
 	public GameObject kingdomMenu;
-	public GameObject kingdomLines;
+//	public GameObject kingdomLines;
 	public GameObject kingdomDots;
 	public GameObject centralNodeGlow;
 	//journey assets
@@ -39,7 +39,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		Debug.Log ("Leave kingdom");
 		kingdomMenu.SetActive (false);
 		kingdomDots.SetActive (false);
-		kingdomLines.SetActive (false);
+//		kingdomLines.SetActive (false);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = false;
 		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
 		journeyFadeAnim.Play ();
@@ -50,7 +50,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		Debug.Log ("arrive at kingdom");
 		centralNodeGlow.SetActive (true);
 		kingdomDots.SetActive (true);
-		kingdomLines.SetActive (true);
+//		kingdomLines.SetActive (true);
 		centralNode.GetComponent<CircleCollider2D> ().enabled = true;
 		AM.PlayClip(1, 0.1f, false);
 	}
