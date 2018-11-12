@@ -22,7 +22,7 @@ public class PetalScript : MonoBehaviour {
 		Deactivate ();
 		Invoke ("Activate", cooldownTime);
 		particle.Play ();
-		Debug.Log("Mouseenter");
+
 	}
 
 	public void Activate() {
@@ -34,7 +34,7 @@ public class PetalScript : MonoBehaviour {
 	}
 
 	void OnMouseEnter () {
-
+		Debug.Log("Mouse Enter");
 		SwayPetals ();
 	}
 }

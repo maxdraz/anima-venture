@@ -17,16 +17,17 @@ public class StringPluckScript : MonoBehaviour {
 
 
 	public void PluckString () {
+		anim.Stop ();
 		anim.Play ();
 		audio.Play ();
 		//Deactivate ();
 	}
 
-	public void Activate() {
-		colliders.SetActive (true);
-	}
-
-	void Deactivate () {
-		colliders.SetActive (false);
-	}
+//	public void Activate() {
+//		colliders.SetActive (true);
+//	}
+//
+//	void Deactivate () {
+//		colliders.SetActive (false);
+//	}
 }

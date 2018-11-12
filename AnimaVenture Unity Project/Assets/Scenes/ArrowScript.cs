@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class ArrowScript : MonoBehaviour {
 	Transform mousePos;
-    Vector3 startPos;
-	public float botomLimit;
-
+	float startYPos;
 	bool mouseOver;
     bool lerpBack = false;
+	Transform startParent;
+
+	public float lerpBackSpeed;
+	public float secondPitchFactor;
+	public AudioSource audio1;
+	public AudioSource audio2;
+	public AudioSource audio3;
 
 	// Use this for initialization
 	void Awake () {
+		startParent = transform.parent.transform;
 		mousePos = GameObject.Find ("MouseTransform").transform;
 		mouseOver = false;
-        startPos = transform.position;
+		float startYPos = transform.position.y;
 
 		
 	}
@@ -24,8 +30,16 @@ public class ArrowScript : MonoBehaviour {
 		
         if (lerpBack)
         {
-            transform.position = Vector3.Lerp(transform.position, startPos, 1f * Time.deltaTime);
+			transform.position = Vector3.Lerp(transform.position, startParent.transform.position, lerpBackSpeed * Time.deltaTime);
         }
+
+		if (transform.position != startParent.transform.position) {
+
+			PitchChange ();
+		} else {
+		
+			lerpBack = false;
+		}
     }
 
 
@@ -37,10 +51,22 @@ public class ArrowScript : MonoBehaviour {
 	}
 
 	void OnMouseExit () {
-		transform.parent = null;
+		transform.parent = startParent;
 		mouseOver = false;
         lerpBack = true;
 	}
 
-   
+	void PitchChange () {
+		float firstPitchFactor = startParent.transform.position.y - transform.position.y;
+		if (firstPitchFactor < 0f) {
+			firstPitchFactor = firstPitchFactor * -1f;
+
+		}
+		Debug.Log (firstPitchFactor);
+		float finalPitchFactor = firstPitchFactor / secondPitchFactor;
+		audio1.pitch = 1 + finalPitchFactor;
+		audio2.pitch = 1 + finalPitchFactor;
+		audio3.pitch = 1 + finalPitchFactor;
+
+	}
 }

@@ -6,21 +6,22 @@ public class CameraFOVLerpRework : MonoBehaviour {
 	
 
 
-	public Camera camera;
-	public float cameraSize;
+	Camera camera;
+	float cameraSize;
 	public float targetSize;
 
 	public float kingdomSelectSize;
 	public float journeySelectSize;
 
-	public bool isLerping;
+	public float lerpSpeed;
+	bool isLerping;
 	bool isReadyForInput;
 	public GameObject centralNodeGlow;
 
 	// Use this for initialization
 
 	void Start () {
-
+		camera = GetComponent<Camera> ();
 		isLerping = false;
 		isReadyForInput = true;
 		cameraSize = camera.orthographicSize;
@@ -30,7 +31,7 @@ public class CameraFOVLerpRework : MonoBehaviour {
 
 		if (isLerping == true) {
 
-			cameraSize = Mathf.Lerp (cameraSize, targetSize, .02f);
+			cameraSize = Mathf.Lerp (cameraSize, targetSize, lerpSpeed);
 			camera.orthographicSize = cameraSize;
 			isReadyForInput = false;
 			//Check for arrival
