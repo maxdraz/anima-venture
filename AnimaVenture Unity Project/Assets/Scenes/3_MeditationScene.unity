@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3295142af9895bc44a499e43362c79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneIndex: 1
 --- !u!114 &1722408429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,7 +704,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930944817}
-  m_Text: "Close your eyes \nand follow the journey...\n\n(Journey mp3 plays)"
+  m_Text: "Close your eyes \nand follow the journey..."
   m_OffsetZ: 0
   m_CharacterSize: 0.015
   m_LineSpacing: 1
