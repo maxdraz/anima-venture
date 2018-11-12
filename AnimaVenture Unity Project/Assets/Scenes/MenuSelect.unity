@@ -409,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centralNode: {fileID: 0}
   kingdomMenu: {fileID: 0}
-  kingdomLines: {fileID: 0}
+  kingdomArrows: {fileID: 0}
   kingdomDots: {fileID: 0}
   centralNodeGlow: {fileID: 0}
   backButton: {fileID: 0}
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3295142af9895bc44a499e43362c79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneIndex: 1
 --- !u!4 &1157899712
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,10 +1143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad511df9014bbf249a8b034d26adfc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1732599279}
-  cameraSize: 0
   targetSize: 0.9
   kingdomSelectSize: 4.05
   journeySelectSize: 0.9
-  isLerping: 0
+  lerpSpeed: 0
   centralNodeGlow: {fileID: 0}
