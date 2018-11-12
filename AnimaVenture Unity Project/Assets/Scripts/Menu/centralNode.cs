@@ -33,7 +33,7 @@ public class centralNode : MonoBehaviour {
 
 		}
 
-		if (main.GetComponent<CameraFOVLerpRework> ().targetSize == 4.05f){
+		if (main.GetComponent<CameraFOVLerpRework> ().targetSize == 4.85f){
 
 			KingdomFadeAnim.SetBool ("FadeToKingdom", true);
 			ReadyForInput = true;

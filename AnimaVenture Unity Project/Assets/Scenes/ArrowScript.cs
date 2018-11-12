@@ -28,10 +28,10 @@ public class ArrowScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if (lerpBack)
-        {
-			transform.position = Vector3.Lerp(transform.position, startParent.transform.position, lerpBackSpeed * Time.deltaTime);
-        }
+        //if (lerpBack)
+        //{
+		//	transform.position = Vector3.Lerp(transform.position, startParent.transform.position, lerpBackSpeed * Time.deltaTime);
+        //}
 
 		if (transform.position != startParent.transform.position) {
 
@@ -53,7 +53,7 @@ public class ArrowScript : MonoBehaviour {
 	void OnMouseExit () {
 		transform.parent = startParent;
 		mouseOver = false;
-        lerpBack = true;
+        //lerpBack = true;
 	}
 
 	void PitchChange () {

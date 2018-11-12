@@ -9,7 +9,7 @@ public class TouchTone : MonoBehaviour {
 
 	void OnMouseEnter(){
 
-				audio.PlayClip (ToneToPlay, .1f, false, pitch);
+				audio.PlayClip (ToneToPlay, .3f, false, pitch);
 			
 	}
 }
