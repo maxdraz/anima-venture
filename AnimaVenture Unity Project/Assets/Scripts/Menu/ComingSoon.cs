@@ -6,21 +6,40 @@ public class ComingSoon : MonoBehaviour {
 
     public GameObject comingSoon;
     public GameObject rainforest;
+    public GameObject journey;
+
+    public GameObject glow;
+
     SpriteRenderer display;
     SpriteRenderer kingdom;
+
+    SpriteRenderer glowSprite;
+
+    Color g;
+
+    public Sprite[] sprites;
+
+    CircleCollider2D center;
     SphereCollider detect;
     float speed = .1f;
     float alpha;
     float yPos;
 
+
 	// Use this for initialization
 	void Start ()
     {
         display = GetComponent<SpriteRenderer>();
+        glowSprite = glow.GetComponent<SpriteRenderer>();
+        center = journey.GetComponent<CircleCollider2D>();
+
+        Color g = glowSprite.material.color;
+        glowSprite.color = new Color(115f, 55f, 173f, 1f);
         Color c = display.material.color;
         c.a = 0f;
         display.material.color = c;
         detect = GetComponent<SphereCollider>();
+        center.enabled = false;
         comingSoon.SetActive(false);
         rainforest.SetActive(false);
     }
@@ -45,6 +64,7 @@ public class ComingSoon : MonoBehaviour {
         if(other.gameObject.tag == "Forest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
+            glowSprite.sprite = sprites[1];
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -53,7 +73,10 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Rainforest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
+            //glowSprite.color = new Color(115f, 55f, 173f, 1f);
+            glowSprite.sprite = sprites[4];
             StartCoroutine("FadeIn");
+            center.enabled = true;
             display.sprite = kingdom.sprite;
             rainforest.SetActive(true);
         }
@@ -61,6 +84,7 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Desert")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
+            glowSprite.sprite = sprites[1];
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -69,6 +93,7 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Mountain")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
+            glowSprite.sprite = sprites[1];
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -77,6 +102,7 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Polar")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
+            glowSprite.sprite = sprites[1];
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -85,6 +111,7 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Jungle")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
+            glowSprite.sprite = sprites[1];
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -101,6 +128,7 @@ public class ComingSoon : MonoBehaviour {
 
         if (other.gameObject.tag == "Rainforest")
         {
+            center.enabled = false;
             StartCoroutine("FadeOut");
             rainforest.SetActive(false);
         }
@@ -137,6 +165,9 @@ public class ComingSoon : MonoBehaviour {
             Color c = display.material.color;
             c.a = t;
             display.material.color = c;
+            Color g = glowSprite.material.color;
+            g.a = t;
+            glowSprite.material.color = g;
             yield return new WaitForSeconds(0.01f);
         }
 
@@ -149,6 +180,9 @@ public class ComingSoon : MonoBehaviour {
             Color c = display.material.color;
             c.a = t;
             display.material.color = c;
+            Color g = glowSprite.material.color;
+            g.a = t;
+            glowSprite.material.color = g;
             yield return new WaitForSeconds(0.01f);
         }
 
