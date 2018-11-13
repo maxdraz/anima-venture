@@ -86,7 +86,7 @@ public class GameManager_Simon : MonoBehaviour {
     public void StartGame()
     {        
         //make start button disappear       
-        startButton.SetActive(false);
+        //startButton.SetActive(false);
         //call start timer function
         timer.startTimerBool = true;
         //start moving dolmen
@@ -103,7 +103,7 @@ public class GameManager_Simon : MonoBehaviour {
     {
        
         //make start button disappear       
-        startButton.SetActive(false);
+        //startButton.SetActive(false);
         //make restart button appear        
         //restartButton.SetActive(true);
         //reset the current input position in sequence
@@ -191,6 +191,11 @@ public class GameManager_Simon : MonoBehaviour {
 
     void EnableButtons()
     {
+        if(colourSequence.Count < 2)
+        {
+            EventHandler.SharedInstance.tip2Trigger.Invoke();
+            //StartCoroutine(GamePauser.sharedInstance.PauseForTime(EventHandler.SharedInstance.tip1Anim.length));
+        }
         // play animation
         animator.SetBool("enabledBool", true);
       
