@@ -14,6 +14,7 @@ public class EventHandler : MonoBehaviour {
     public UnityEngine.Events.UnityEvent startSimon;
     public UnityEngine.Events.UnityEvent tip2Trigger;
 
+    
     private void Awake()
     {
         SharedInstance = this;
