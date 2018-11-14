@@ -22651,6 +22651,11 @@ Prefab:
       propertyPath: m_Radius
       value: 4.41
       objectReference: {fileID: 0}
+    - target: {fileID: 114515190437400292, guid: aa5d85d1781f89440b4f0ba81315bc87,
+        type: 2}
+      propertyPath: turnSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa5d85d1781f89440b4f0ba81315bc87, type: 2}
   m_IsPrefabAsset: 0
