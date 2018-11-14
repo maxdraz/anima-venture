@@ -38,11 +38,10 @@ public class SpinSound : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        volume = spin.volume;
         angVel = rb.angularVelocity;
         z = angVel.z;
 
-        spin.volume = z / 10;
+        spin.volume = z;
 
         if (z < 0)
         {
