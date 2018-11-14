@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/Menu/SpinSound.cs" Line="23" Column="21" />
       <File FileName="Assets/Scripts/AudioManager.cs" Line="144" Column="1" />
       <File FileName="Assets/Scripts/Simon Game/Button_Simon.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Menu/LoadScene.cs" Line="14" Column="31" />
+      <File FileName="Assets/Scripts/Menu/LoadScene.cs" Line="7" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.AnimaVenture_220Unity_220Project PreferredExecutionTarget="Unity.Editor" />
