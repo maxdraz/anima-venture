@@ -113,6 +113,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &203357477
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 119.321014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 581.8818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.5934049
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &334192709
 Prefab:
   m_ObjectHideFlags: 0
@@ -122,11 +164,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.8
+      value: 0.0050047636
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.93
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -134,15 +176,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalRotation.w
@@ -150,7 +192,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
       propertyPath: m_LocalScale.x
@@ -227,7 +269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &607886689
 GameObject:
@@ -240,6 +282,7 @@ GameObject:
   - component: {fileID: 607886692}
   - component: {fileID: 607886691}
   - component: {fileID: 607886690}
+  - component: {fileID: 607886694}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -323,6 +366,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &607886694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 607886689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cba9dd2af5e1a449966ed8982f6a7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1452496508}
+  tooltips:
+  - Get yourself in a comfortable position, close your eyes and begin to observe the
+    sensations of breathing.
+  - Be spacious, and allow thoughts and emotions to settle.
+  - Try not to analyze or judge anything you experience or any thought that passes
+    through your mind. Simply observe.
+  - Sit quietly and allow thoughts to float freely in and out of your mind.
+  - "You should not be carried away by the dictation of the mind, but the mind should
+    be carried by your dictation. \u2013 A.C Bhaktivedanta Swami"
+  - "While meditating we are simply seeing what the mind has been doing all along.
+    \u2013 Allan Lokos"
+  - "If you want to conquer the anxiety of life, live in the moment, live in the breath.
+    \u2013 Amit Ray"
+  - "Meditate, Visualize and Create your own reality and the universe will simply
+    reflect back to you. \u2013 Amit Ray"
+  - "Silence is not an absence but a presence. \u2013 Anne D. LeClaire"
+  - "When meditation is mastered, the mind is unwavering like the flame of a candle
+    in a windless place. \u2013 Bhagavad Gita"
 --- !u!1 &638009862
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +473,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1241507335
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754326579457334, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080355531609858, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_Name
+      value: Loading Icon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080355531609858, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 987086b046c021a40b3bab7493b05d7e, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1452496506
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +545,7 @@ GameObject:
   - component: {fileID: 1452496507}
   - component: {fileID: 1452496509}
   - component: {fileID: 1452496508}
+  - component: {fileID: 1452496510}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -467,8 +603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Get yourself in a comfortable position, close your eyes and begin to observe
-    the sensations of breathing.
+  m_Text: text goes here
 --- !u!222 &1452496509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -476,3 +611,63 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452496506}
   m_CullTransparentMesh: 0
+--- !u!95 &1452496510
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452496506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03b6e2fb5a7f0a04ab2fc95f4e7ec6c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1999908526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999908528}
+  - component: {fileID: 1999908527}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999908527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999908526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402a21e7cfae59a448916684cde54602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 0
+  timeDelay: 5
+--- !u!4 &1999908528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999908526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
