@@ -13,7 +13,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 
 	//journey assets
 	public GameObject backButton;
-	public GameObject simonStartButton;
 	public GameObject journeyLines;
 	public GameObject journeyDots;
 	public GameObject journey1;
@@ -63,7 +62,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		Debug.Log ("Leave journey");
 
 		backButton.SetActive (false);
-		simonStartButton.SetActive (false);
 		journey1.SetActive (false);
 		journey2.SetActive (false);
 		journeyDots.SetActive (false);
@@ -76,7 +74,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		Debug.Log ("arrive at journey");
 
 		backButton.SetActive (true);
-		simonStartButton.SetActive (true);
 		journeyLines.SetActive (true);
 		journeyDots.SetActive (true);
 		journey1.SetActive (true);
