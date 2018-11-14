@@ -5,11 +5,12 @@ using UnityEngine;
 public class ShootingStar : MonoBehaviour {
 
     public float speed;
+    public float setInactiveAfter;
     public Transform startTrans;
     public Transform endTrans;
     public GameObject telegraphToSpawn;
     public int telegraphIndex;
-
+    
 
     private void OnEnable()
     {
@@ -41,7 +42,7 @@ public class ShootingStar : MonoBehaviour {
                 telegraphPrefab.transform.position = endTrans.position;
                 telegraphPrefab.GetComponent<Telegraph>().colourIndex = telegraphIndex;
                 telegraphPrefab.SetActive(true);
-                gameObject.SetActive(false);
+                StartCoroutine(SetInactiveAfterTime(setInactiveAfter));
 
                 yield break;
                 
@@ -59,5 +60,11 @@ public class ShootingStar : MonoBehaviour {
     {
         startTrans = start;
         transform.position = startTrans.position;
+    }
+
+    IEnumerator SetInactiveAfterTime(float t)
+    {
+        yield return new WaitForSeconds(t);
+        gameObject.SetActive(false);
     }
 }

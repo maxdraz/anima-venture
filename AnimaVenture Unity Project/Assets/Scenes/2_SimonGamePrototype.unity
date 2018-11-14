@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d54b1f2eff18f342bdc5fdd8075df8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  time: 90
   distance: 0
   distanceToTarget: 0
   speed: 0
@@ -3437,7 +3437,8 @@ Prefab:
         type: 2}
       propertyPath: mixer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 24100000, guid: f1bc01d082fc04dcdb7238893eadcccb,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a7defb89c36df4c86677dca8b45039, type: 2}
   m_IsPrefabAsset: 0
