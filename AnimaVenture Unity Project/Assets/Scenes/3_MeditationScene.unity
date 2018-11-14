@@ -255,7 +255,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Back to Menu
+  m_Text: 'Back to Journey
+
+'
 --- !u!222 &875246128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -593,6 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 1
+  loadWithTimerBool: 0
+  loadAfterTime: 2
 --- !u!114 &1722408429
 MonoBehaviour:
   m_ObjectHideFlags: 0
