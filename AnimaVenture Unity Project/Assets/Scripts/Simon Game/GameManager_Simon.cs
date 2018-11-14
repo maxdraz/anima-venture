@@ -262,7 +262,7 @@ public class GameManager_Simon : MonoBehaviour {
            
             //add 1 to the current position in the sequence            
             positionInSequence++;
-            AM.PlayClip(buttonIndex, "Sfx");
+            AM.PlayClip(buttonIndex, "Simon Sfx");
             
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
@@ -273,7 +273,7 @@ public class GameManager_Simon : MonoBehaviour {
                 // timer.SubtractTime(timeToSubtract);
 
                 //play sound
-                AM.PlayClip(4, "Sfx");
+                AM.PlayClip(4, "Simon Sfx");
 
                 //add speed boost
                 StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));

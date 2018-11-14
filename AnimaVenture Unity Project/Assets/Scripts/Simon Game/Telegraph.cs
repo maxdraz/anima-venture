@@ -31,7 +31,7 @@ public class Telegraph : MonoBehaviour {
         glow.GetComponent<SpriteRenderer>().color = glowColours[colourIndex];
         var main = ps.main;
         main.startColor = glowColours[colourIndex];
-        AM.PlayClip(colourIndex);
+        AM.PlayClip(colourIndex, "Simon Sfx");
     }
 
     private void Update()
