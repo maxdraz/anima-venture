@@ -73,8 +73,8 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Rainforest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            //glowSprite.color = new Color(115f, 55f, 173f, 1f);
             glowSprite.sprite = sprites[4];
+            glowSprite.color = new Color(115f, 55f, 173f, 1f);
             StartCoroutine("FadeIn");
             center.enabled = true;
             display.sprite = kingdom.sprite;
