@@ -6,11 +6,13 @@ public class PetalScript : MonoBehaviour {
 
 	Animation anim;
 	AudioSource audio;
-	public SphereCollider collider;
-	public ParticleSystem particle;
+	SphereCollider collider;
+	ParticleSystem particle;
 	public float cooldownTime;
 
 	void Start () {
+		particle = GetComponentInChildren<ParticleSystem> ();
+		collider = GetComponent<SphereCollider> ();
 		anim = GetComponent<Animation> ();
 		audio = GetComponent<AudioSource> ();
 	}
@@ -19,8 +21,7 @@ public class PetalScript : MonoBehaviour {
 	public void SwayPetals () {
 		anim.Play ();
 		audio.Play ();
-		Deactivate ();
-		Invoke ("Activate", cooldownTime);
+
 		particle.Play ();
 
 	}
@@ -34,6 +35,8 @@ public class PetalScript : MonoBehaviour {
 	}
 
 	void OnMouseEnter () {
+		Deactivate ();
+		Invoke ("Activate", cooldownTime);
 		Debug.Log("Mouse Enter");
 		SwayPetals ();
 	}
