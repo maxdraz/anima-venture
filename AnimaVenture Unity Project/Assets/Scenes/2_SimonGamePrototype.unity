@@ -3437,8 +3437,7 @@ Prefab:
         type: 2}
       propertyPath: mixer
       value: 
-      objectReference: {fileID: 24100000, guid: 2f8e2bb1266ff19469f5a526b666bf18,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a7defb89c36df4c86677dca8b45039, type: 2}
   m_IsPrefabAsset: 0
