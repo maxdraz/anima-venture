@@ -27,9 +27,12 @@ public class centralNode : MonoBehaviour {
 	}
 
 	public void StartAnimation () {
+//		Debug.Log ("START FADE ANIM");
 		KingdomFadeAnim.SetBool ("Wait", false);
 		if (main.GetComponent<CameraFOVLerpRework> ().targetSize == .9f) {
 			KingdomFadeAnim.SetBool ("FadeToKingdom", false);
+//			Debug.Log ("FADE TO J SELECT");
+
 
 		}
 
@@ -37,6 +40,8 @@ public class centralNode : MonoBehaviour {
 
 			KingdomFadeAnim.SetBool ("FadeToKingdom", true);
 			ReadyForInput = true;
+//			Debug.Log ("FADE TO K  SELECT");
+
 		}
 	}
 
