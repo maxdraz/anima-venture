@@ -42,7 +42,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomDots.SetActive (false);
 		kingdomArrows.SetActive (false);
 //		kingdomLines.SetActive (false);
-		centralNode.GetComponent<CircleCollider2D> ().enabled = false;
 		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
 		journeyFadeAnim.Play ();
 	}
@@ -89,6 +88,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 
 	public void ScaleDownKingdomSelect () {
 		kingdomMenu.SetActive (true);
+		centralNode.GetComponent<centralNode> ().ReadyForInput = true;
 		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleDown");	
 		KingdomSelectScaleAnim.Play ();
 
