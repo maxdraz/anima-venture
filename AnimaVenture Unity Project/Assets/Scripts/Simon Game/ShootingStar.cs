@@ -10,7 +10,14 @@ public class ShootingStar : MonoBehaviour {
     public Transform endTrans;
     public GameObject telegraphToSpawn;
     public int telegraphIndex;
+    public ParticleSystem trailPS;
+    public ParticleSystem headPS;
     
+    public float endStartSize;
+     float originalTrailStartSize;
+    float originalHeadStartSize;
+
+
 
     private void OnEnable()
     {
@@ -42,6 +49,19 @@ public class ShootingStar : MonoBehaviour {
                 telegraphPrefab.transform.position = endTrans.position;
                 telegraphPrefab.GetComponent<Telegraph>().colourIndex = telegraphIndex;
                 telegraphPrefab.SetActive(true);
+
+                //make colour of particles fade out 
+                var trailMain = trailPS.main;
+                var headSizeOverLife = headPS.sizeOverLifetime;
+
+                originalTrailStartSize = trailMain.startSize.constant;
+               // originalHeadStartSize = headMain.startSize.constant;
+
+                trailMain.startSize = endStartSize;
+                headSizeOverLife.enabled = true;
+                headSizeOverLife.sizeMultiplier = 0.01f;
+               // headEmmision.enabled = false;
+
                 StartCoroutine(SetInactiveAfterTime(setInactiveAfter));
 
                 yield break;
@@ -65,6 +85,16 @@ public class ShootingStar : MonoBehaviour {
     IEnumerator SetInactiveAfterTime(float t)
     {
         yield return new WaitForSeconds(t);
+
+        var trailMain = trailPS.main;
+        //  var headMain = headPS.main;
+        var headSizeOverLife = headPS.sizeOverLifetime;
+        headSizeOverLife.enabled = false;
+
+        trailMain.startSize = originalTrailStartSize;
+      //  headMain.startSize = originalHeadStartSize;
+
         gameObject.SetActive(false);
+      
     }
 }

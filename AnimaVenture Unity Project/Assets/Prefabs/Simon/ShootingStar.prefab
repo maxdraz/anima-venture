@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288840984131196}
   m_LocalRotation: {x: -0, y: -0, z: 0.5834012, w: 0.8121842}
-  m_LocalPosition: {x: 6.761012, y: 1.3200768, z: -0.068359375}
+  m_LocalPosition: {x: 0.37706375, y: 0.69409233, z: -0.068359375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4558986406410810}
@@ -114,12 +114,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  setInactiveAfter: 0.65
+  setInactiveAfter: 1
   startTrans: {fileID: 0}
   endTrans: {fileID: 0}
   telegraphToSpawn: {fileID: 1229507734458604, guid: 006a9df12f192ea4d9aaeaef8549e65c,
     type: 2}
   telegraphIndex: 0
+  trailPS: {fileID: 198050702158162474}
+  headPS: {fileID: 198975605580376380}
+  endStartSize: 0
 --- !u!198 &198050702158162474
 ParticleSystem:
   m_ObjectHideFlags: 1
