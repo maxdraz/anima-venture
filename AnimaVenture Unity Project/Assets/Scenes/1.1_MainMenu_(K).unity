@@ -6543,6 +6543,10 @@ Prefab:
       propertyPath: kingdomButton
       value: 
       objectReference: {fileID: 699074311}
+    - target: {fileID: 1138415685606220, guid: ed6df34725a6ecd4982cde44bc034e16, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6df34725a6ecd4982cde44bc034e16, type: 2}
   m_IsPrefabAsset: 0

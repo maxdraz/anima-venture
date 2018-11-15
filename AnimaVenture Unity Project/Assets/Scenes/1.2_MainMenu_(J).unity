@@ -576,6 +576,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1706812009658520, guid: cee0ee5b67cd0b74ab0b331bc00082ab, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cee0ee5b67cd0b74ab0b331bc00082ab, type: 2}
   m_IsPrefabAsset: 0
@@ -875,6 +879,10 @@ Prefab:
       propertyPath: kingdomButton
       value: 
       objectReference: {fileID: 640499870}
+    - target: {fileID: 1138415685606220, guid: ed6df34725a6ecd4982cde44bc034e16, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed6df34725a6ecd4982cde44bc034e16, type: 2}
   m_IsPrefabAsset: 0
@@ -1033,7 +1041,8 @@ Prefab:
       propertyPath: main
       value: 
       objectReference: {fileID: 2002269877}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 82261664461988478, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1929900510 stripped
