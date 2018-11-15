@@ -42,12 +42,12 @@ public class SpinSound : MonoBehaviour {
         angVel = rb.angularVelocity;
         z = angVel.z;
 
-        spin.volume = z / 8;
+        spin.volume = z/8;
 
         if (z < 0)
         {
             z = -z;
-            spin.volume = z;
+            spin.volume = z/8;
         }
     }
 }

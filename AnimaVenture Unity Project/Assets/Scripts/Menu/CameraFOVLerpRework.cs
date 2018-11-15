@@ -35,13 +35,13 @@ public class CameraFOVLerpRework : MonoBehaviour {
 			camera.orthographicSize = cameraSize;
 			isReadyForInput = false;
 			//Check for arrival
-//			if (camera.orthographicSize < journeySelectSize + .01f || camera.orthographicSize > kingdomSelectSize - .05f) {
-//				
-////				ReadyForPlayerInput ();
-//				ToggleTargetSize ();
-//				ToggleLerpBool ();
-//
-//			}
+			/*if (camera.orthographicSize < journeySelectSize + .01f || camera.orthographicSize > kingdomSelectSize - .05f) {
+				
+				ReadyForPlayerInput ();
+				ToggleTargetSize ();
+				ToggleLerpBool ();
+
+			}*/
 		}
 	}
 

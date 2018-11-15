@@ -6,10 +6,17 @@ public class TouchTone : MonoBehaviour {
 	public AudioManager audio;
 	public int ToneToPlay;
 	public float pitch;
+	ParticleSystem particle;
+
+	void Start () {
+
+		particle = GetComponentInChildren<ParticleSystem> ();
+
+	}
 
 	void OnMouseEnter(){
 
-				audio.PlayClip (ToneToPlay, .3f, false, pitch);
-			
+				audio.PlayClip (ToneToPlay, "Harp");
+				particle.Play ();
 	}
 }
