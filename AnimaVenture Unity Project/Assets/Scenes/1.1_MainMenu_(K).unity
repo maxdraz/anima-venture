@@ -183,6 +183,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1294048613227696, guid: 2a8ac61afed16ea4580017c18ec1c221,
     type: 2}
   m_PrefabInternal: {fileID: 1840746784}
+--- !u!1 &25787095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773445402465738, guid: 2a8ac61afed16ea4580017c18ec1c221,
+    type: 2}
+  m_PrefabInternal: {fileID: 1840746784}
 --- !u!1 &30188825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1656308282669120, guid: 2a8ac61afed16ea4580017c18ec1c221,
@@ -654,6 +659,16 @@ Prefab:
       propertyPath: menuReturn
       value: 
       objectReference: {fileID: 30188825}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: kSettings
+      value: 
+      objectReference: {fileID: 1657575245}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: jSettings
+      value: 
+      objectReference: {fileID: 25787095}
     m_RemovedComponents:
     - {fileID: 82261664461988478, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
@@ -1402,7 +1417,9 @@ MonoBehaviour:
   kingdomDots: {fileID: 0}
   centralNodeGlow: {fileID: 0}
   menuReturn: {fileID: 0}
+  kSettings: {fileID: 0}
   backButton: {fileID: 699074311}
+  jSettings: {fileID: 0}
   journeyLines: {fileID: 0}
   journeyDots: {fileID: 0}
   journey1: {fileID: 0}
@@ -4654,6 +4671,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1657575245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1135505628724912, guid: 2a8ac61afed16ea4580017c18ec1c221,
+    type: 2}
+  m_PrefabInternal: {fileID: 1840746784}
 --- !u!1 &1671473742
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,6 +5470,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114562019093847672, guid: 2a8ac61afed16ea4580017c18ec1c221,
+        type: 2}
+      propertyPath: main
+      value: 
+      objectReference: {fileID: 1732599279}
+    - target: {fileID: 114562019093847672, guid: 2a8ac61afed16ea4580017c18ec1c221,
+        type: 2}
+      propertyPath: KingdomFadeAnim
+      value: 
+      objectReference: {fileID: 2042617951}
     - target: {fileID: 114158811544677298, guid: 2a8ac61afed16ea4580017c18ec1c221,
         type: 2}
       propertyPath: toSetActive.Array.data[0]
@@ -5468,21 +5500,6 @@ Prefab:
       propertyPath: toSetInactive.Array.data[1]
       value: 
       objectReference: {fileID: 622355530}
-    - target: {fileID: 114158811544677298, guid: 2a8ac61afed16ea4580017c18ec1c221,
-        type: 2}
-      propertyPath: toSetInactive.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562019093847672, guid: 2a8ac61afed16ea4580017c18ec1c221,
-        type: 2}
-      propertyPath: main
-      value: 
-      objectReference: {fileID: 1732599279}
-    - target: {fileID: 114562019093847672, guid: 2a8ac61afed16ea4580017c18ec1c221,
-        type: 2}
-      propertyPath: KingdomFadeAnim
-      value: 
-      objectReference: {fileID: 2042617951}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8ac61afed16ea4580017c18ec1c221, type: 2}
   m_IsPrefabAsset: 0

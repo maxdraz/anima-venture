@@ -11,9 +11,11 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 	public GameObject kingdomDots;
 	public GameObject centralNodeGlow;
     public GameObject menuReturn;
+    public GameObject kSettings;
 
     //journey assets
     public GameObject backButton;
+    public GameObject jSettings;
 	public GameObject journeyLines;
 	public GameObject journeyDots;
 	public GameObject journey1;
@@ -43,6 +45,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomDots.SetActive (false);
 		kingdomArrows.SetActive (false);
         menuReturn.SetActive(false);
+        kSettings.SetActive(false);
 //		kingdomLines.SetActive (false);
 		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
 		journeyFadeAnim.Play ();
@@ -55,6 +58,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		kingdomDots.SetActive (true);
 		kingdomArrows.SetActive (true);
         menuReturn.SetActive(true);
+        kSettings.SetActive(true);
         //		kingdomLines.SetActive (true);
         centralNode.GetComponent<CircleCollider2D> ().enabled = true;
 		AM.PlayClip(1, 0.1f, false);
@@ -68,6 +72,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		journey2.SetActive (false);
 		journeyDots.SetActive (false);
 		journeyLines.SetActive (false);
+        jSettings.SetActive(false);
 		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeOut");
 		journeyFadeAnim.Play ();
 	}
@@ -80,7 +85,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		journeyDots.SetActive (true);
 		journey1.SetActive (true);
 		journey2.SetActive (true);
-		AM.PlayClip(1, 0.1f, false);
+        jSettings.SetActive(true);
+        AM.PlayClip(1, 0.1f, false);
 	}
 
 	public void ScaleUpKingdomSelect () {
