@@ -7295,6 +7295,7 @@ MonoBehaviour:
   kingdomArrows: {fileID: 1168298507032856}
   kingdomDots: {fileID: 1453781878708378}
   centralNodeGlow: {fileID: 1242956372376168}
+  menuReturn: {fileID: 0}
   backButton: {fileID: 0}
   journeyLines: {fileID: 0}
   journeyDots: {fileID: 0}
