@@ -1,14 +1,11 @@
 ﻿<Properties StartupConfiguration="{740CE3D0-6E96-6F19-240C-255C3D04D62B}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu/EndMeditation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu/SpinSound.cs">
     <Files>
-      <File FileName="Assets/Scripts/Menu/SpinSound.cs" Line="23" Column="21" />
-      <File FileName="Assets/Scripts/AudioManager.cs" Line="144" Column="1" />
-      <File FileName="Assets/Scripts/Simon Game/Button_Simon.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Menu/LoadScene.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scenes/KingdomSelectAnimationHandler.cs" Line="17" Column="33" />
-      <File FileName="Assets/Scripts/Menu/centralNode.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Menu/EndMeditation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scenes/TouchTone.cs" Line="19" Column="38" />
+      <File FileName="Assets/Scripts/AudioManager.cs" Line="119" Column="28" />
+      <File FileName="Assets/PetalScript.cs" Line="26" Column="32" />
+      <File FileName="Assets/Scripts/Menu/SpinSound.cs" Line="45" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.AnimaVenture_220Unity_220Project PreferredExecutionTarget="Unity.Editor" />
