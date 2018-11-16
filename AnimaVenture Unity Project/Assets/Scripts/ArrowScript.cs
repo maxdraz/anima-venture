@@ -23,15 +23,15 @@ public class ArrowScript : MonoBehaviour {
 		mouseOver = false;
 		float startYPos = transform.position.y;
 		renderer = GetComponent<LineRenderer> ();
-		renderer.material.color = Color.white;
+		renderer.endColor = Color.gray;
 
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		renderer.SetPosition (1, new Vector3 (transform.position.x, transform.position.y, transform.position.z));
-		renderer.endColor = Color.gray;
+		renderer.SetPosition (0, new Vector3 (transform.position.x, transform.position.y, transform.position.z));
+
         //if (lerpBack)
         //{
 		//	transform.position = Vector3.Lerp(transform.position, startParent.transform.position, lerpBackSpeed * Time.deltaTime);
