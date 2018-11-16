@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class NicksTitleAnimEventHandler : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject[] letters;
+
+
+	public void ActivateLetters (int letterToActivate) {
+
+		letters [letterToActivate].SetActive (true);
 	}
 }

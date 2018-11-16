@@ -9,11 +9,12 @@ public class ArrowScript : MonoBehaviour {
     bool lerpBack = false;
 	Transform startParent;
 
-	public float lerpBackSpeed;
+	float lerpBackSpeed;
 	public float secondPitchFactor;
 	public AudioSource audio1;
 	public AudioSource audio2;
 	public AudioSource audio3;
+	LineRenderer renderer;
 
 	// Use this for initialization
 	void Awake () {
@@ -21,13 +22,16 @@ public class ArrowScript : MonoBehaviour {
 		mousePos = GameObject.Find ("MouseTransform").transform;
 		mouseOver = false;
 		float startYPos = transform.position.y;
+		renderer = GetComponent<LineRenderer> ();
+		renderer.material.color = Color.white;
 
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		renderer.SetPosition (1, new Vector3 (transform.position.x, transform.position.y, transform.position.z));
+		renderer.endColor = Color.gray;
         //if (lerpBack)
         //{
 		//	transform.position = Vector3.Lerp(transform.position, startParent.transform.position, lerpBackSpeed * Time.deltaTime);
