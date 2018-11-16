@@ -7001,7 +7001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpBackSpeed: 3
   secondPitchFactor: 10
   audio1: {fileID: 82332624361492290}
   audio2: {fileID: 82979716408567866}
@@ -7406,7 +7405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpBackSpeed: 3
   secondPitchFactor: 20
   audio1: {fileID: 82215962442752160}
   audio2: {fileID: 82839123378315170}
