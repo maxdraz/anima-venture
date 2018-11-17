@@ -32171,6 +32171,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &867508187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773445402465738, guid: 2a8ac61afed16ea4580017c18ec1c221,
+    type: 2}
+  m_PrefabInternal: {fileID: 640499869}
 --- !u!1001 &881635395
 Prefab:
   m_ObjectHideFlags: 0
@@ -63018,6 +63023,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1607262132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1135505628724912, guid: 2a8ac61afed16ea4580017c18ec1c221,
+    type: 2}
+  m_PrefabInternal: {fileID: 640499869}
 --- !u!1 &1621303451
 GameObject:
   m_ObjectHideFlags: 0
@@ -78435,6 +78445,16 @@ Prefab:
       propertyPath: menuReturn
       value: 
       objectReference: {fileID: 1111435706}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: jSettings
+      value: 
+      objectReference: {fileID: 867508187}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: kSettings
+      value: 
+      objectReference: {fileID: 1607262132}
     m_RemovedComponents:
     - {fileID: 82261664461988478, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
