@@ -139,7 +139,5 @@ public class rotation : MonoBehaviour
             rb.AddTorque(Torque, ForceMode.Force);
         }
 
-
-
     }
 }
