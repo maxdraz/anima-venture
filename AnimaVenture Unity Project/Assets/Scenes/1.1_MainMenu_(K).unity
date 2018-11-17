@@ -3092,132 +3092,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &885005899
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: comingSoon
-      value: 
-      objectReference: {fileID: 18916570}
-    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: rainforest
-      value: 
-      objectReference: {fileID: 542218322}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: menuReturn
-      value: 
-      objectReference: {fileID: 30188825}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: kSettings
-      value: 
-      objectReference: {fileID: 1657575245}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: backButton
-      value: 
-      objectReference: {fileID: 699074311}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: jSettings
-      value: 
-      objectReference: {fileID: 25787095}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: journeyLines
-      value: 
-      objectReference: {fileID: 1542715475}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: journeyDots
-      value: 
-      objectReference: {fileID: 2111658701}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: journey1
-      value: 
-      objectReference: {fileID: 1695005795}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: journey2
-      value: 
-      objectReference: {fileID: 1869712619}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: journeyFadeAnim
-      value: 
-      objectReference: {fileID: 560048026}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: cameraScript
-      value: 
-      objectReference: {fileID: 1732599284}
-    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: AM
-      value: 
-      objectReference: {fileID: 1683195671}
-    - target: {fileID: 114483254060312356, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: toSetActive.Array.data[0]
-      value: 
-      objectReference: {fileID: 30188825}
-    - target: {fileID: 114437021363285004, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: toSetInactive.Array.data[0]
-      value: 
-      objectReference: {fileID: 30188825}
-    - target: {fileID: 114008394789909666, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: main
-      value: 
-      objectReference: {fileID: 1732599279}
-    - target: {fileID: 1146989360612454, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &906354180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,7 +3314,7 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1242956372376168, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
-  m_PrefabInternal: {fileID: 885005899}
+  m_PrefabInternal: {fileID: 1546985180}
 --- !u!1 &1192417686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4649,6 +4523,128 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1177049160689858, guid: 28dbd31bcd157ae46900aa96392d81cf,
     type: 2}
   m_PrefabInternal: {fileID: 1867121661}
+--- !u!1001 &1546985180
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998509026890882, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114008394789909666, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: main
+      value: 
+      objectReference: {fileID: 1732599279}
+    - target: {fileID: 114437021363285004, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: toSetInactive.Array.data[0]
+      value: 
+      objectReference: {fileID: 30188825}
+    - target: {fileID: 114483254060312356, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: toSetActive.Array.data[0]
+      value: 
+      objectReference: {fileID: 30188825}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: menuReturn
+      value: 
+      objectReference: {fileID: 30188825}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: kSettings
+      value: 
+      objectReference: {fileID: 1657575245}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 699074311}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: jSettings
+      value: 
+      objectReference: {fileID: 25787095}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: journeyLines
+      value: 
+      objectReference: {fileID: 1542715475}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: journeyDots
+      value: 
+      objectReference: {fileID: 2111658701}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: journey1
+      value: 
+      objectReference: {fileID: 1695005795}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: journey2
+      value: 
+      objectReference: {fileID: 1869712619}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: journeyFadeAnim
+      value: 
+      objectReference: {fileID: 560048026}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: cameraScript
+      value: 
+      objectReference: {fileID: 1732599284}
+    - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: AM
+      value: 
+      objectReference: {fileID: 1683195671}
+    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: comingSoon
+      value: 
+      objectReference: {fileID: 18916570}
+    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: rainforest
+      value: 
+      objectReference: {fileID: 542218322}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1568914262
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,7 +5829,7 @@ Prefab:
     - target: {fileID: 114799188713157032, guid: 28dbd31bcd157ae46900aa96392d81cf,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4208879933158144, guid: 28dbd31bcd157ae46900aa96392d81cf, type: 2}
       propertyPath: m_LocalRotation.z
@@ -5894,7 +5890,7 @@ Prefab:
     - target: {fileID: 114348979724710172, guid: 28dbd31bcd157ae46900aa96392d81cf,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4421338691466918, guid: 28dbd31bcd157ae46900aa96392d81cf, type: 2}
       propertyPath: m_LocalRotation.z
@@ -6808,7 +6804,7 @@ Transform:
 Animator:
   m_CorrespondingSourceObject: {fileID: 95213923836466604, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
-  m_PrefabInternal: {fileID: 885005899}
+  m_PrefabInternal: {fileID: 1546985180}
 --- !u!1 &2067970618
 GameObject:
   m_ObjectHideFlags: 0

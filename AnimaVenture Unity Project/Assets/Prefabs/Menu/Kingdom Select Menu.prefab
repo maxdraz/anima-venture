@@ -667,6 +667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4034032761668882}
+  - component: {fileID: 114625201495382892}
   - component: {fileID: 114237236122155026}
   - component: {fileID: 114016427595993012}
   - component: {fileID: 54363286913500134}
@@ -6886,7 +6887,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235300369775926}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6088643c72e8d40e6a9204f5e3076578, type: 3}
   m_Name: 
@@ -7208,6 +7209,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b4b48b64c77644884f75e01408864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114625201495382892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235300369775926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e85371f8b6ea641a4e4d818c537077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 0.1
+  Rotate: 0
+  z: 0
+  Torque: {x: 0, y: 0, z: 0}
 --- !u!114 &114627476752765742
 MonoBehaviour:
   m_ObjectHideFlags: 1
