@@ -7437,14 +7437,12 @@ MonoBehaviour:
   rainforest: {fileID: 0}
   journey: {fileID: 1703552380003108}
   glow: {fileID: 1886847979037204}
-  sprites:
-  - {fileID: 0}
-  - {fileID: 21300000, guid: c12cae05ead67ea4c8fc2c33fd183dd4, type: 3}
-  - {fileID: 21300000, guid: c12cae05ead67ea4c8fc2c33fd183dd4, type: 3}
-  - {fileID: 21300000, guid: c12cae05ead67ea4c8fc2c33fd183dd4, type: 3}
-  - {fileID: 21300000, guid: c12cae05ead67ea4c8fc2c33fd183dd4, type: 3}
-  - {fileID: 21300000, guid: c12cae05ead67ea4c8fc2c33fd183dd4, type: 3}
-  - {fileID: 21300000, guid: c12cae05ead67ea4c8fc2c33fd183dd4, type: 3}
+  forest: {fileID: 1816677381068866}
+  mountain: {fileID: 1488303082679730}
+  ocean: {fileID: 1299915677993154}
+  polar: {fileID: 1238587819593380}
+  desert: {fileID: 1762931165445720}
+  jungle: {fileID: 1394124655303640}
 --- !u!114 &114952524352423950
 MonoBehaviour:
   m_ObjectHideFlags: 1

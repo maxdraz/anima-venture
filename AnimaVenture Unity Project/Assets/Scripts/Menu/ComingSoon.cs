@@ -17,17 +17,21 @@ public class ComingSoon : MonoBehaviour {
 
     Color g;
 
-    public Sprite[] sprites;
-
     CircleCollider2D center;
     SphereCollider detect;
     float speed = .1f;
     float alpha;
     float yPos;
 
+    public GameObject forest;
+    public GameObject mountain;
+    public GameObject ocean;
+    public GameObject polar;
+    public GameObject desert;
+    public GameObject jungle;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         display = GetComponent<SpriteRenderer>();
         glowSprite = glow.GetComponent<SpriteRenderer>();
@@ -64,7 +68,8 @@ public class ComingSoon : MonoBehaviour {
         if(other.gameObject.tag == "Forest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            glowSprite.sprite = sprites[1];
+            glowSprite.sprite = forest.GetComponent<SpriteRenderer>().sprite;
+            glowSprite.color = forest.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -73,8 +78,8 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Rainforest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            //glowSprite.color = new Color(115f, 55f, 173f, 1f);
-            glowSprite.sprite = sprites[4];
+            glowSprite.sprite = ocean.GetComponent<SpriteRenderer>().sprite;
+            glowSprite.color = ocean.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
             center.enabled = true;
             display.sprite = kingdom.sprite;
@@ -84,7 +89,8 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Desert")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            glowSprite.sprite = sprites[1];
+            glowSprite.sprite = desert.GetComponent<SpriteRenderer>().sprite;
+            glowSprite.color = desert.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -93,7 +99,8 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Mountain")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            glowSprite.sprite = sprites[1];
+            glowSprite.sprite = mountain.GetComponent<SpriteRenderer>().sprite;
+            glowSprite.color = mountain.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -102,7 +109,8 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Polar")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            glowSprite.sprite = sprites[1];
+            glowSprite.sprite = polar.GetComponent<SpriteRenderer>().sprite;
+            glowSprite.color = polar.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
@@ -111,7 +119,8 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Jungle")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
-            glowSprite.sprite = sprites[1];
+            glowSprite.sprite = jungle.GetComponent<SpriteRenderer>().sprite;
+            glowSprite.color = jungle.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
