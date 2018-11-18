@@ -4207,7 +4207,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1205456737164476, guid: 4e8631dca90403041bca7355bef528be, type: 2}
       propertyPath: m_Name
-      value: BordersPS
+      value: RainPS
       objectReference: {fileID: 0}
     - target: {fileID: 198252476564860772, guid: 4e8631dca90403041bca7355bef528be,
         type: 2}
