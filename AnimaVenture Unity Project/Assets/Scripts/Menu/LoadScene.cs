@@ -5,26 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
 
+    int loadingScreenIndex = 4;
     public int sceneIndex;
     public bool loadWithTimerBool = false;
     public float loadAfterTime = 2;
 
     private void Start()
     {
-        if (loadWithTimerBool)
+       if (loadWithTimerBool)
         {
-            StartCoroutine(LoadSceneAfterTime());
-        }
+           StartCoroutine(LoadSceneAfterTime());
+       }
     }
 
     public void LoadThisScene()
     {
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+        SceneToLoad.onlyInstance.SetSceneToLoadNext(sceneIndex);
+        SceneManager.LoadScene(loadingScreenIndex, LoadSceneMode.Single);
+        
     }
 
     public IEnumerator LoadSceneAfterTime()
     {
         yield return new WaitForSeconds(loadAfterTime);
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+        SceneToLoad.onlyInstance.SetSceneToLoadNext(sceneIndex);
+        SceneManager.LoadScene(loadingScreenIndex, LoadSceneMode.Single);
+   }
+
+    private void OnMouseDown()
+    {
+        LoadThisScene();
     }
 }

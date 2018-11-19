@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d54b1f2eff18f342bdc5fdd8075df8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 90
+  time: 2
   distance: 0
   distanceToTarget: 0
   speed: 0
@@ -5170,17 +5170,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1941808749}
-        m_MethodName: SetSceneToLoadNext
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &857286455
@@ -5774,9 +5763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3295142af9895bc44a499e43362c79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 4
+  sceneIndex: 3
   loadWithTimerBool: 1
-  loadAfterTime: 1
+  loadAfterTime: 2
 --- !u!1001 &1000138777
 Prefab:
   m_ObjectHideFlags: 0
@@ -9932,12 +9921,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1922405323}
   m_CullTransparentMesh: 0
---- !u!114 &1941808749 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114125699598804154, guid: 4360aad163e660d42a7464e3610d1196,
-    type: 2}
-  m_PrefabInternal: {fileID: 656150459}
-  m_Script: {fileID: 11500000, guid: 607d86bab836bba498f55a6114ad5d53, type: 3}
 --- !u!1 &1951444747
 GameObject:
   m_ObjectHideFlags: 0
