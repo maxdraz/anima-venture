@@ -90,7 +90,7 @@ public class GameManager_Simon : MonoBehaviour {
         //call start timer function
         timer.startTimerBool = true;
         //start moving dolmen
-        dolmen.moveDolmenBool = true;
+        //dolmen.moveDolmenBool = true;
         //make restart button appear        
        // restartButton.SetActive(true);
         // invoke pick random colour method
@@ -267,6 +267,17 @@ public class GameManager_Simon : MonoBehaviour {
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
             {
+                if(colourSequence.Count == 1)
+                {
+                    StartCoroutine(EventHandler.SharedInstance.StartDolmen());
+                } else if (colourSequence.Count == 3)
+                {
+                    EventHandler.SharedInstance.startRainPS.Invoke();
+                }
+                else if (colourSequence.Count == 4)
+                {
+                    EventHandler.SharedInstance.startBottomPS.Invoke();
+                }
                 //Add one to score
                 score.Add(1);
                 //Subtract time from timer

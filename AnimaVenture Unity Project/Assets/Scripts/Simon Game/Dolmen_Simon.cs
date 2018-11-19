@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dolmen_Simon : MonoBehaviour {
 
+    public static Dolmen_Simon sharedInstance;
+
     public float time;
     [SerializeField] float distance;
     [SerializeField] float distanceToTarget;
@@ -16,9 +18,13 @@ public class Dolmen_Simon : MonoBehaviour {
 
     [SerializeField] Transform targetTransform;
 
-    private void Start()
+    private void Awake()
     {
-        
+        sharedInstance = this;
+    }
+
+    private void Start()
+    { 
         
         distance = CalculateDistance(targetTransform.position.y, transform.position.y);
         speed = distance / time;
