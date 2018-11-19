@@ -7716,7 +7716,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.428566
+  m_Radius: 1
   m_Center: {x: -1.9846994, y: -1.1543655, z: 0}
 --- !u!135 &135189135995287088
 SphereCollider:
@@ -7752,7 +7752,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.428566
+  m_Radius: 1
   m_Center: {x: -1.9846989, y: 1.134114, z: 0}
 --- !u!135 &135337221839662012
 SphereCollider:
@@ -7764,7 +7764,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.428566
+  m_Radius: 1
   m_Center: {x: 0, y: -2.2884789, z: 0}
 --- !u!135 &135347742365479950
 SphereCollider:
@@ -7824,7 +7824,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.42856604
+  m_Radius: 1
   m_Center: {x: 0, y: 2.3001578, z: 0}
 --- !u!135 &135688845930711426
 SphereCollider:
@@ -7848,7 +7848,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.428566
+  m_Radius: 1
   m_Center: {x: 1.975777, y: -1.1321751, z: 0}
 --- !u!135 &135706910736220934
 SphereCollider:
@@ -7860,7 +7860,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.428566
+  m_Radius: 1
   m_Center: {x: 1.9760833, y: 1.1428077, z: 0}
 --- !u!212 &212017062599601812
 SpriteRenderer:
@@ -10150,7 +10150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

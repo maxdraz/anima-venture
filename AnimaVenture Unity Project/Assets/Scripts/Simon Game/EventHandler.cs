@@ -28,12 +28,12 @@ public class EventHandler : MonoBehaviour {
     private void Start()
     {
         // COMMENTED FOR TESTING
-        //playIntroCutscene.Invoke();
+        playIntroCutscene.Invoke();
 
-        StartCoroutine(StartSimon(1));      
+       // StartCoroutine(StartSimon(1));      
 
         // COMMENTED FOR TESTING
-        // StartCoroutine(DisplayTip1((float)introTimeline.duration));
+         StartCoroutine(DisplayTip1((float)introTimeline.duration));
     }
 
     private void Update()

@@ -86,7 +86,7 @@ public class rotation : MonoBehaviour
 
     void OnMouseDown()
     {
-        rb.angularDrag = 1;
+        //rb.angularDrag = 1;
         z = 0.0f;
         startPos = Input.mousePosition;
         startX = startPos.x;
@@ -118,7 +118,7 @@ public class rotation : MonoBehaviour
         else if (startY > Screen.height / 2 && endX > startX)
         {
             Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
+ 
         }
 
         else if (startY < Screen.height / 2 && endX > startX)

@@ -94,7 +94,9 @@ public class TestRotation : MonoBehaviour
     void OnMouseDown()
     {
         rb.angularDrag = 1;
-        z = 0.0f;
+        rb.angularVelocity = new Vector3(0, 0, 0);
+        z = 0f;
+        Torque = new Vector3(0, 0, 0);
         startPos = Input.mousePosition;
         startX = startPos.x;
         startY = startPos.y;
