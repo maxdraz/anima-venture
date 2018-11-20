@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ComingSoon : MonoBehaviour {
+public class ComingSoon : MonoBehaviour
+{
 
     public GameObject comingSoon;
     public GameObject rainforest;
     public GameObject journey;
+    public Text kingdomName;
 
     public GameObject glow;
 
@@ -31,7 +34,7 @@ public class ComingSoon : MonoBehaviour {
     public GameObject jungle;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         display = GetComponent<SpriteRenderer>();
         glowSprite = glow.GetComponent<SpriteRenderer>();
@@ -50,11 +53,11 @@ public class ComingSoon : MonoBehaviour {
 
     private void Awake()
     {
-      
+
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         if (detect.radius < 0.77f)
         {
@@ -65,14 +68,16 @@ public class ComingSoon : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        if(other.gameObject.tag == "Forest")
+        if (other.gameObject.tag == "Forest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
             glowSprite.sprite = forest.GetComponent<SpriteRenderer>().sprite;
             glowSprite.color = forest.GetComponent<SpriteRenderer>().color;
+            kingdomName.text = "Rainforest";
             StartCoroutine("FadeIn");
+            center.enabled = true;
             display.sprite = kingdom.sprite;
-            comingSoon.SetActive(true);
+            rainforest.SetActive(true);
         }
 
         if (other.gameObject.tag == "Rainforest")
@@ -81,9 +86,9 @@ public class ComingSoon : MonoBehaviour {
             glowSprite.sprite = ocean.GetComponent<SpriteRenderer>().sprite;
             glowSprite.color = ocean.GetComponent<SpriteRenderer>().color;
             StartCoroutine("FadeIn");
-            center.enabled = true;
             display.sprite = kingdom.sprite;
-            rainforest.SetActive(true);
+            comingSoon.SetActive(true);
+            kingdomName.text = "Ocean";
         }
 
         if (other.gameObject.tag == "Desert")
@@ -94,6 +99,7 @@ public class ComingSoon : MonoBehaviour {
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
+            kingdomName.text = "Desert";
         }
 
         if (other.gameObject.tag == "Mountain")
@@ -104,6 +110,7 @@ public class ComingSoon : MonoBehaviour {
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
+            kingdomName.text = "Mountain";
         }
 
         if (other.gameObject.tag == "Polar")
@@ -114,6 +121,7 @@ public class ComingSoon : MonoBehaviour {
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
+            kingdomName.text = "Polar";
         }
 
         if (other.gameObject.tag == "Jungle")
@@ -124,6 +132,7 @@ public class ComingSoon : MonoBehaviour {
             StartCoroutine("FadeIn");
             display.sprite = kingdom.sprite;
             comingSoon.SetActive(true);
+            kingdomName.text = "Jungle";
         }
     }
 
@@ -132,44 +141,51 @@ public class ComingSoon : MonoBehaviour {
         if (other.gameObject.tag == "Forest")
         {
             StartCoroutine("FadeOut");
-            comingSoon.SetActive(false);
+            rainforest.SetActive(false);
+            center.enabled = false;
+            //kingdomName.text = "";
+
         }
 
         if (other.gameObject.tag == "Rainforest")
         {
-            center.enabled = false;
             StartCoroutine("FadeOut");
-            rainforest.SetActive(false);
+            comingSoon.SetActive(false);
+            //kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Desert")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
+            //kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Mountain")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
+            //kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Polar")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
+            //kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Jungle")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
+            //kingdomName.text = "";
         }
     }
 
     IEnumerator FadeIn()
     {
-		//Need to feed in a new backgroud sprite into the sprite renderer component, so it can be faded in
+        //Need to feed in a new backgroud sprite into the sprite renderer component, so it can be faded in
         for (float t = 0.05f; t <= 1; t += 0.05f)
         {
             Color c = display.material.color;
@@ -178,6 +194,9 @@ public class ComingSoon : MonoBehaviour {
             Color g = glowSprite.material.color;
             g.a = t;
             glowSprite.material.color = g;
+            /*Color m = kingdomName.material.color;
+            m.a = t;
+            kingdomName.material.color = m;*/
             yield return new WaitForSeconds(0.01f);
         }
 
@@ -185,7 +204,7 @@ public class ComingSoon : MonoBehaviour {
 
     IEnumerator FadeOut()
     {
-        for (float t = 1f; t >= -0/05f; t -= 0.05f)
+        for (float t = 1f; t >= -0 / 05f; t -= 0.05f)
         {
             Color c = display.material.color;
             c.a = t;
@@ -193,6 +212,9 @@ public class ComingSoon : MonoBehaviour {
             Color g = glowSprite.material.color;
             g.a = t;
             glowSprite.material.color = g;
+            /*Color m = kingdomName.material.color;
+            m.a = t;
+            kingdomName.material.color = m;*/
             yield return new WaitForSeconds(0.01f);
         }
 

@@ -3808,6 +3808,11 @@ Prefab:
       propertyPath: rainforest
       value: 
       objectReference: {fileID: 542218322}
+    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: kingdomName
+      value: 
+      objectReference: {fileID: 2094179474}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_IsPrefabAsset: 0
@@ -6514,6 +6519,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1813543550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1584899693781474, guid: 2a8ac61afed16ea4580017c18ec1c221,
+    type: 2}
+  m_PrefabInternal: {fileID: 1840746784}
 --- !u!1 &1823434951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,6 +6726,20 @@ Prefab:
       propertyPath: toSetInactive.Array.data[1]
       value: 
       objectReference: {fileID: 622355530}
+    - target: {fileID: 114727838282078504, guid: 2a8ac61afed16ea4580017c18ec1c221,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1813543550}
+    - target: {fileID: 114727838282078504, guid: 2a8ac61afed16ea4580017c18ec1c221,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773445402465738, guid: 2a8ac61afed16ea4580017c18ec1c221, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8ac61afed16ea4580017c18ec1c221, type: 2}
   m_IsPrefabAsset: 0
