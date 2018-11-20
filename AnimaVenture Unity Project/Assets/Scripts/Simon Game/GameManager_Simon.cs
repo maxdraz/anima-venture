@@ -10,6 +10,7 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] float gameStartDelay = 2f;
     [SerializeField] float delayBetweenTelegraphs=1.5f;
     [SerializeField] float lastTelegraphDelay = 1f;
+    [SerializeField] float replayTelegraphDelay = 1f;
     [SerializeField] float enableButtonsDelay = 2f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
     [SerializeField] float shootingStarSpeed = 2f;
@@ -120,6 +121,10 @@ public class GameManager_Simon : MonoBehaviour {
         //make restart button appear        
         //restartButton.SetActive(true);
         //reset the current input position in sequence
+        if(colourSequence.Count < 2)
+        {
+            yield return new WaitForSeconds(2f);
+        }
         positionInSequence = 0;
         yield return new WaitForSeconds(delayBetweenTelegraphs);
         //Play back sequence
@@ -142,8 +147,11 @@ public class GameManager_Simon : MonoBehaviour {
             shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
             //set start trans to a random spawn point
             shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+            //set trail colour
+            shootingStar.GetComponent<ShootingStar>().colourIndex = colourIndex;
             //set object active
             shootingStar.SetActive(true);
+            
             //set telegraph colour index
             shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
             // make the star move
@@ -173,14 +181,17 @@ public class GameManager_Simon : MonoBehaviour {
             shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
             //set start trans to a random spawn point
             shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+            //set trail colour
+            shootingStar.GetComponent<ShootingStar>().colourIndex = colourIndex;
             //set object active
             shootingStar.SetActive(true);
+            
             //set telegraph colour index
             shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
             // make the star move
             StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
 
-            yield return new WaitForSeconds(enableButtonsDelay);
+            yield return new WaitForSeconds(replayTelegraphDelay);
 
         }
 
@@ -238,8 +249,12 @@ public class GameManager_Simon : MonoBehaviour {
         shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
         //set start trans to a random spawn point
         shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+        //set trail color
+        shootingStar.GetComponent<ShootingStar>().colourIndex = randomColourIndex;
         //set object active
         shootingStar.SetActive(true);
+        
+        Debug.Log("GM " + randomColourIndex);
         //set telegraph colour index
         shootingStar.GetComponent<ShootingStar>().telegraphIndex = randomColourIndex;
         // make the star move
@@ -300,7 +315,7 @@ public class GameManager_Simon : MonoBehaviour {
                 //Shake the camera
                 CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
-                score.Add(1);
+                StartCoroutine(score.Add(1));
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
 

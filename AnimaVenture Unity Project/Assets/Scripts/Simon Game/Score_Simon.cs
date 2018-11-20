@@ -8,13 +8,22 @@ public class Score_Simon : MonoBehaviour {
     public int currentScore = 0;
     // [SerializeField] Text scoreText;
     [SerializeField] TextMesh scoreText;
+    public ParticleSystem ps;
 
 
-    public void Add(int amount)
+    public IEnumerator Add(int amount)
     {
+        yield return new WaitForSeconds(0.5f);
+        if(score == 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+        }
         score += amount;
         currentScore = score;
         UpdateDisplay();
+        
+        ps.gameObject.SetActive(true);
+        ps.Play();
     }
 
     public void Set(int amount)
@@ -27,4 +36,6 @@ public class Score_Simon : MonoBehaviour {
     {
         scoreText.text = score.ToString();
     }
+
+    
 }

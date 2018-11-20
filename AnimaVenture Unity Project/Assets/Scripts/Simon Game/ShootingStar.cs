@@ -17,11 +17,16 @@ public class ShootingStar : MonoBehaviour {
      float originalTrailStartSize;
     float originalHeadStartSize;
 
+    public int colourIndex;
+    public List<Color> trailColours;
+
 
 
     private void OnEnable()
     {
-       // MoveObject(speed);
+        var main = trailPS.main;
+        main.startColor = trailColours[colourIndex];
+        Debug.Log("Trail " + colourIndex);
     }
 
     private void Start()
