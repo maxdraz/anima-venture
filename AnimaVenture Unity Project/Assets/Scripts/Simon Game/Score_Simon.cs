@@ -13,11 +13,15 @@ public class Score_Simon : MonoBehaviour {
 
     public IEnumerator Add(int amount)
     {
-        yield return new WaitForSeconds(0.5f);
+        
         if(score == 0)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
         }
+
+        //yield return new WaitForSeconds(0.25f);
+        scoreText.gameObject.SetActive(true);
+
         score += amount;
         currentScore = score;
         UpdateDisplay();
