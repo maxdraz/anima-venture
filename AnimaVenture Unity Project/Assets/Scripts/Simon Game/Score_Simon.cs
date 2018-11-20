@@ -16,7 +16,10 @@ public class Score_Simon : MonoBehaviour {
         
         if(score == 0)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.75f);
+        }else
+        {
+            yield return new WaitForSeconds(0.75f);
         }
 
         //yield return new WaitForSeconds(0.25f);
