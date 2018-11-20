@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Score_Simon : MonoBehaviour {
     [SerializeField] int score = 0;
     public int currentScore = 0;
-    [SerializeField] Text scoreText;
+    // [SerializeField] Text scoreText;
+    [SerializeField] TextMesh scoreText;
 
 
     public void Add(int amount)
