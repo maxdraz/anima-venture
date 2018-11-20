@@ -5,7 +5,8 @@ using UnityEngine;
 public class Button_Simon : MonoBehaviour {
 
     [SerializeField] float lightUpTime;
-
+    [SerializeField] Color thisColor;
+    [SerializeField] ParticleSystem ps;
     GameManager_Simon gm;
     Animation anim; 
     SpriteRenderer sRenderer;
@@ -18,7 +19,8 @@ public class Button_Simon : MonoBehaviour {
         //References to objects / components
         anim = GetComponent<Animation>();
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager_Simon>();
-        sRenderer = GetComponent<SpriteRenderer>();
+        sRenderer = GetComponent<SpriteRenderer>();        
+        
     }
 
     private void OnMouseDown()
@@ -48,6 +50,12 @@ public class Button_Simon : MonoBehaviour {
             sRenderer.color.g,
             sRenderer.color.b,
             1.0f);
+
+        ps.transform.gameObject.SetActive(true);
+        ps.Play();
+        
+
+
     }
 
     IEnumerator ResetButton(float t)
@@ -58,5 +66,7 @@ public class Button_Simon : MonoBehaviour {
             sRenderer.color.g,
             sRenderer.color.b,
             0.5f);
+
+       
     }
 }

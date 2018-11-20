@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
-
     private float angle = 0.1f;
 
     public float turnSpeed = 10f;
@@ -12,6 +11,9 @@ public class rotation : MonoBehaviour
     Vector3 axis;
     private float angle1;
     public bool Rotate;
+
+    Vector3 angularVel;
+    public float z;
 
     Rigidbody rb;
     Vector3 startPos;
@@ -24,22 +26,27 @@ public class rotation : MonoBehaviour
 
     float touchSpeed;
 
-    Vector3 Torque;
+    public Vector3 Torque;
     float timeStart;
     float timeEnd;
 
-    GameObject instructionalText;
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         angle1 = transform.eulerAngles.z;
-        instructionalText = GameObject.Find("RotationInstructions");
     }
 
     // Update is called once per frame
     void Update()
     {
+        angularVel = rb.angularVelocity;
+        z = angularVel.z * Mathf.Rad2Deg;
+
+        /*if(z < 0.1f)
+        {
+            z = 0.0f;
+        }*/
 
     }
 
@@ -55,11 +62,9 @@ public class rotation : MonoBehaviour
         //Debug.Log("Angle is " + angle);
     }
 
-
     void OnMouseDrag()
     {
         RotateObj();
-       
     }
 
     void RotateObj()
@@ -69,7 +74,6 @@ public class rotation : MonoBehaviour
 
         float ang = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg - angle;
         transform.rotation = Quaternion.AngleAxis(ang, Vector3.forward);
-        //      Debug.Log("Angle is " + ang);
     }
 
     void RotateTo(float ang)
@@ -82,27 +86,22 @@ public class rotation : MonoBehaviour
 
     void OnMouseDown()
     {
+        //rb.angularDrag = 1;
+        z = 0.0f;
         startPos = Input.mousePosition;
         startX = startPos.x;
         startY = startPos.y;
         timeStart = Time.time;
-        Debug.Log("start is " + startPos);
-
+        //Debug.Log("start is " + startPos);
     }
 
     void OnMouseUp()
     {
-        //Disable Instructional text       
-        if (instructionalText.activeInHierarchy)
-        {
-            instructionalText.SetActive(false);
-        }
-
         endPos = Input.mousePosition;
         endX = endPos.x;
         endY = endPos.y;
         Vector3 deltaPos = endPos - startPos;
-        Debug.Log("end is " + endPos);
+        //Debug.Log("end is " + endPos);
 
         timeEnd = Time.time;
         touchSpeed = deltaPos.magnitude / (timeEnd - timeStart);
@@ -119,7 +118,7 @@ public class rotation : MonoBehaviour
         else if (startY > Screen.height / 2 && endX > startX)
         {
             Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
+ 
         }
 
         else if (startY < Screen.height / 2 && endX > startX)
@@ -139,5 +138,6 @@ public class rotation : MonoBehaviour
             Torque = new Vector3(0, 0, touchSpeed * -1);
             rb.AddTorque(Torque, ForceMode.Force);
         }
+
     }
 }

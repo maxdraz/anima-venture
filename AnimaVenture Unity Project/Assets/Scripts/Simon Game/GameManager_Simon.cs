@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using EZCameraShake;
 
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
+    
     [SerializeField] float gameStartDelay = 2f;
     [SerializeField] float delayBetweenTelegraphs=1.5f;
+    [SerializeField] float lastTelegraphDelay = 1f;
+    [SerializeField] float enableButtonsDelay = 2f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
+    [SerializeField] float shootingStarSpeed = 2f;
     [SerializeField] float speedBoostMultiplier;
     [SerializeField] float speedBoostTime;
     float timerTime;
@@ -25,6 +30,10 @@ public class GameManager_Simon : MonoBehaviour {
     Telegraph_Simon[] telegraphs;
     [SerializeField]
     Button_Simon[] buttons;
+    [SerializeField]
+    List<Transform> telegraphSpawnpoints;
+    [SerializeField]
+    List<Transform> telegraphEndTransforms;
 
     GameObject startButton;
     GameObject restartButton;
@@ -41,6 +50,18 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] Animator animator;
     public bool continueBool;
     AudioManager AM;
+    [Header("Camera Shake Variables")]
+    [Space(15)]
+    public float pressedMagnitude;
+    public float pressedRoughness;
+    public float pressedFadeInTime;
+    public float pressedFadeOutTime;
+    [Space(15)]
+    public float sequenceCorrectMagnitude;
+    public float sequenceCorrectRoughness;
+    public float sequenceCorrectFadeInTime;
+    public float sequenceCorrectFadeOutTime;
+
 
 
     private void Awake()
@@ -78,11 +99,11 @@ public class GameManager_Simon : MonoBehaviour {
     public void StartGame()
     {        
         //make start button disappear       
-        startButton.SetActive(false);
+        //startButton.SetActive(false);
         //call start timer function
         timer.startTimerBool = true;
         //start moving dolmen
-        dolmen.moveDolmenBool = true;
+        //dolmen.moveDolmenBool = true;
         //make restart button appear        
        // restartButton.SetActive(true);
         // invoke pick random colour method
@@ -95,7 +116,7 @@ public class GameManager_Simon : MonoBehaviour {
     {
        
         //make start button disappear       
-        startButton.SetActive(false);
+        //startButton.SetActive(false);
         //make restart button appear        
         //restartButton.SetActive(true);
         //reset the current input position in sequence
@@ -113,10 +134,27 @@ public class GameManager_Simon : MonoBehaviour {
                 yield break;
             }
             //whatever colour is stored in the list, display the corresponding telegraph
-            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
+            //StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
+
+            //get shooting star from pool and store in a reference
+            GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
+            shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
+            shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
+            //set start trans to a random spawn point
+            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+            //set object active
+            shootingStar.SetActive(true);
+            //set telegraph colour index
+            shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
+            // make the star move
+            StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
+            
+
             yield return new WaitForSeconds(delayBetweenTelegraphs);
         }
         //pick a new random colour and add it to the list
+        // wait for seconds here to make new telegraph stand out more
+        yield return new WaitForSeconds(lastTelegraphDelay);
         PickRandomColour();
 
     }
@@ -129,9 +167,23 @@ public class GameManager_Simon : MonoBehaviour {
         //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
-            StartCoroutine(telegraphs[colourIndex].DisplayTelegraph(telegraphLightUpTime));
-            yield return new WaitForSeconds(delayBetweenTelegraphs);
+            //get shooting star from pool and store in a reference
+            GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
+            shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
+            shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
+            //set start trans to a random spawn point
+            shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+            //set object active
+            shootingStar.SetActive(true);
+            //set telegraph colour index
+            shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
+            // make the star move
+            StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
+
+            yield return new WaitForSeconds(enableButtonsDelay);
+
         }
+
         //enable buttons again
         EnableButtons();
     }
@@ -152,6 +204,12 @@ public class GameManager_Simon : MonoBehaviour {
 
     void EnableButtons()
     {
+        if(colourSequence.Count < 2)
+        {
+            if (!EventHandler.SharedInstance.testingMode)
+            EventHandler.SharedInstance.tip2Trigger.Invoke();
+            //StartCoroutine(GamePauser.sharedInstance.PauseForTime(EventHandler.SharedInstance.tip1Anim.length));
+        }
         // play animation
         animator.SetBool("enabledBool", true);
       
@@ -174,13 +232,24 @@ public class GameManager_Simon : MonoBehaviour {
         
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
-        StartCoroutine(telegraphs[randomColourIndex].DisplayTelegraph(telegraphLightUpTime));
-        
+        //get shooting star from pool and store in a reference
+        GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
+        shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
+        shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
+        //set start trans to a random spawn point
+        shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+        //set object active
+        shootingStar.SetActive(true);
+        //set telegraph colour index
+        shootingStar.GetComponent<ShootingStar>().telegraphIndex = randomColourIndex;
+        // make the star move
+        StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
+
         colourSequence.Add(randomColourIndex);
 
         //Enable Buttons here
         //I envoke for visual purposes only, so that the collider enables only after telegraph animation is finished
-        Invoke("EnableButtons", telegraphLightUpTime);
+        Invoke("EnableButtons", enableButtonsDelay);
     }
 
     public void RestartGame()
@@ -207,18 +276,36 @@ public class GameManager_Simon : MonoBehaviour {
            
             //add 1 to the current position in the sequence            
             positionInSequence++;
-            AM.PlayClip(buttonIndex);
-            
+            //play sound
+            AM.PlayClip(buttonIndex, "Simon Sfx");
+            //slight camera shake
+            CameraShaker.Instance.ShakeOnce(pressedMagnitude, pressedRoughness, pressedFadeInTime, pressedFadeOutTime);
+
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
             {
+                if(colourSequence.Count == 1)
+                {
+                    StartCoroutine(EventHandler.SharedInstance.StartDolmen());
+                } else if (colourSequence.Count == 3)
+                {
+                    EventHandler.SharedInstance.startRainPS.Invoke();
+                }
+                else if (colourSequence.Count == 4)
+                {
+                    EventHandler.SharedInstance.startBottomPS.Invoke();
+                }
+                // Sequence is correct!
+
+                //Shake the camera
+                CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
                 score.Add(1);
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
 
                 //play sound
-                AM.PlayClip(4);
+                AM.PlayClip(4, "Simon Sfx");
 
                 //add speed boost
                 StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));

@@ -4,9 +4,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
-   
-    public void LoadThisScene(int sceneIndex)
+
+    int loadingScreenIndex = 4;
+    public int sceneIndex;
+    public bool loadWithTimerBool = false;
+    public float loadAfterTime = 2;
+
+    private void Start()
     {
-        SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+       if (loadWithTimerBool)
+        {
+           StartCoroutine(LoadSceneAfterTime());
+       }
+    }
+
+    public void LoadThisScene()
+    {
+        SceneToLoad.onlyInstance.SetSceneToLoadNext(sceneIndex);
+        SceneManager.LoadScene(loadingScreenIndex, LoadSceneMode.Single);
+        
+    }
+
+    public IEnumerator LoadSceneAfterTime()
+    {
+        yield return new WaitForSeconds(loadAfterTime);
+        SceneToLoad.onlyInstance.SetSceneToLoadNext(sceneIndex);
+        SceneManager.LoadScene(loadingScreenIndex, LoadSceneMode.Single);
+   }
+
+    private void OnMouseDown()
+    {
+        LoadThisScene();
     }
 }

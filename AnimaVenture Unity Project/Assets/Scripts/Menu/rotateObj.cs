@@ -83,8 +83,8 @@ public class rotateObj : MonoBehaviour
 
     void Update()
     {
-        //speed = Mathf.Lerp(lerpSpeed, speed, Time.deltaTime);
-        //transform.Rotate(axis, lerpSpeed * Time.deltaTime * 360);
+        speed = Mathf.Lerp(lerpSpeed, speed, Time.deltaTime);
+        transform.Rotate(axis, lerpSpeed * Time.deltaTime * 360);
 
         //RotateTo(0);
     }
