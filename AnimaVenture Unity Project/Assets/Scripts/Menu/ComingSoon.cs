@@ -169,6 +169,7 @@ public class ComingSoon : MonoBehaviour {
 
     IEnumerator FadeIn()
     {
+		//Need to feed in a new backgroud sprite into the sprite renderer component, so it can be faded in
         for (float t = 0.05f; t <= 1; t += 0.05f)
         {
             Color c = display.material.color;

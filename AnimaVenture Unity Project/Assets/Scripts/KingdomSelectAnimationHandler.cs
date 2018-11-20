@@ -20,8 +20,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 	public GameObject journeyDots;
 	public GameObject journey1;
 	public GameObject journey2;
+	//public Animation journeyFadeAnim;
 
-	public Animation journeyFadeAnim;
 	public Animation KingdomSelectScaleAnim;
 
 	public CameraFOVLerpRework cameraScript;
@@ -47,8 +47,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
         menuReturn.SetActive(false);
         kSettings.SetActive(false);
 //		kingdomLines.SetActive (false);
-		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
-		journeyFadeAnim.Play ();
+		//journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
+		//journeyFadeAnim.Play ();
 	}
 
 
@@ -73,8 +73,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		journeyDots.SetActive (false);
 		journeyLines.SetActive (false);
         jSettings.SetActive(false);
-		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeOut");
-		journeyFadeAnim.Play ();
+		//journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeOut");
+		//journeyFadeAnim.Play ();
 	}
 
 	public void ArriveAtJourney () {
@@ -90,6 +90,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 	}
 
 	public void ScaleUpKingdomSelect () {
+		centralNode.GetComponent<Animation> ().clip = centralNode.GetComponent<Animation> ().GetClip ("CentralNodeScaleUp");
+		centralNode.GetComponent<Animation> ().Play ();
 		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleUp");	
 		KingdomSelectScaleAnim.Play ();
 
@@ -97,6 +99,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 
 	public void ScaleDownKingdomSelect () {
 		kingdomMenu.SetActive (true);
+		centralNode.GetComponent<Animation> ().clip = centralNode.GetComponent<Animation> ().GetClip ("CentralNodeScaleDown");
+		centralNode.GetComponent<Animation> ().Play ();
 		centralNode.GetComponent<centralNode> ().ReadyForInput = true;
 		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleDown");	
 		KingdomSelectScaleAnim.Play ();
