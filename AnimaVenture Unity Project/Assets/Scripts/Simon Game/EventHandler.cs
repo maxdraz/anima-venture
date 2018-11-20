@@ -6,6 +6,8 @@ using UnityEngine.Timeline;
 public class EventHandler : MonoBehaviour {
 
 	public static EventHandler SharedInstance;
+    public bool testingMode;
+    [Space(15)]
     public TimelineAsset introTimeline;
     public AnimationClip tip1Anim;
 
@@ -27,13 +29,23 @@ public class EventHandler : MonoBehaviour {
 
     private void Start()
     {
-        // COMMENTED FOR TESTING
-        playIntroCutscene.Invoke();
 
-       // StartCoroutine(StartSimon(1));      
+        if (testingMode)
+        {
+            StartCoroutine(StartSimon(0.5f));
+        }
+        else
+        {
+            StartCoroutine(DisplayTip1(2f));
+        }
+        // COMMENTED FOR TESTING
+       // playIntroCutscene.Invoke();
+
+        // StartCoroutine(StartSimon(1));      
+        //StartCoroutine(DisplayTip1(2f));
 
         // COMMENTED FOR TESTING
-         StartCoroutine(DisplayTip1((float)introTimeline.duration));
+         //StartCoroutine(DisplayTip1((float)introTimeline.duration));
     }
 
     private void Update()

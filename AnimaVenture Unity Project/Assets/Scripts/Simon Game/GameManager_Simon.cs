@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using EZCameraShake;
 
 public class GameManager_Simon : MonoBehaviour {
     [Header("Tweakable Variables")]
@@ -49,6 +50,18 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] Animator animator;
     public bool continueBool;
     AudioManager AM;
+    [Header("Camera Shake Variables")]
+    [Space(15)]
+    public float pressedMagnitude;
+    public float pressedRoughness;
+    public float pressedFadeInTime;
+    public float pressedFadeOutTime;
+    [Space(15)]
+    public float sequenceCorrectMagnitude;
+    public float sequenceCorrectRoughness;
+    public float sequenceCorrectFadeInTime;
+    public float sequenceCorrectFadeOutTime;
+
 
 
     private void Awake()
@@ -193,6 +206,7 @@ public class GameManager_Simon : MonoBehaviour {
     {
         if(colourSequence.Count < 2)
         {
+            if (!EventHandler.SharedInstance.testingMode)
             EventHandler.SharedInstance.tip2Trigger.Invoke();
             //StartCoroutine(GamePauser.sharedInstance.PauseForTime(EventHandler.SharedInstance.tip1Anim.length));
         }
@@ -262,8 +276,11 @@ public class GameManager_Simon : MonoBehaviour {
            
             //add 1 to the current position in the sequence            
             positionInSequence++;
+            //play sound
             AM.PlayClip(buttonIndex, "Simon Sfx");
-            
+            //slight camera shake
+            CameraShaker.Instance.ShakeOnce(pressedMagnitude, pressedRoughness, pressedFadeInTime, pressedFadeOutTime);
+
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
             {
@@ -278,6 +295,10 @@ public class GameManager_Simon : MonoBehaviour {
                 {
                     EventHandler.SharedInstance.startBottomPS.Invoke();
                 }
+                // Sequence is correct!
+
+                //Shake the camera
+                CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
                 score.Add(1);
                 //Subtract time from timer
