@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StringPluckScript : MonoBehaviour {
 
+	public float cooldownTime;
 	Animation anim;
 	AudioSource audio;
 	GameObject colliders;
@@ -20,14 +21,15 @@ public class StringPluckScript : MonoBehaviour {
 		anim.Stop ();
 		anim.Play ();
 		audio.Play ();
-		//Deactivate ();
+		Deactivate ();
+		Invoke ("Activate", cooldownTime);
 	}
 
-//	public void Activate() {
-//		colliders.SetActive (true);
-//	}
-//
-//	void Deactivate () {
-//		colliders.SetActive (false);
-//	}
+	public void Activate() {
+		colliders.SetActive (true);
+	}
+
+	void Deactivate () {
+		colliders.SetActive (false);
+	}
 }
