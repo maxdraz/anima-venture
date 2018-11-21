@@ -5970,7 +5970,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 20.534098, z: 0.20000003}
+  m_Size: {x: 0.22, y: 1.9, z: 0.20000003}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65922324202838088
 BoxCollider:
@@ -7246,7 +7246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e472a805fea9d6d44925640a44c8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
+  cooldownTime: 1
 --- !u!114 &114155444616403376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7551,7 +7551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e472a805fea9d6d44925640a44c8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
+  cooldownTime: 1
 --- !u!114 &114514670632324076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7694,7 +7694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e472a805fea9d6d44925640a44c8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
+  cooldownTime: 1
 --- !u!114 &114671967201842220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7772,7 +7772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e472a805fea9d6d44925640a44c8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
+  cooldownTime: 1
 --- !u!114 &114853420786024112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7817,7 +7817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e472a805fea9d6d44925640a44c8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
+  cooldownTime: 1
 --- !u!114 &114905156132247734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7840,7 +7840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e472a805fea9d6d44925640a44c8c8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
+  cooldownTime: 1
 --- !u!114 &114931790565531824
 MonoBehaviour:
   m_ObjectHideFlags: 1

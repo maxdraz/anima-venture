@@ -3685,21 +3685,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
+    - target: {fileID: 114008394789909666, guid: 420388241a193624fab357d06e77fdb9,
         type: 2}
-      propertyPath: comingSoon
+      propertyPath: main
       value: 
-      objectReference: {fileID: 18916570}
-    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: rainforest
-      value: 
-      objectReference: {fileID: 542218322}
-    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
-        type: 2}
-      propertyPath: kingdomName
-      value: 
-      objectReference: {fileID: 2094179474}
+      objectReference: {fileID: 1732599279}
     - target: {fileID: 114534152444726452, guid: 420388241a193624fab357d06e77fdb9,
         type: 2}
       propertyPath: menuReturn
@@ -3750,16 +3740,21 @@ Prefab:
       propertyPath: AM
       value: 
       objectReference: {fileID: 1683195671}
-    - target: {fileID: 114008394789909666, guid: 420388241a193624fab357d06e77fdb9,
+    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
         type: 2}
-      propertyPath: main
+      propertyPath: comingSoon
       value: 
-      objectReference: {fileID: 1732599279}
-    - target: {fileID: 65915606362452886, guid: 420388241a193624fab357d06e77fdb9,
+      objectReference: {fileID: 18916570}
+    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
         type: 2}
-      propertyPath: m_Size.y
-      value: 1.9
-      objectReference: {fileID: 0}
+      propertyPath: rainforest
+      value: 
+      objectReference: {fileID: 542218322}
+    - target: {fileID: 114946397918921502, guid: 420388241a193624fab357d06e77fdb9,
+        type: 2}
+      propertyPath: kingdomName
+      value: 
+      objectReference: {fileID: 2094179474}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_IsPrefabAsset: 0
