@@ -202,6 +202,7 @@ public class GameManager_Simon : MonoBehaviour {
     void DisableButtons()
     {
         //animation
+       // animator.SetBool("incorrectBool", false);
         animator.SetBool("enabledBool", false);
         
         //disable colliders on buttons to prevent player input
@@ -211,17 +212,20 @@ public class GameManager_Simon : MonoBehaviour {
            
 
         }
+
+        
     }
 
     void EnableButtons()
     {
+        animator.SetBool("incorrectBool", false);
         if(colourSequence.Count < 2)
         {
             if (!EventHandler.SharedInstance.testingMode)
             EventHandler.SharedInstance.tip2Trigger.Invoke();
             //StartCoroutine(GamePauser.sharedInstance.PauseForTime(EventHandler.SharedInstance.tip1Anim.length));
         }
-        // play animation
+        // play animation        
         animator.SetBool("enabledBool", true);
       
         for (int cnt = 0; cnt < buttons.Length; cnt++)
@@ -294,13 +298,16 @@ public class GameManager_Simon : MonoBehaviour {
             //play sound
             AM.PlayClip(buttonIndex, "Simon Sfx");
             //slight camera shake
-            CameraShaker.Instance.ShakeOnce(pressedMagnitude, pressedRoughness, pressedFadeInTime, pressedFadeOutTime);
+           // CameraShaker.Instance.ShakeOnce(pressedMagnitude, pressedRoughness, pressedFadeInTime, pressedFadeOutTime);
 
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
             {
                 if(colourSequence.Count == 1)
                 {
+                    //play screen shake
+                    CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
+                    //start dolmen
                     StartCoroutine(EventHandler.SharedInstance.StartDolmen());
                 } else if (colourSequence.Count == 3)
                 {
@@ -313,7 +320,7 @@ public class GameManager_Simon : MonoBehaviour {
                 // Sequence is correct!
 
                 //Shake the camera
-                CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
+               // CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
                 StartCoroutine(score.Add(1));
                 //Subtract time from timer
@@ -332,7 +339,13 @@ public class GameManager_Simon : MonoBehaviour {
         else
         {
             //disable buttons
-            DisableButtons();
+            //DisableButtons();
+
+            //PLAY BUTTON INCORRECT ANIM
+            animator.SetBool("incorrectBool", true);
+            animator.SetBool("enabledBool", false);
+            
+            
 
             
             //restart game
@@ -341,6 +354,7 @@ public class GameManager_Simon : MonoBehaviour {
             score.Set(score.currentScore);
             //Play back sequence
             StartCoroutine(PlayBackSequence());
+            DisableButtons();
         }       
         
     }
