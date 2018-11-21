@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class NicksTitleAnimEventHandler : MonoBehaviour {
 
-	public GameObject[] letters;
+	public ParticleSystem[] particles;
 
 
-	public void ActivateLetters (int letterToActivate) {
+	public void ActivateParticles () {
+		for (int i = 0; i < particles.Length; i++){
 
-		letters [letterToActivate].SetActive (true);
+			particles [i].Play ();
+		}
 	}
 }
