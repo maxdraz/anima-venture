@@ -198,6 +198,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1581270584426290, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 826866563}
+--- !u!58 &35604992
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35604991}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 4.342015
 --- !u!95 &35604995
 Animator:
   serializedVersion: 3
@@ -248,6 +263,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1914623787383644, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 826866563}
+--- !u!58 &73785125
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73785124}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 4.342015
 --- !u!95 &73785128
 Animator:
   serializedVersion: 3
@@ -523,6 +553,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1283595075671766, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 826866563}
+--- !u!58 &123313608
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123313607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.342015
 --- !u!95 &123313611
 Animator:
   serializedVersion: 3
@@ -2659,6 +2704,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1244116385907394, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 826866563}
+--- !u!58 &619347036
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619347034}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 4.342015
 --- !u!95 &619347038
 Animator:
   serializedVersion: 3
@@ -2683,7 +2743,7 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619347034}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
@@ -3776,6 +3836,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1404265866581964, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 826866563}
+--- !u!58 &819155249
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819155248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 4.342015
 --- !u!95 &819155252
 Animator:
   serializedVersion: 3
@@ -4100,6 +4175,12 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114237236122155026, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+    - {fileID: 135200656428092804, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+    - {fileID: 135039234291027992, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+    - {fileID: 135198487176666158, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+    - {fileID: 135813229162805080, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+    - {fileID: 135952139686169136, guid: 420388241a193624fab357d06e77fdb9, type: 2}
+    - {fileID: 135595066985845844, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 420388241a193624fab357d06e77fdb9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &835584362
@@ -4514,6 +4595,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1707120006673342, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 826866563}
+--- !u!58 &1005570460
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005570459}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.342015
 --- !u!95 &1005570463
 Animator:
   serializedVersion: 3

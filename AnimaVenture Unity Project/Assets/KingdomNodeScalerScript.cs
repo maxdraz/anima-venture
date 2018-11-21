@@ -11,12 +11,12 @@ public class KingdomNodeScalerScript : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 	}
 
-	void OnMouseEnter () {
+	void OnMouseDown () {
 		Debug.Log ("MouseDown");
 		animator.SetBool ("ScaleUp", true);
 	}
 
-	void OnMouseExit () {
+	void OnMouseUp () {
 		Debug.Log ("MouseUp");
 		animator.SetBool ("ScaleUp", false);
 	}
