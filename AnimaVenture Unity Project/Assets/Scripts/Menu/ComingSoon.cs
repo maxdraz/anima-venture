@@ -143,7 +143,7 @@ public class ComingSoon : MonoBehaviour
             StartCoroutine("FadeOut");
             rainforest.SetActive(false);
             center.enabled = false;
-            //kingdomName.text = "";
+            kingdomName.text = "";
 
         }
 
@@ -151,35 +151,35 @@ public class ComingSoon : MonoBehaviour
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
-            //kingdomName.text = "";
+            kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Desert")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
-            //kingdomName.text = "";
+            kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Mountain")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
-            //kingdomName.text = "";
+            kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Polar")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
-            //kingdomName.text = "";
+            kingdomName.text = "";
         }
 
         if (other.gameObject.tag == "Jungle")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
-            //kingdomName.text = "";
+            kingdomName.text = "";
         }
     }
 

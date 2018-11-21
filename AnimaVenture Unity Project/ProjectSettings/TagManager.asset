@@ -18,6 +18,7 @@ TagManager:
   - Polar
   - Jungle
   - GlowForest
+  - Ocean
   layers:
   - Default
   - TransparentFX
