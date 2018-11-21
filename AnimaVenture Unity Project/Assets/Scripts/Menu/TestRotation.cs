@@ -18,7 +18,7 @@ public class TestRotation : MonoBehaviour
     Rigidbody rb;
     Vector3 startPos;
     Vector3 endPos;
-
+    Vector3 startSpin;
 
     Vector3 currPos;
     Vector3 lastPos;
@@ -41,6 +41,8 @@ public class TestRotation : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         angle1 = transform.eulerAngles.z;
+        startSpin = new Vector3(0, 0, 100 * 12.93f);
+        rb.AddTorque(startSpin, ForceMode.Force);
     }
 
     private void Awake()
