@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: b29e5fc7755b5ca4fbd17eaa22d76053
+guid: 6daaef1bf221bab43bc2bb593d1932c1
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Ring_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -41,12 +40,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,31 +137,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Ring_0
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 360
-        width: 286
-        height: 286
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2640f96ac304bfb4784066d5d9f34a90
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6a19aba8320690940ab82ee31c9ae472
+    spriteID: 4dc450dd09bf0724c9daeb02630237d1
     vertices: []
     indices: 
     edges: []

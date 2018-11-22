@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowCursor : MonoBehaviour {
 
     TrailRenderer trail;
+    GameObject ps;
 
 	// Use this for initialization
 	void Start () {
@@ -19,21 +20,25 @@ public class FollowCursor : MonoBehaviour {
             trail.enabled = false;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
+            ps = ObjectPooler.SharedInstance.GetPooledObject("RipplePS");
+            ps.transform.position = mousePos;
+            ps.SetActive(true);
         }
 
         if (Input.GetMouseButton(0))
         {
+           
             trail.enabled = true;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;           
         }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            trail.enabled = true;
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = mousePos;
-        }
+       // if (Input.GetMouseButtonUp(0))
+      //  {
+      //      trail.enabled = true;
+     //       Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+     //       transform.position = mousePos;
+    //    }
 
 
     }

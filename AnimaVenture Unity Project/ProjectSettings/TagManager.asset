@@ -20,6 +20,7 @@ TagManager:
   - GlowForest
   - Ocean
   - MouseTrail
+  - RipplePS
   layers:
   - Default
   - TransparentFX
