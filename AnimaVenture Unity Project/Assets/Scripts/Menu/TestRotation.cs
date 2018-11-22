@@ -48,6 +48,11 @@ public class TestRotation : MonoBehaviour
         StartCoroutine(Spin());
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(Spin());
+    }
+
     // Update is called once per frame
     void Update()
     {
