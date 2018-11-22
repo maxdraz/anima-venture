@@ -7670,7 +7670,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 0.1
   Rotate: 0
+  angularVel: {x: 0, y: 0, z: 0}
   z: 0
+  currZ: 0
+  lastZ: 0
   Torque: {x: 0, y: 0, z: 0}
 --- !u!114 &114625953906416012
 MonoBehaviour:

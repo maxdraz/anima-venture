@@ -9,10 +9,9 @@ public class TestRotation : MonoBehaviour
     public float turnSpeed = 10f;
     float lerpSpeed = 0.01f;
     Vector3 axis;
-    private float angle1;
     public bool Rotate;
 
-    Vector3 angularVel;
+    public Vector3 angularVel;
     public float z;
 
     Rigidbody rb;
@@ -20,9 +19,8 @@ public class TestRotation : MonoBehaviour
     Vector3 endPos;
     Vector3 startSpin;
 
-    Vector3 currPos;
-    Vector3 lastPos;
-
+    public float currZ;
+    public float lastZ;
 
     float startX;
     float deltaX;
@@ -40,7 +38,6 @@ public class TestRotation : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        angle1 = transform.eulerAngles.z;
         startSpin = new Vector3(0, 0, 100 * 12.93f);
         rb.AddTorque(startSpin, ForceMode.Force);
     }
@@ -55,8 +52,7 @@ public class TestRotation : MonoBehaviour
     {
         angularVel = rb.angularVelocity;
         z = angularVel.z * Mathf.Rad2Deg;
-
-        currPos = Input.mousePosition;
+        currZ = transform.eulerAngles.z;
     }
 
     void OnMouseOver()
@@ -117,79 +113,15 @@ public class TestRotation : MonoBehaviour
         timeEnd = Time.time;
         touchSpeed = deltaPos.magnitude / (timeEnd - timeStart);
 
-        //TOP LEFT
-        if (endY > Screen.height / 2 && endX < Screen.width / 2 && currPos.y > lastPos.y && currPos.x > lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY > Screen.height / 2 && endX < Screen.width / 2 && currPos.y < lastPos.y && currPos.x < lastPos.x)
+        if(currZ > lastZ)
         {
             Torque = new Vector3(0, 0, touchSpeed * 1);
             rb.AddTorque(Torque, ForceMode.Force);
         }
 
-        if (endY > Screen.height / 2 && endX < Screen.width / 2 && currPos.y > lastPos.y && currPos.x < lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * 1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        //TOP RIGHT
-        if (endY > Screen.height / 2 && endX > Screen.width / 2 && currPos.y > lastPos.y && currPos.x < lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * 1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY > Screen.height / 2 && endX > Screen.width / 2 && currPos.y < lastPos.y && currPos.x > lastPos.x)
+        if (currZ < lastZ)
         {
             Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY > Screen.height / 2 && endX > Screen.width / 2 && currPos.y > lastPos.y && currPos.x > lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        //BOTTOM RIGHT
-        if (endY < Screen.height / 2 && endX > Screen.width / 2 && currPos.y < lastPos.y && currPos.x < lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY < Screen.height / 2 && endX > Screen.width / 2 && currPos.y > lastPos.y && currPos.x > lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * 1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY < Screen.height / 2 && endX > Screen.width / 2 && currPos.y < lastPos.y && currPos.x > lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        //BOTTOM LEFT
-        if (endY < Screen.height / 2 && endX < Screen.width / 2 && currPos.y > lastPos.y && currPos.x < lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * -1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY < Screen.height / 2 && endX < Screen.width / 2 && currPos.y < lastPos.y && currPos.x > lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * 1);
-            rb.AddTorque(Torque, ForceMode.Force);
-        }
-
-        if (endY < Screen.height / 2 && endX < Screen.width / 2 && currPos.y < lastPos.y && currPos.x < lastPos.x)
-        {
-            Torque = new Vector3(0, 0, touchSpeed * 1);
             rb.AddTorque(Torque, ForceMode.Force);
         }
     }
@@ -200,13 +132,12 @@ public class TestRotation : MonoBehaviour
 
         while (true)
         {
-            if (currPos == lastPos)
+            if (currZ == lastZ)
             {
                 //print("same");
             }
             yield return new WaitForSeconds(time);
-            lastPos = currPos;
-            //print("not same");
+            lastZ = currZ;
         }
     }
 }
