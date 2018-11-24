@@ -7,15 +7,17 @@ public class PauseAudio : MonoBehaviour {
 
     public AudioSource audio;
     public AudioMixer mixer;
+    public float dbPerSecond;
+    public bool unpauseBool;
 
     public void PauseTrack()
     {
         
-        StartCoroutine(FadeOutVolume(80f, 0));
+        StartCoroutine(FadeOutVolume(dbPerSecond, 0, -20));
         
     }
 
-   public IEnumerator FadeOutVolume(float speed, float maxVolume)
+   public IEnumerator FadeOutVolume(float speed, float maxVolume, float targetVolume)
     {
         while (true)
         {           
@@ -24,11 +26,12 @@ public class PauseAudio : MonoBehaviour {
             Debug.Log(maxVolume);
             mixer.SetFloat("meditationVol", maxVolume);
 
-            if (maxVolume <= -80)
+            if (maxVolume <= targetVolume)
             {
-                audio.Pause();
-                this.gameObject.SetActive(false);
-                yield break;
+                maxVolume = targetVolume;
+                    audio.Pause();
+                    yield break;
+                
             }
 
             yield return null;
@@ -36,6 +39,8 @@ public class PauseAudio : MonoBehaviour {
 
        
     }
+
+    
     
 
     }

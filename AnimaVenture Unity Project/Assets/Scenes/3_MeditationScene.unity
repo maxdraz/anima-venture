@@ -4972,6 +4972,8 @@ GameObject:
   - component: {fileID: 1085140847}
   - component: {fileID: 1085140846}
   - component: {fileID: 1085140850}
+  - component: {fileID: 1085140852}
+  - component: {fileID: 1085140851}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5077,6 +5079,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1085140851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1085140845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edc20dd38de1d14cb496ac6f4c02eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 1750863300}
+  mixer: {fileID: 24100000, guid: f1bc01d082fc04dcdb7238893eadcccb, type: 2}
+  dbPerSecond: 240
+--- !u!114 &1085140852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1085140845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74d1c40d9d86884394e2e85e5c0f857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 1750863300}
+  mixer: {fileID: 24100000, guid: f1bc01d082fc04dcdb7238893eadcccb, type: 2}
+  dbPerSecond: 80
+  unpauseBool: 0
 --- !u!1 &1134411374
 GameObject:
   m_ObjectHideFlags: 0
@@ -9964,7 +9995,6 @@ GameObject:
   - component: {fileID: 1604009987}
   - component: {fileID: 1604009986}
   - component: {fileID: 1604009985}
-  - component: {fileID: 1604009984}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -9990,18 +10020,6 @@ RectTransform:
   m_AnchoredPosition: {x: 178.70001, y: 400}
   m_SizeDelta: {x: 160, y: 170.49}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1604009984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1604009982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7edc20dd38de1d14cb496ac6f4c02eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 1750863300}
 --- !u!114 &1604009985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10052,7 +10070,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1604009984}
+      - m_Target: {fileID: 1085140851}
         m_MethodName: UnPauseTrack
         m_Mode: 1
         m_Arguments:
@@ -10121,7 +10139,6 @@ GameObject:
   - component: {fileID: 1710652206}
   - component: {fileID: 1710652205}
   - component: {fileID: 1710652204}
-  - component: {fileID: 1710652207}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -10197,7 +10214,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1710652207}
+      - m_Target: {fileID: 1085140852}
         m_MethodName: PauseTrack
         m_Mode: 1
         m_Arguments:
@@ -10207,6 +10224,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1710652202}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -10244,19 +10272,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710652202}
   m_CullTransparentMesh: 0
---- !u!114 &1710652207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1710652202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e74d1c40d9d86884394e2e85e5c0f857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 1750863300}
-  mixer: {fileID: 24100000, guid: f1bc01d082fc04dcdb7238893eadcccb, type: 2}
 --- !u!1 &1722408426
 GameObject:
   m_ObjectHideFlags: 0
