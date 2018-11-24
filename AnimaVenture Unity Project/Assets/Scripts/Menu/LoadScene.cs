@@ -25,6 +25,11 @@ public class LoadScene : MonoBehaviour {
         
     }
 
+    public void SetSceneIndex(int index)
+    {
+        sceneIndex = index;
+    }
+
     public IEnumerator LoadSceneAfterTime()
     {
         yield return new WaitForSeconds(loadAfterTime);

@@ -6,6 +6,16 @@ public class GamePauser : MonoBehaviour {
 
     public static GamePauser sharedInstance;
 
+    public bool pauseOnEnable;
+
+    private void OnEnable()
+    {
+        if (pauseOnEnable)
+        {
+            PauseGame();
+        }
+    }
+
     void Awake()
     {
         sharedInstance = this;
