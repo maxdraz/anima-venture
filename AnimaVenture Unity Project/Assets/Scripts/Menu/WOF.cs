@@ -50,6 +50,11 @@ public class WOF : MonoBehaviour
         z = menu.transform.eulerAngles.z;
         currAngle = menu.transform.rotation;
         vel = rb.angularVelocity.z;
+
+        if (vel < 0)
+        {
+            vel = vel * -1;
+        }
         //StartCoroutine(Snap());
 
         if (currAngle == lastAngle && z > 30 && z < 90 && vel <= .1f)
