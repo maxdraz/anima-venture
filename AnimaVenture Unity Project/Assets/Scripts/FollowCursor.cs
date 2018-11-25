@@ -20,9 +20,9 @@ public class FollowCursor : MonoBehaviour {
             trail.enabled = false;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;
-            ps = ObjectPooler.SharedInstance.GetPooledObject("RipplePS");
-            ps.transform.position = mousePos;
-            ps.SetActive(true);
+           // ps = ObjectPooler.SharedInstance.GetPooledObject("RipplePS");
+           // ps.transform.position = mousePos;
+           // ps.SetActive(true);
         }
 
         if (Input.GetMouseButton(0))

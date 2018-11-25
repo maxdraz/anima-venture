@@ -1329,10 +1329,6 @@ MonoBehaviour:
     objectToPool: {fileID: 1349485692871758, guid: 07bb749423eec30438334f66b2f483c8,
       type: 2}
     amountToPool: 4
-  - shouldExpand: 1
-    objectToPool: {fileID: 1927982756554226, guid: ecb5747d68f70474798e83eaa1593767,
-      type: 2}
-    amountToPool: 4
 --- !u!114 &178581204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f6b4f13b57a3646a5820be6e6a1746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseOnEnable: 0
 --- !u!1 &192243602
 GameObject:
   m_ObjectHideFlags: 0

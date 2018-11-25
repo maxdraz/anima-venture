@@ -15858,7 +15858,7 @@ Prefab:
     - target: {fileID: 114727390835580980, guid: ed188c9c831ba044f884f18298beffe3,
         type: 2}
       propertyPath: itemsToPool.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4122311130168978, guid: ed188c9c831ba044f884f18298beffe3, type: 2}
       propertyPath: m_LocalPosition.x
@@ -15895,14 +15895,13 @@ Prefab:
     - target: {fileID: 114727390835580980, guid: ed188c9c831ba044f884f18298beffe3,
         type: 2}
       propertyPath: itemsToPool.Array.data[1].shouldExpand
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114727390835580980, guid: ed188c9c831ba044f884f18298beffe3,
         type: 2}
       propertyPath: itemsToPool.Array.data[1].objectToPool
       value: 
-      objectReference: {fileID: 1927982756554226, guid: ecb5747d68f70474798e83eaa1593767,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 114727390835580980, guid: ed188c9c831ba044f884f18298beffe3,
         type: 2}
       propertyPath: itemsToPool.Array.data[1].amountToPool
