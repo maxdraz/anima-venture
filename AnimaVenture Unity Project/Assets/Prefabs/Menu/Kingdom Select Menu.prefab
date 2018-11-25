@@ -8459,6 +8459,12 @@ MonoBehaviour:
   jungle: {fileID: 1394124655303640}
   ocean: {fileID: 1299915677993154}
   KingdomNameTextAnim: {fileID: 0}
+  menu: {fileID: 0}
+  currAngle: {x: 0, y: 0, z: 0, w: 0}
+  lastAngle: {x: 0, y: 0, z: 0, w: 0}
+  rb: {fileID: 0}
+  z: 0
+  vel: 0
 --- !u!114 &114988776827063096
 MonoBehaviour:
   m_ObjectHideFlags: 1

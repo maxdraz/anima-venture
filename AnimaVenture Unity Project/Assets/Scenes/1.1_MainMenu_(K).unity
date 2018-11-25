@@ -12303,6 +12303,12 @@ MonoBehaviour:
   jungle: {fileID: 962720697}
   ocean: {fileID: 1411707535}
   KingdomNameTextAnim: {fileID: 1184940916}
+  menu: {fileID: 2008361342}
+  currAngle: {x: 0, y: 0, z: 0, w: 0}
+  lastAngle: {x: 0, y: 0, z: 0, w: 0}
+  rb: {fileID: 2008361350}
+  z: 0
+  vel: 0
 --- !u!212 &1154177270
 SpriteRenderer:
   m_ObjectHideFlags: 0
