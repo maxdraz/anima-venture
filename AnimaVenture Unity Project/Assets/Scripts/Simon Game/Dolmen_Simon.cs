@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Dolmen_Simon : MonoBehaviour {
 
     public static Dolmen_Simon sharedInstance;
@@ -17,6 +18,8 @@ public class Dolmen_Simon : MonoBehaviour {
     
 
     [SerializeField] Transform targetTransform;
+
+    public ParticleSystem ps;
 
     private void Awake()
     {
@@ -44,6 +47,8 @@ public class Dolmen_Simon : MonoBehaviour {
             meditationButton.SetActive(true);
             moveDolmenBool = false;
             pauseGameBool = true;
+
+            StopParticleEffect();
         }
        
         
@@ -70,5 +75,22 @@ public class Dolmen_Simon : MonoBehaviour {
         speed *= spdMultiplier;
         yield return new WaitForSeconds(t);
         speed = oldSpeed;
+    }
+
+    void StopParticleEffect()
+    {
+        
+        var emission = ps.emission;
+        emission.rateOverTimeMultiplier = 0f;
+
+        if(ps.gameObject.transform.childCount > 0)
+        {
+            
+            var childMain = ps.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+            childMain.loop = false;
+
+            var childEmission = ps.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().emission;
+            childEmission.rateOverTimeMultiplier = 0f;
+        }
     }
 }
