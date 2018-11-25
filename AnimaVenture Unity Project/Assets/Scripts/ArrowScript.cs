@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowScript : MonoBehaviour {
-	Transform mousePos;
+	
 	float startYPos;
-	bool mouseOver;
-    bool lerpBack = false;
-	Transform startParent;
+	AudioSource audio;
+	public AudioClip[] clips;
+	public int position;
+	public GameObject firstTransform;
+	public GameObject secondTransform;
+	public GameObject thirdTransform;
+	public float lerpSpeed;
 
-	float lerpBackSpeed;
-	public float secondPitchFactor;
-	public AudioSource audio1;
-	public AudioSource audio2;
-	public AudioSource audio3;
+
 	LineRenderer renderer;
 
 	// Use this for initialization
 	void Awake () {
-		startParent = transform.parent.transform;
-		mousePos = GameObject.Find ("MouseTransform").transform;
-		mouseOver = false;
 		float startYPos = transform.position.y;
 		renderer = GetComponent<LineRenderer> ();
 		renderer.endColor = Color.gray;
+		audio = GetComponent<AudioSource> ();
 
 		
 	}
@@ -32,45 +30,55 @@ public class ArrowScript : MonoBehaviour {
 	void Update () {
 		renderer.SetPosition (0, new Vector3 (transform.position.x, transform.position.y, transform.position.z));
 
-        //if (lerpBack)
-        //{
-		//	transform.position = Vector3.Lerp(transform.position, startParent.transform.position, lerpBackSpeed * Time.deltaTime);
-        //}
+		if (position == 0) {
 
-		if (transform.position != startParent.transform.position) {
+			transform.position = Vector3.Lerp (transform.position, firstTransform.transform.position, lerpSpeed * Time.deltaTime);
+		}
 
-			PitchChange ();
-		} else {
-		
-			lerpBack = false;
+		if (position == 1) {
+
+			transform.position = Vector3.Lerp (transform.position, secondTransform.transform.position, lerpSpeed * Time.deltaTime);
+		}
+
+		if (position == 2) {
+
+			transform.position = Vector3.Lerp (transform.position, thirdTransform.transform.position, lerpSpeed * Time.deltaTime);
 		}
     }
 
-
-
-	void OnMouseEnter() {
-		transform.parent = mousePos;
-		mouseOver = true;
-        lerpBack = false;
+	void OnMouseDown () {
+		Debug.Log ("HIT");
+		PlayAudioAndChangePosition ();
 	}
 
-	void OnMouseExit () {
-		transform.parent = startParent;
-		mouseOver = false;
-        //lerpBack = true;
-	}
 
-	void PitchChange () {
-		float firstPitchFactor = startParent.transform.position.y - transform.position.y;
-		if (firstPitchFactor < 0f) {
-			firstPitchFactor = firstPitchFactor * -1f;
+	void PlayAudioAndChangePosition() {
+	
 
+		if (position == 0){
+
+			audio.clip = clips[0];
+			audio.Play ();
+
+		} 
+			
+			if (position == 1) {
+				
+				audio.clip = clips[1];
+				audio.Play ();
+			}
+
+				if (position == 2){
+
+					audio.clip = clips[2];
+					audio.Play ();
+
+			}
+
+		position++;
+		if (position == 3) {
+
+			position = 0;
 		}
-		Debug.Log (firstPitchFactor);
-		float finalPitchFactor = firstPitchFactor / secondPitchFactor;
-		audio1.pitch = 1 + finalPitchFactor;
-		audio2.pitch = 1 + finalPitchFactor;
-		audio3.pitch = 1 + finalPitchFactor;
-
 	}
 }

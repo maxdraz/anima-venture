@@ -5,7 +5,7 @@ using UnityEngine;
 public class StringColliderScript : MonoBehaviour {
 
 
-	void OnMouseEnter () {
+	void OnMouseOver() {
 		//PluckString ();
 		Debug.Log("Plucked");
 		transform.parent.GetComponentInParent<StringPluckScript> ().PluckString ();

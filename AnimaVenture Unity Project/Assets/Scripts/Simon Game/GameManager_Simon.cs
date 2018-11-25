@@ -10,6 +10,7 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] float gameStartDelay = 2f;
     [SerializeField] float delayBetweenTelegraphs=1.5f;
     [SerializeField] float lastTelegraphDelay = 1f;
+    [SerializeField] float replayTelegraphDelay = 1f;
     [SerializeField] float enableButtonsDelay = 2f;
     [SerializeField] float telegraphLightUpTime = 1.5f;
     [SerializeField] float shootingStarSpeed = 2f;
@@ -120,6 +121,10 @@ public class GameManager_Simon : MonoBehaviour {
         //make restart button appear        
         //restartButton.SetActive(true);
         //reset the current input position in sequence
+        if(colourSequence.Count < 2)
+        {
+            yield return new WaitForSeconds(2f);
+        }
         positionInSequence = 0;
         yield return new WaitForSeconds(delayBetweenTelegraphs);
         //Play back sequence
@@ -142,8 +147,11 @@ public class GameManager_Simon : MonoBehaviour {
             shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
             //set start trans to a random spawn point
             shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+            //set trail colour
+            shootingStar.GetComponent<ShootingStar>().colourIndex = colourIndex;
             //set object active
             shootingStar.SetActive(true);
+            
             //set telegraph colour index
             shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
             // make the star move
@@ -173,14 +181,17 @@ public class GameManager_Simon : MonoBehaviour {
             shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
             //set start trans to a random spawn point
             shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+            //set trail colour
+            shootingStar.GetComponent<ShootingStar>().colourIndex = colourIndex;
             //set object active
             shootingStar.SetActive(true);
+            
             //set telegraph colour index
             shootingStar.GetComponent<ShootingStar>().telegraphIndex = colourIndex;
             // make the star move
             StartCoroutine(shootingStar.GetComponent<ShootingStar>().MoveObject(shootingStarSpeed));
 
-            yield return new WaitForSeconds(enableButtonsDelay);
+            yield return new WaitForSeconds(replayTelegraphDelay);
 
         }
 
@@ -191,6 +202,7 @@ public class GameManager_Simon : MonoBehaviour {
     void DisableButtons()
     {
         //animation
+       // animator.SetBool("incorrectBool", false);
         animator.SetBool("enabledBool", false);
         
         //disable colliders on buttons to prevent player input
@@ -200,17 +212,20 @@ public class GameManager_Simon : MonoBehaviour {
            
 
         }
+
+        
     }
 
     void EnableButtons()
     {
+        animator.SetBool("incorrectBool", false);
         if(colourSequence.Count < 2)
         {
             if (!EventHandler.SharedInstance.testingMode)
             EventHandler.SharedInstance.tip2Trigger.Invoke();
             //StartCoroutine(GamePauser.sharedInstance.PauseForTime(EventHandler.SharedInstance.tip1Anim.length));
         }
-        // play animation
+        // play animation        
         animator.SetBool("enabledBool", true);
       
         for (int cnt = 0; cnt < buttons.Length; cnt++)
@@ -238,8 +253,12 @@ public class GameManager_Simon : MonoBehaviour {
         shootingStar.GetComponent<ShootingStar>().speed = shootingStarSpeed;
         //set start trans to a random spawn point
         shootingStar.GetComponent<ShootingStar>().setStartPos(telegraphSpawnpoints[Random.Range(0, telegraphSpawnpoints.Count)]);
+        //set trail color
+        shootingStar.GetComponent<ShootingStar>().colourIndex = randomColourIndex;
         //set object active
         shootingStar.SetActive(true);
+        
+        Debug.Log("GM " + randomColourIndex);
         //set telegraph colour index
         shootingStar.GetComponent<ShootingStar>().telegraphIndex = randomColourIndex;
         // make the star move
@@ -279,13 +298,16 @@ public class GameManager_Simon : MonoBehaviour {
             //play sound
             AM.PlayClip(buttonIndex, "Simon Sfx");
             //slight camera shake
-            CameraShaker.Instance.ShakeOnce(pressedMagnitude, pressedRoughness, pressedFadeInTime, pressedFadeOutTime);
+           // CameraShaker.Instance.ShakeOnce(pressedMagnitude, pressedRoughness, pressedFadeInTime, pressedFadeOutTime);
 
             //if the current position has reached the end of the recorded sequence
             if (positionInSequence == colourSequence.Count)
             {
                 if(colourSequence.Count == 1)
                 {
+                    //play screen shake
+                    CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
+                    //start dolmen
                     StartCoroutine(EventHandler.SharedInstance.StartDolmen());
                 } else if (colourSequence.Count == 3)
                 {
@@ -298,9 +320,9 @@ public class GameManager_Simon : MonoBehaviour {
                 // Sequence is correct!
 
                 //Shake the camera
-                CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
+               // CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
-                score.Add(1);
+                StartCoroutine(score.Add(1));
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
 
@@ -317,7 +339,13 @@ public class GameManager_Simon : MonoBehaviour {
         else
         {
             //disable buttons
-            DisableButtons();
+            //DisableButtons();
+
+            //PLAY BUTTON INCORRECT ANIM
+            animator.SetBool("incorrectBool", true);
+            animator.SetBool("enabledBool", false);
+            
+            
 
             
             //restart game
@@ -326,6 +354,7 @@ public class GameManager_Simon : MonoBehaviour {
             score.Set(score.currentScore);
             //Play back sequence
             StartCoroutine(PlayBackSequence());
+            DisableButtons();
         }       
         
     }

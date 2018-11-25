@@ -18,6 +18,9 @@ TagManager:
   - Polar
   - Jungle
   - GlowForest
+  - Ocean
+  - MouseTrail
+  - RipplePS
   layers:
   - Default
   - TransparentFX
