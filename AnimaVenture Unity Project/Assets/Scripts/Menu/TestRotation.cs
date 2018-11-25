@@ -34,6 +34,8 @@ public class TestRotation : MonoBehaviour
     public Vector3 Torque;
     float timeStart;
     float timeEnd;
+	bool firstInput;
+	public Animation KingdomLinesFadeIn;
 
     // Use this for initialization
     void Start()
@@ -41,6 +43,7 @@ public class TestRotation : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startSpin = new Vector3(0, 0, 100 * 12.93f);
         rb.AddTorque(startSpin, ForceMode.Force);
+		firstInput = true;
     }
 
     private void Awake()
@@ -77,6 +80,13 @@ public class TestRotation : MonoBehaviour
 
     void OnMouseDrag()
     {
+
+		if (firstInput) {
+
+			KingdomLinesFadeIn.Play ();
+			firstInput = false;
+		}
+
         RotateObj();
     }
 

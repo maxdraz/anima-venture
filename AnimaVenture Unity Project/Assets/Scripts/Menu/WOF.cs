@@ -15,6 +15,8 @@ public class WOF : MonoBehaviour
 	public GameObject jungle;
 	public GameObject ocean;
 
+	public Animation KingdomNameTextAnim;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -71,6 +73,9 @@ public class WOF : MonoBehaviour
             wofSprite.color = color;
             Debug.Log("Ocean");
         }
+
+		KingdomNameTextAnim.clip = KingdomNameTextAnim.GetClip ("KingdomNameTextFadeIn");
+		KingdomNameTextAnim.Play ();
 	}
 
 	private void OnTriggerExit(Collider other)
@@ -104,5 +109,8 @@ public class WOF : MonoBehaviour
         {
             wofSprite.color = startColor;
         }
+
+		KingdomNameTextAnim.clip = KingdomNameTextAnim.GetClip ("KingdomNameTextFadeOut");
+		KingdomNameTextAnim.Play ();
 	}
 }
