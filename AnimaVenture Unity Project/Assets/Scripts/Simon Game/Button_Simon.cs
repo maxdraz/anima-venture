@@ -74,20 +74,32 @@ public class Button_Simon : MonoBehaviour {
     {
         if (collision.gameObject.tag == "MouseTrail" && leftColliderBool == true)
         {
-            leftColliderBool = false;
+            
             Debug.Log("triiger has entered!");
            // StartCoroutine(DisableColliderForTime(anim.GetClip("ButtonOnClick").length));
             DisplayButton();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "MouseTrail")
+        {
+            leftColliderBool = false;
+        }
+        else
         {
             leftColliderBool = true;
         }
     }
+
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {//
+    //  if (collision.gameObject.tag == "MouseTrail")
+    //   {
+    //   leftColliderBool = true;
+    //  }
+    // }
 
 
 

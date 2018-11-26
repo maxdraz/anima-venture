@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing or Personal/Archived/OriginalSimonScene.unity
     guid: bde7de2ce3b2ee146b02b028882390fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/0_MenuSelect.unity
     guid: 8097d9610f0d01a41803599ee5070f24
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1.1_MainMenu_(K).unity
     guid: 8a53704eb758d4647be0f31f44f40f89
   - enabled: 1
