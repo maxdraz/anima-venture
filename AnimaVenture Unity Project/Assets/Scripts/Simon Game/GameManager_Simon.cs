@@ -258,7 +258,7 @@ public class GameManager_Simon : MonoBehaviour {
         //set object active
         shootingStar.SetActive(true);
         
-        Debug.Log("GM " + randomColourIndex);
+
         //set telegraph colour index
         shootingStar.GetComponent<ShootingStar>().telegraphIndex = randomColourIndex;
         // make the star move

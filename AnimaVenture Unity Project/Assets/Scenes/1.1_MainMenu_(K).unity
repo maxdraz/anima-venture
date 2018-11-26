@@ -18870,103 +18870,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.06
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.8
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4042982145579364, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+    - target: {fileID: 4341874355003086, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 1737893169027270, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737893169027270, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
-      propertyPath: m_Name
-      value: MouseTrail2Big2
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.atime1
-      value: 18311
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.atime2
-      value: 35466
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.key1.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.42115188
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Time
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.16153717
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.key2.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.atime3
-      value: 47224
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.key3.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 96801006826808646, guid: 13994a06e529b374f8962a645e9cf901,
-        type: 2}
-      propertyPath: m_Parameters.colorGradient.atime4
-      value: 32768
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13994a06e529b374f8962a645e9cf901, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: e90d68fd03577b44cb7e7f7403a8c241, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1331484587
 GameObject:

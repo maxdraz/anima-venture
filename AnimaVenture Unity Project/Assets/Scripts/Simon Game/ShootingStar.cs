@@ -26,7 +26,7 @@ public class ShootingStar : MonoBehaviour {
     {
         var main = trailPS.main;
         main.startColor = trailColours[colourIndex];
-        Debug.Log("Trail " + colourIndex);
+
     }
 
     private void Start()
