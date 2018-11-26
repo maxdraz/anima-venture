@@ -21,4 +21,12 @@ public class InputButtonsAnimationHandler : MonoBehaviour {
             button.DisableCollider();
         }
     }
+
+    public void SetLayers(int layerIndex)
+    {
+        foreach (Button_Simon button in inputButtons)
+        {
+            button.gameObject.layer = layerIndex;
+        }
+    }
 }

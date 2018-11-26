@@ -51,7 +51,7 @@ public class Button_Simon : MonoBehaviour {
     public void EnableCollider()
     {
         Debug.Log("EnableButtons called");
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;       
 
 
     }
@@ -93,13 +93,13 @@ public class Button_Simon : MonoBehaviour {
         }
     }
 
-    // private void OnTriggerExit2D(Collider2D collision)
-    // {//
-    //  if (collision.gameObject.tag == "MouseTrail")
-    //   {
-    //   leftColliderBool = true;
-    //  }
-    // }
+     private void OnTriggerExit2D(Collider2D collision)
+     {
+      if (collision.gameObject.tag == "MouseTrail")
+     {
+      leftColliderBool = true;
+     }
+    }
 
 
 
