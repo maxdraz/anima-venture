@@ -23,7 +23,7 @@ public class WOF : MonoBehaviour
     public Quaternion lastAngle;
     public Rigidbody rb;
     public float z;
-    bool spinning = false;
+    public bool spinning = false;
     public float vel;
     float speed = 5f;
 
@@ -50,45 +50,54 @@ public class WOF : MonoBehaviour
         z = menu.transform.eulerAngles.z;
         currAngle = menu.transform.rotation;
         vel = rb.angularVelocity.z;
-
-        if (vel < 0)
-        {
-            vel = vel * -1;
-        }
-        //StartCoroutine(Snap());
+        if (vel > .1f)
+		{
+			spinning = true;
+		}
+		if (vel < 0)
+		{
+			vel = vel * -1;
+		}
 
         if (currAngle == lastAngle && z > 30 && z < 90 && vel <= .1f)
         {
             StartCoroutine(Mountain(1));
+			spinning = false;
         }
 
         if (currAngle == lastAngle && z > 90 && z < 150 && vel <= .1f)
         {
             StartCoroutine(Desert(1));
+			spinning = false;
         }
 
         if (currAngle == lastAngle && z > 150 && z < 210 && vel <= .1f)
         {
             StartCoroutine(Ocean(1));
+			spinning = false;
         }
 
         if (currAngle == lastAngle && z > 210 && z < 270 && vel <= .1f)
         {
             StartCoroutine(Jungle(1));
+			spinning = false;
         }
 
         if (currAngle == lastAngle && z > 270 && z < 330 && vel <= .1f)
         {
             StartCoroutine(Polar(1));
+			spinning = false;
         }
 
         if (currAngle == lastAngle && z > 330 && vel <= .1f)
         {
             StartCoroutine(Forest1(1));
+			spinning = false;
         }
         if (currAngle == lastAngle && z < 30 && vel <= .1f)
         {
             StartCoroutine(Forest(1));
+			spinning = false;
         }
     }
 
@@ -198,6 +207,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
     IEnumerator Desert(float duration)
@@ -212,6 +222,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
     IEnumerator Ocean(float duration)
@@ -226,6 +237,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
     IEnumerator Jungle(float duration)
@@ -240,6 +252,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
     IEnumerator Polar(float duration)
@@ -254,6 +267,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
     IEnumerator Forest(float duration)
@@ -268,6 +282,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
     IEnumerator Forest1(float duration)
@@ -282,6 +297,7 @@ public class WOF : MonoBehaviour
             yield return null;
         }
         menu.transform.eulerAngles = endRotation;
+		spinning = false;
     }
 
 }
