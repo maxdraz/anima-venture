@@ -11,6 +11,7 @@ public class TestRotation : MonoBehaviour
     Vector3 axis;
     public float angleZ;
     public bool Rotate;
+    public float minThresholdToShowNameText;
 
     Vector3 angularVel;
     public float z;
@@ -36,8 +37,9 @@ public class TestRotation : MonoBehaviour
     float timeEnd;
 	bool firstInput;
 	public Animation KingdomLinesFadeIn;
-
-    // Use this for initialization
+    public GameObject NameText; 
+        
+        // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -80,14 +82,14 @@ public class TestRotation : MonoBehaviour
 
     void OnMouseDrag()
     {
-
-		if (firstInput) {
-
-			KingdomLinesFadeIn.Play ();
-			firstInput = false;
-		}
-
         RotateObj();
+
+        if (firstInput)
+        {
+            NameText.SetActive(true);
+            KingdomLinesFadeIn.Play();
+            firstInput = false;
+        }
     }
 
     void RotateObj()
@@ -125,11 +127,21 @@ public class TestRotation : MonoBehaviour
 
         timeEnd = Time.time;
         touchSpeed = deltaPos.magnitude / (timeEnd - timeStart);
-
-        if(currZ > lastZ)
+        Debug.Log(touchSpeed);
+        if (currZ > lastZ)
         {
             Torque = new Vector3(0, 0, touchSpeed * 1);
             rb.AddTorque(Torque, ForceMode.Force);
+
+            if (touchSpeed > minThresholdToShowNameText)
+            {
+                //if (firstInput)
+               // {
+                   // NameText.SetActive(true);
+                   // KingdomLinesFadeIn.Play();
+                   // firstInput = false;
+                //}
+            }
         }
 
         if (currZ < lastZ)
@@ -137,7 +149,15 @@ public class TestRotation : MonoBehaviour
             Torque = new Vector3(0, 0, touchSpeed * -1);
             rb.AddTorque(Torque, ForceMode.Force);
         }
-        
+  //      if (touchSpeed < -minThresholdToShowNameText)
+    //    {
+      //      if (firstInput)
+        //    {
+          //      NameText.SetActive(true);
+            //    KingdomLinesFadeIn.Play();
+               // firstInput = false;
+            //}
+      // }
     }
 
     IEnumerator Spin()
