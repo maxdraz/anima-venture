@@ -14279,6 +14279,11 @@ Prefab:
       propertyPath: centralNodeGlow
       value: 
       objectReference: {fileID: 1175828171}
+    - target: {fileID: 114819923818937826, guid: cf9c78c3b1925954baff09ab69029cf8,
+        type: 2}
+      propertyPath: lerpSpeed
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9c78c3b1925954baff09ab69029cf8, type: 2}
   m_IsPrefabAsset: 0
