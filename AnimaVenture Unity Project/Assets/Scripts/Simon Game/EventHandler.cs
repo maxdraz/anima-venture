@@ -19,6 +19,7 @@ public class EventHandler : MonoBehaviour {
     public UnityEngine.Events.UnityEvent startDolmenPS;
     public UnityEngine.Events.UnityEvent startRainPS;
     public UnityEngine.Events.UnityEvent startBottomPS;
+    public UnityEngine.Events.UnityEvent tip3Trigger;
 
 
     private void Awake()

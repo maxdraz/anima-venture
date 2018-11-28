@@ -5,12 +5,14 @@ using UnityEngine;
 public class ContinueSimon : MonoBehaviour {
 
     GameManager_Simon gm;
+    EventHandler eh;
     Animator animator;
     public bool dolmenCompleteBool = false;
 
     private void Awake()
     {
         gm = GameObject.FindWithTag("GameManager").GetComponent<GameManager_Simon>();
+        eh = GameObject.FindWithTag("GameManager").GetComponent<EventHandler>();
         animator = gameObject.GetComponentInParent<Animator>();
     }
 
@@ -24,6 +26,7 @@ public class ContinueSimon : MonoBehaviour {
         
         if (dolmenCompleteBool)
         {
+            eh.tip3Trigger.Invoke();
             StartCoroutine(SetColliderActive(1f));
             
         }

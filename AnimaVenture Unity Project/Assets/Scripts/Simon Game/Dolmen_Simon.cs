@@ -11,7 +11,7 @@ public class Dolmen_Simon : MonoBehaviour {
     [SerializeField] float distance;
     [SerializeField] float distanceToTarget;
     [SerializeField] float speed;
-    public bool pauseGameBool;
+    public bool pauseDolmenBool;
     
     public bool moveDolmenBool;
     [SerializeField] GameObject meditationButton;
@@ -22,6 +22,7 @@ public class Dolmen_Simon : MonoBehaviour {
     public ParticleSystem ps;
 
     public GameObject continueSimon;
+    public GameObject whiteDolmen;
 
     private void Awake()
     {
@@ -48,7 +49,7 @@ public class Dolmen_Simon : MonoBehaviour {
         {
             meditationButton.SetActive(true);
             moveDolmenBool = false;
-            // pauseGameBool = true;
+            pauseDolmenBool = true;
             continueSimon.GetComponent<ContinueSimon>().enabled = true;
 
             StopParticleEffect();
@@ -74,10 +75,17 @@ public class Dolmen_Simon : MonoBehaviour {
 
     public IEnumerator SpeedUpDolmen(float spdMultiplier, float t)
     {
+        if (!pauseDolmenBool)
+        {
+            whiteDolmen.SetActive(true);
+        }
+
         float oldSpeed = speed;
         speed *= spdMultiplier;
         yield return new WaitForSeconds(t);
         speed = oldSpeed;
+        
+
     }
 
     void StopParticleEffect()
