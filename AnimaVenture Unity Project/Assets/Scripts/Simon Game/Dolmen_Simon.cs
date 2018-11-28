@@ -15,7 +15,8 @@ public class Dolmen_Simon : MonoBehaviour {
     
     public bool moveDolmenBool;
     [SerializeField] GameObject meditationButton;
-    
+    [SerializeField] GameObject meditationButtonImage;
+
 
     [SerializeField] Transform targetTransform;
 
@@ -48,8 +49,8 @@ public class Dolmen_Simon : MonoBehaviour {
         
         if(distanceToTarget <= 0)
         {
-            meditationButton.SetActive(true);
-            dolmenGlow.SetActive(true);
+            StartCoroutine(EnableMeditationButton(4.5f));
+            
             moveDolmenBool = false;
             pauseDolmenBool = true;
             continueSimon.GetComponent<ContinueSimon>().enabled = true;
@@ -87,6 +88,16 @@ public class Dolmen_Simon : MonoBehaviour {
         yield return new WaitForSeconds(t);
         speed = oldSpeed;
         
+
+    }
+
+    IEnumerator EnableMeditationButton(float t)
+    {
+        yield return new WaitForSeconds(t);
+        meditationButtonImage.SetActive(true);
+        meditationButton.SetActive(true);
+        dolmenGlow.SetActive(true);
+
 
     }
 
