@@ -21,6 +21,8 @@ public class Dolmen_Simon : MonoBehaviour {
 
     public ParticleSystem ps;
 
+    public GameObject continueSimon;
+
     private void Awake()
     {
         sharedInstance = this;
@@ -46,7 +48,8 @@ public class Dolmen_Simon : MonoBehaviour {
         {
             meditationButton.SetActive(true);
             moveDolmenBool = false;
-            pauseGameBool = true;
+            // pauseGameBool = true;
+            continueSimon.GetComponent<ContinueSimon>().enabled = true;
 
             StopParticleEffect();
         }

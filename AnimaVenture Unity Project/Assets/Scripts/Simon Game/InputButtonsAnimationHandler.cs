@@ -5,6 +5,12 @@ using UnityEngine;
 public class InputButtonsAnimationHandler : MonoBehaviour {
 
     public List<Button_Simon> inputButtons;
+    Animator animator;
+
+    private void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
 
     public void EnableColliders()
     {
@@ -28,5 +34,10 @@ public class InputButtonsAnimationHandler : MonoBehaviour {
         {
             button.gameObject.layer = layerIndex;
         }
+    }
+
+    public void SetContinueBoolFalse()
+    {
+        animator.SetBool("continueBool", false);
     }
 }

@@ -74,8 +74,7 @@ public class Button_Simon : MonoBehaviour {
     {
         if (collision.gameObject.tag == "MouseTrail" && leftColliderBool == true)
         {
-            
-            Debug.Log("triiger has entered!");
+           
            // StartCoroutine(DisableColliderForTime(anim.GetClip("ButtonOnClick").length));
             DisplayButton();
         }

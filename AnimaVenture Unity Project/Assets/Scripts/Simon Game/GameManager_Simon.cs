@@ -45,6 +45,9 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] Timer_Simon timer;
     [SerializeField] GameObject endGameMenu;
     [SerializeField] Dolmen_Simon dolmen;
+    public bool dolmenFullyRisenBool;
+    public ContinueSimon cs;
+
     [Space(15)]
     [Header("Animations")]
     //Animations
@@ -113,7 +116,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     }
 
-    IEnumerator PlayGame()
+     public IEnumerator PlayGame()
     {
        
         //make start button disappear       
@@ -131,11 +134,11 @@ public class GameManager_Simon : MonoBehaviour {
         foreach (int colourIndex in colourSequence)
         {
             //if dolmen is finished moving
-            if (dolmen.pauseGameBool)
+            if (cs.dolmenCompleteBool)
             {
                 positionInSequence = 0;
-                DisableButtons();
-                dolmen.pauseGameBool = false;
+                DisableButtons();               
+                
                 yield break;
             }
             //whatever colour is stored in the list, display the corresponding telegraph
