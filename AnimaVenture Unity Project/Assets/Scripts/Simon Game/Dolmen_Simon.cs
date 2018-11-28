@@ -23,6 +23,7 @@ public class Dolmen_Simon : MonoBehaviour {
 
     public GameObject continueSimon;
     public GameObject whiteDolmen;
+    public GameObject dolmenGlow;
 
     private void Awake()
     {
@@ -48,6 +49,7 @@ public class Dolmen_Simon : MonoBehaviour {
         if(distanceToTarget <= 0)
         {
             meditationButton.SetActive(true);
+            dolmenGlow.SetActive(true);
             moveDolmenBool = false;
             pauseDolmenBool = true;
             continueSimon.GetComponent<ContinueSimon>().enabled = true;
