@@ -20,6 +20,7 @@ public class Dolmen_Simon : MonoBehaviour {
 
     [SerializeField] Transform targetTransform;
 
+
     public ParticleSystem ps;
 
     public GameObject continueSimon;
@@ -41,7 +42,11 @@ public class Dolmen_Simon : MonoBehaviour {
     private void FixedUpdate()
     {
         distanceToTarget = CalculateDistance(targetTransform.position.y, transform.position.y);
+
         
+        
+        
+
         if (moveDolmenBool)
         { 
             MoveDolmen();

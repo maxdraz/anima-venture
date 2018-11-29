@@ -51,6 +51,8 @@ public class GameManager_Simon : MonoBehaviour {
     [Space(15)]
     [Header("Animations")]
     //Animations
+    [SerializeField]
+    Animator hexAnim;
     [SerializeField] Animator animator;
     public bool continueBool;
     AudioManager AM;
@@ -332,6 +334,9 @@ public class GameManager_Simon : MonoBehaviour {
                 //play sound
                 AM.PlayClip(4, "Simon Sfx");
 
+                //play All Correct Animations
+                hexAnim.SetBool("correctBool", true);
+
                 //add speed boost
                 StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));
                 //replay sequence and add a new colour to the end
@@ -341,12 +346,13 @@ public class GameManager_Simon : MonoBehaviour {
         }
         else
         {
-            //disable buttons
-            //DisableButtons();
+            //INCORRECT INPUT HAS BEEN MADE
 
-            //PLAY BUTTON INCORRECT ANIM
+            //PLAY BUTTON INCORRECT ANIMS
             animator.SetBool("incorrectBool", true);
             animator.SetBool("enabledBool", false);
+
+            hexAnim.SetBool("incorrectBool", true);
             
             
 
