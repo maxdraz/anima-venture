@@ -6,6 +6,7 @@ public class FollowCursor : MonoBehaviour {
 
     TrailRenderer trail;
     GameObject ps;
+    public bool useColliderBool;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +28,10 @@ public class FollowCursor : MonoBehaviour {
 
         if (Input.GetMouseButton(0))
         {
-            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            if (useColliderBool)
+            {
+                gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            }
             trail.enabled = true;
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mousePos;           
