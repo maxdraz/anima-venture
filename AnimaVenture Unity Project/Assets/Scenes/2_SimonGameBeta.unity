@@ -1302,6 +1302,7 @@ MonoBehaviour:
   endGameMenu: {fileID: 857286452}
   dolmen: {fileID: 294645836}
   dolmenFullyRisenBool: 0
+  dolmenAlmostRisenBool: 0
   cs: {fileID: 626569681}
   hexAnim: {fileID: 427629857}
   animator: {fileID: 823132731}
@@ -1314,6 +1315,7 @@ MonoBehaviour:
   sequenceCorrectRoughness: 0.2
   sequenceCorrectFadeInTime: 1
   sequenceCorrectFadeOutTime: 9
+  sequenceInProgress: 0
 --- !u!4 &178581202
 Transform:
   m_ObjectHideFlags: 0
@@ -1367,7 +1369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4464438aefe189c44add1198344164f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testingMode: 1
+  testingMode: 0
   introTimeline: {fileID: 11400000, guid: b2c561a9b713cfa47909a2f2d1710a4b, type: 2}
   tip1Anim: {fileID: 7400000, guid: 93feaa36f8f786544b89d589c6f2e88e, type: 2}
   playIntroCutscene:
@@ -2875,7 +2877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d54b1f2eff18f342bdc5fdd8075df8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 90
+  time: 30
   distance: 0
   distanceToTarget: 0
   speed: 0
@@ -4607,7 +4609,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 626569677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

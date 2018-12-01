@@ -43,8 +43,8 @@ public class Dolmen_Simon : MonoBehaviour {
     {
         distanceToTarget = CalculateDistance(targetTransform.position.y, transform.position.y);
 
-        
-        
+
+
         
 
         if (moveDolmenBool)
@@ -52,6 +52,8 @@ public class Dolmen_Simon : MonoBehaviour {
             MoveDolmen();
         }
         
+        
+
         if(distanceToTarget <= 0)
         {
             StartCoroutine(EnableMeditationButton(4.5f));

@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using EZCameraShake;
 
 public class GameManager_Simon : MonoBehaviour {
+
+    public static GameManager_Simon SharedInstance;
+
     [Header("Tweakable Variables")]
     
     [SerializeField] float gameStartDelay = 2f;
@@ -46,6 +49,7 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] GameObject endGameMenu;
     [SerializeField] Dolmen_Simon dolmen;
     public bool dolmenFullyRisenBool;
+    public bool dolmenAlmostRisenBool;
     public ContinueSimon cs;
 
     [Space(15)]
@@ -68,10 +72,11 @@ public class GameManager_Simon : MonoBehaviour {
     public float sequenceCorrectFadeInTime;
     public float sequenceCorrectFadeOutTime;
 
-
+    public bool sequenceInProgress;
 
     private void Awake()
     {
+        SharedInstance = this;
         //initialize all references
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
@@ -120,13 +125,22 @@ public class GameManager_Simon : MonoBehaviour {
 
      public IEnumerator PlayGame()
     {
-       
+
+        yield return null;
+        //if dolmen is finished moving
+        if (cs.dolmenCompleteBool)
+        {
+            positionInSequence = 0;
+            DisableButtons();
+
+            yield break;
+        }
         //make start button disappear       
         //startButton.SetActive(false);
         //make restart button appear        
         //restartButton.SetActive(true);
         //reset the current input position in sequence
-        if(colourSequence.Count < 2)
+        if (colourSequence.Count < 2)
         {
             yield return new WaitForSeconds(2f);
         }
@@ -135,6 +149,8 @@ public class GameManager_Simon : MonoBehaviour {
         //Play back sequence
         foreach (int colourIndex in colourSequence)
         {
+            sequenceInProgress = true;  
+
             //if dolmen is finished moving
             if (cs.dolmenCompleteBool)
             {
@@ -174,12 +190,31 @@ public class GameManager_Simon : MonoBehaviour {
 
     IEnumerator PlayBackSequence()
     {
+
+       
         yield return new WaitForSeconds(delayBetweenTelegraphs);
+
+        //if dolmen is finished moving
+        if (cs.dolmenCompleteBool)
+        {
+            positionInSequence = 0;
+            DisableButtons();
+
+            yield break;
+        }
 
         positionInSequence = 0;
         //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
+            sequenceInProgress = true;
+            if (cs.dolmenCompleteBool)
+            {
+                positionInSequence = 0;
+                DisableButtons();
+
+                yield break;
+            }
             //get shooting star from pool and store in a reference
             GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
             shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
@@ -223,6 +258,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     void EnableButtons()
     {
+        sequenceInProgress = false;
         animator.SetBool("incorrectBool", false);
         if(colourSequence.Count < 2)
         {
@@ -249,6 +285,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     void PickRandomColour()
     {
+        sequenceInProgress = true;
         
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
@@ -274,6 +311,7 @@ public class GameManager_Simon : MonoBehaviour {
         //Enable Buttons here
         //I envoke for visual purposes only, so that the collider enables only after telegraph animation is finished
         Invoke("EnableButtons", enableButtonsDelay);
+        
     }
 
     public void RestartGame()
