@@ -24217,6 +24217,11 @@ Prefab:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 114727838282078504, guid: 2a8ac61afed16ea4580017c18ec1c221,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8ac61afed16ea4580017c18ec1c221, type: 2}
   m_IsPrefabAsset: 0
