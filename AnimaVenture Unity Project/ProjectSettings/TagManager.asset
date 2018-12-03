@@ -21,6 +21,8 @@ TagManager:
   - Ocean
   - MouseTrail
   - RipplePS
+  - String
+  - TouchTone
   layers:
   - Default
   - TransparentFX
