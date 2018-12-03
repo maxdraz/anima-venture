@@ -8,9 +8,11 @@ public class StringPluckScript : MonoBehaviour {
 	Animation anim;
 	AudioSource audio;
 	GameObject colliders;
+	bool canPlay;
 
 
 	void Start () {
+		canPlay = true;
 		colliders = transform.GetChild (0).transform.gameObject;
 		anim = GetComponent<Animation> ();
 		audio = GetComponent<AudioSource> ();
@@ -18,11 +20,13 @@ public class StringPluckScript : MonoBehaviour {
 
 
 	public void PluckString () {
+		if (canPlay) {
 		anim.Stop ();
 		anim.Play ();
 		audio.Play ();
 		Deactivate ();
 		Invoke ("Activate", cooldownTime);
+		}
 	}
 
 	public void Activate() {

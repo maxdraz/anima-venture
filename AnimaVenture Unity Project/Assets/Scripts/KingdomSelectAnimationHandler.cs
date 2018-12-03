@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class KingdomSelectAnimationHandler : MonoBehaviour {
 	//kingdom assets
+	public ParticleSystem kSelectStarsParticle;
 	public GameObject centralNode;
 	public GameObject kingdomMenu;
 	public GameObject kingdomLines;
-	public GameObject kingdomArrows;
-	public GameObject kingdomDots;
-	public GameObject centralNodeGlow;
     public GameObject menuReturn;
     public GameObject kSettings;
 
@@ -17,9 +15,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
     public GameObject backButton;
     public GameObject jSettings;
 	public GameObject journeyLines;
-	public GameObject journeyDots;
-	public GameObject journey1;
-	public GameObject journey2;
 	public Animation journeyFadeAnim;
 
 	public Animation KingdomSelectScaleAnim;
@@ -36,18 +31,11 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		cameraScript.ToggleLerpBool ();
 	
 	}
-
-	public void StartJourneyTransition () {
-	
-	
-	}
-
+		
 
 	public void LeaveKingdom () {
 		Debug.Log ("Leave kingdom");
 		kingdomMenu.SetActive (false);
-		kingdomDots.SetActive (false);
-		kingdomArrows.SetActive (false);
         menuReturn.SetActive(false);
         kSettings.SetActive(false);
 		kingdomLines.SetActive (false);
@@ -58,9 +46,6 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 
 	public void ArriveAtKingdom () {
 		Debug.Log ("arrive at kingdom");
-		centralNodeGlow.SetActive (true);
-		kingdomDots.SetActive (true);
-		kingdomArrows.SetActive (true);
         menuReturn.SetActive(true);
         kSettings.SetActive(true);
         kingdomLines.SetActive (true);
@@ -68,16 +53,13 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		AM.PlayClip(1, 0.1f, false);
         bigTrail.SetActive(true);
         smallTrail.SetActive(false);
+		kSelectStarsParticle.Play ();
 
     }
 
     public void LeaveJourney () {
 		Debug.Log ("Leave journey");
-
 		backButton.SetActive (false);
-		journey1.SetActive (false);
-		journey2.SetActive (false);
-		journeyDots.SetActive (false);
 		journeyLines.SetActive (false);
         jSettings.SetActive(false);
 		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeOut");
@@ -86,12 +68,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 
 	public void ArriveAtJourney () {
 		Debug.Log ("arrive at journey");
-
 		backButton.SetActive (true);
 		journeyLines.SetActive (true);
-		journeyDots.SetActive (true);
-		journey1.SetActive (true);
-		journey2.SetActive (true);
         jSettings.SetActive(true);
         AM.PlayClip(1, 0.1f, false);
         bigTrail.SetActive(false);
@@ -103,6 +81,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		centralNode.GetComponent<Animation> ().Play ();
 		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleUp");	
 		KingdomSelectScaleAnim.Play ();
+		kSelectStarsParticle.Stop ();
+
 
 	}
 

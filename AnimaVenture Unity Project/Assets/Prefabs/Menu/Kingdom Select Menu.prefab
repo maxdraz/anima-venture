@@ -8071,20 +8071,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3bd717fa82a924b83de28a76ff490f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kSelectStarsParticle: {fileID: 0}
   centralNode: {fileID: 1703552380003108}
   kingdomMenu: {fileID: 1235300369775926}
   kingdomLines: {fileID: 1296387810513878}
-  kingdomArrows: {fileID: 1168298507032856}
-  kingdomDots: {fileID: 1453781878708378}
-  centralNodeGlow: {fileID: 1242956372376168}
   menuReturn: {fileID: 0}
   kSettings: {fileID: 0}
   backButton: {fileID: 0}
   jSettings: {fileID: 0}
   journeyLines: {fileID: 0}
-  journeyDots: {fileID: 0}
-  journey1: {fileID: 0}
-  journey2: {fileID: 0}
   journeyFadeAnim: {fileID: 0}
   KingdomSelectScaleAnim: {fileID: 111244271124184396}
   cameraScript: {fileID: 0}
