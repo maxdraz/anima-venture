@@ -11,22 +11,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing or Personal/Archived/OriginalSimonScene.unity
     guid: bde7de2ce3b2ee146b02b028882390fc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/0_MenuSelect.unity
     guid: 8097d9610f0d01a41803599ee5070f24
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/1.1_MainMenu_(K).unity
     guid: 8a53704eb758d4647be0f31f44f40f89
   - enabled: 1
     path: Assets/Scenes/2_SimonGameBeta.unity
     guid: 2b6f57abb934f5742bdf5ef6a8cc237c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/3_MeditationScene.unity
     guid: 253c9b9d26c210f4984ec6ccbddfbce2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
     guid: afdc9d2d4e88a954daebdc0f0e258a0e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/1.2_MainMenu_(J).unity
     guid: 111782a3faff32a45bfaa5f8737ecaab
   m_configObjects: {}
