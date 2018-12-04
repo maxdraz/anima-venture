@@ -6271,6 +6271,7 @@ GameObject:
   - component: {fileID: 219270156}
   - component: {fileID: 219270155}
   - component: {fileID: 219270157}
+  - component: {fileID: 219270158}
   m_Layer: 0
   m_Name: IntroAnimation
   m_TagString: Untagged
@@ -6343,6 +6344,21 @@ MonoBehaviour:
   - {fileID: 449853282}
   - {fileID: 1069358646}
   - {fileID: 562310769}
+--- !u!114 &219270158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219270154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec914d6a5b604f46905aba2f5b782e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tappedOnce: 0
+  tappedTwice: 0
+  tapCooldown: 1
+  skipText: {fileID: 1002294276}
 --- !u!1001 &232490799
 Prefab:
   m_ObjectHideFlags: 0
@@ -43326,6 +43342,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 746d717ff3835494f914b4e294dabc6f,
     type: 3}
   m_PrefabInternal: {fileID: 52883450}
+--- !u!1 &1002294276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002294279}
+  - component: {fileID: 1002294278}
+  - component: {fileID: 1002294277}
+  - component: {fileID: 1002294280}
+  m_Layer: 5
+  m_Name: SkipText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1002294277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002294276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 09083a1f0b24add408af9f3be3501b74, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Tap to Skip
+--- !u!222 &1002294278
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002294276}
+  m_CullTransparentMesh: 0
+--- !u!224 &1002294279
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002294276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2138396201}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.10004, y: -356.7}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1002294280
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002294276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 023c9bff3cceb7f4ebb215ce9f4e4e3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1019844559
 GameObject:
   m_ObjectHideFlags: 0
@@ -69866,6 +69976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1684269891}
   - component: {fileID: 1684269890}
+  - component: {fileID: 1684269892}
   m_Layer: 0
   m_Name: Camera Movement
   m_TagString: Untagged
@@ -69905,6 +70016,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1684269892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1684269889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec914d6a5b604f46905aba2f5b782e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tappedOnce: 0
+  tappedTwice: 0
+  tapCooldown: 1
+  skipText: {fileID: 1002294276}
 --- !u!4 &1717360038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 61195a9e7e4c652499cc6feb660cec81,
@@ -71760,6 +71886,7 @@ RectTransform:
   - {fileID: 639949483}
   - {fileID: 232490800}
   - {fileID: 1664846172}
+  - {fileID: 1002294279}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
