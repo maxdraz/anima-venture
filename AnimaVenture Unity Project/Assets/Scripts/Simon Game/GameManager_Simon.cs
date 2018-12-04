@@ -53,6 +53,17 @@ public class GameManager_Simon : MonoBehaviour {
     public ContinueSimon cs;
 
     [Space(15)]
+
+    [Header("ParticleSystems")]
+
+    GameObject[] particleSystems;
+    [SerializeField]
+    List<IntensifyParticleSystem> particleSystemsToIntensify;
+
+    [SerializeField]IntensifyParticleSystem dolmenPS1;
+    [SerializeField]IntensifyParticleSystem dolmenPS2;
+
+    [Space(15)]
     [Header("Animations")]
     //Animations
     [SerializeField]
@@ -81,6 +92,19 @@ public class GameManager_Simon : MonoBehaviour {
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
         AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+
+        particleSystems = GameObject.FindGameObjectsWithTag("ParticleSystem");
+
+        for(int i = 0; i < particleSystems.Length; i++)
+        {
+            if(particleSystems[i].GetComponent<IntensifyParticleSystem>() != null)
+            {
+               particleSystemsToIntensify.Add(particleSystems[i].GetComponent<IntensifyParticleSystem>());
+                
+            }
+
+            particleSystems[i].SetActive(false);
+        }
         
         //score = GameObject.Find("Score").GetComponent<Score_Simon>();
 
@@ -368,6 +392,16 @@ public class GameManager_Simon : MonoBehaviour {
                 StartCoroutine(score.Add(1));
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
+
+                //Intensify Particle systems
+                for(int i = 0; i < particleSystemsToIntensify.Count; i ++)
+                {
+                    
+                    particleSystemsToIntensify[0].gameObject.SetActive(true);
+                    
+
+                    StartCoroutine(particleSystemsToIntensify[i].Intensify());
+                }
 
                 //play sound
                 AM.PlayClip(4, "Simon Sfx");

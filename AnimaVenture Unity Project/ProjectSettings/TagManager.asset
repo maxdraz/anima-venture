@@ -23,6 +23,7 @@ TagManager:
   - RipplePS
   - String
   - TouchTone
+  - ParticleSystem
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,9 @@ using UnityEngine;
 public class IntensifyParticleSystem : MonoBehaviour {
 
     ParticleSystem ps;
+    public float originalSpeed;
+    public float newSpeed;
+    public float intensifyForTime;
 
     private void Awake()
     {
@@ -13,14 +16,10 @@ public class IntensifyParticleSystem : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Debug.Log("Mouse Clicked");
-            StartCoroutine(Intensify(1,3, 2.5f));
-        }
+      
     }
 
-    public IEnumerator Intensify(float originalSpeed, float newSpeed, float intensifyForTime)
+    public IEnumerator Intensify()
     {
         var main = ps.main;
         main.startSpeed = newSpeed;
