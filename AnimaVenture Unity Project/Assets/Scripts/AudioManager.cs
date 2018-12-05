@@ -150,4 +150,9 @@ public class AudioManager : MonoBehaviour {
             StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
         }
     }
+
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
 }
