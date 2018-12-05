@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KingdomSelectAnimationHandler : MonoBehaviour {
 	//kingdom assets
-	public ParticleSystem kSelectStarsParticle;
+	public GameObject kSelectStarsParticle;
 	public GameObject centralNode;
 	public GameObject kingdomMenu;
 	public GameObject kingdomLines;
@@ -14,8 +14,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
     //journey assets
     public GameObject backButton;
     public GameObject jSettings;
-	public GameObject journeyLines;
-	public Animation journeyFadeAnim;
+	public Animation journeyBackGroundFadeAnim;
+	public Animator journeyLinesFadeAnim;
 
 	public Animation KingdomSelectScaleAnim;
 
@@ -39,8 +39,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
         menuReturn.SetActive(false);
         kSettings.SetActive(false);
 		kingdomLines.SetActive (false);
-		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeIn");	
-		journeyFadeAnim.Play ();
+		journeyBackGroundFadeAnim.clip = journeyBackGroundFadeAnim.GetClip ("JourneyFadeIn");	
+		journeyBackGroundFadeAnim.Play ();
 	}
 
 
@@ -53,24 +53,27 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		AM.PlayClip(1, 0.1f, false);
         bigTrail.SetActive(true);
         smallTrail.SetActive(false);
-		kSelectStarsParticle.Play ();
+		kSelectStarsParticle.SetActive (true);
+//		kSelectStarsParticle.Play ();
 
     }
 
     public void LeaveJourney () {
 		Debug.Log ("Leave journey");
 		backButton.SetActive (false);
-		journeyLines.SetActive (false);
+		journeyLinesFadeAnim.SetBool ("Wait", false);
+		journeyLinesFadeAnim.SetBool ("JourneyFadeIn", false);
         jSettings.SetActive(false);
-		journeyFadeAnim.clip = journeyFadeAnim.GetClip ("JourneyFadeOut");
-		journeyFadeAnim.Play ();
+		journeyBackGroundFadeAnim.clip = journeyBackGroundFadeAnim.GetClip ("JourneyFadeOut");
+		journeyBackGroundFadeAnim.Play ();
 	}
 
 	public void ArriveAtJourney () {
 		Debug.Log ("arrive at journey");
 		backButton.SetActive (true);
-		journeyLines.SetActive (true);
-        jSettings.SetActive(true);
+		journeyLinesFadeAnim.SetBool ("Wait", false);
+		journeyLinesFadeAnim.SetBool ("JourneyFadeIn", true);
+		jSettings.SetActive(true);
         AM.PlayClip(1, 0.1f, false);
         bigTrail.SetActive(false);
         smallTrail.SetActive(true);
@@ -81,7 +84,8 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
 		centralNode.GetComponent<Animation> ().Play ();
 		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleUp");	
 		KingdomSelectScaleAnim.Play ();
-		kSelectStarsParticle.Stop ();
+		kSelectStarsParticle.SetActive (false);
+//		kSelectStarsParticle.Stop ();
 
 
 	}
