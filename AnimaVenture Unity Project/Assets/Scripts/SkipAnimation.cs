@@ -11,6 +11,7 @@ public class SkipAnimation : MonoBehaviour
     [SerializeField] float tapCooldown = 2f;
     float originalCooldown;
     public GameObject skipText;
+    
 
 
 
@@ -25,6 +26,8 @@ public class SkipAnimation : MonoBehaviour
 
     private void Update()
     {
+       
+
         if (Input.GetMouseButtonDown(0) && tappedOnce == false)
         {
             tappedOnce = true;
@@ -85,10 +88,20 @@ public class SkipAnimation : MonoBehaviour
                 tappedOnce = false;
                 tappedTwice = false;
                 skipText.SetActive(false);
-                this.enabled = false;
+                DisableSkipping();
                 yield break;
             }
             yield return null;
+        }
+    }
+
+    public void DisableSkipping()
+    {
+        SkipAnimation[] allScripts = FindObjectsOfType<SkipAnimation>();
+
+        for(int i = 0; i < allScripts.Length; i++)
+        {
+            allScripts[i].enabled = false;
         }
     }
 }
