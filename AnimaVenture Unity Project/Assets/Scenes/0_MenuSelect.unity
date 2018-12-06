@@ -31507,7 +31507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 1
   loadWithTimerBool: 0
-  loadAfterTime: 2
+  loadAfterTime: 3
 --- !u!199 &639949489
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -38082,7 +38082,7 @@ Prefab:
     - target: {fileID: 114038978104715040, guid: 4f89bea27ba6c254e824ad7fc8b707a7,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadThisScene
+      value: StartLoadingSceneAfterTime
       objectReference: {fileID: 0}
     - target: {fileID: 1810586633734656, guid: 4f89bea27ba6c254e824ad7fc8b707a7, type: 2}
       propertyPath: m_IsActive

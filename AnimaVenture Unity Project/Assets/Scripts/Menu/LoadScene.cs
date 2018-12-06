@@ -37,6 +37,11 @@ public class LoadScene : MonoBehaviour {
         SceneManager.LoadScene(loadingScreenIndex, LoadSceneMode.Single);
    }
 
+    public void StartLoadingSceneAfterTime()
+    {
+        StartCoroutine(LoadSceneAfterTime());
+    }
+
     private void OnMouseDown()
     {
         LoadThisScene();
