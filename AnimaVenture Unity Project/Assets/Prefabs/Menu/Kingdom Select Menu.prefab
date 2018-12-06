@@ -8026,15 +8026,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   clips:
-  - {fileID: 8300000, guid: fb2a2b26ef2a4fe4b92a3c919c284fc3, type: 3}
-  - {fileID: 8300000, guid: f42ed079038373249a5a993390fe2d75, type: 3}
-  - {fileID: 8300000, guid: 624cd077fb2637d4faa4bf513b320221, type: 3}
+  - {fileID: 8300000, guid: c1ffa9516f68344c28a18386a1190c3b, type: 3}
+  - {fileID: 8300000, guid: c46fc81b1250648f6b0cc190e3a496a3, type: 3}
+  - {fileID: 8300000, guid: 719cc907ba3784519b607be213ea91c9, type: 3}
   position: 0
   firstTransform: {fileID: 1409939664071018}
   secondTransform: {fileID: 1699677806224586}
   thirdTransform: {fileID: 1619671565997266}
   lerpSpeed: 3
+  toneToPlay: 0
+  first: 0
+  second: 0
+  third: 0
+  mixer: 
 --- !u!114 &114483254060312356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8225,15 +8231,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   clips:
-  - {fileID: 8300000, guid: fb2a2b26ef2a4fe4b92a3c919c284fc3, type: 3}
-  - {fileID: 8300000, guid: f42ed079038373249a5a993390fe2d75, type: 3}
-  - {fileID: 8300000, guid: 624cd077fb2637d4faa4bf513b320221, type: 3}
+  - {fileID: 8300000, guid: 719cc907ba3784519b607be213ea91c9, type: 3}
+  - {fileID: 8300000, guid: c1ffa9516f68344c28a18386a1190c3b, type: 3}
+  - {fileID: 8300000, guid: c46fc81b1250648f6b0cc190e3a496a3, type: 3}
   position: 0
   firstTransform: {fileID: 1334709067735080}
   secondTransform: {fileID: 1560053501433698}
   thirdTransform: {fileID: 1747828739089442}
   lerpSpeed: 3
+  toneToPlay: 0
+  first: 0
+  second: 0
+  third: 0
+  mixer: 
 --- !u!114 &114665468830769128
 MonoBehaviour:
   m_ObjectHideFlags: 1

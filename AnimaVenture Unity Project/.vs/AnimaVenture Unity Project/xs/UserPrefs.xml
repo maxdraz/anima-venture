@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{740CE3D0-6E96-6F19-240C-255C3D04D62B}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StringColliderScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PetalScript.cs">
     <Files>
       <File FileName="Assets/Scripts/Menu/WOF.cs" Line="55" Column="20" />
       <File FileName="Assets/Scripts/Menu/ComingSoon.cs" Line="66" Column="6" />
       <File FileName="Assets/Scripts/StringPluckScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/StringColliderScript.cs" Line="8" Column="15" />
+      <File FileName="Assets/Scripts/ArrowScript.cs" Line="8" Column="20" />
+      <File FileName="Assets/Scripts/PetalScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.AnimaVenture_220Unity_220Project PreferredExecutionTarget="Unity.Editor" />

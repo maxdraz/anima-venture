@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArrowScript : MonoBehaviour {
 	
 	float startYPos;
+	public AudioManager audioManager;
 	AudioSource audio;
 	public AudioClip[] clips;
 	public int position;
@@ -12,6 +13,11 @@ public class ArrowScript : MonoBehaviour {
 	public GameObject secondTransform;
 	public GameObject thirdTransform;
 	public float lerpSpeed;
+	public int toneToPlay;
+	public int first;
+	public int second;
+	public int third;
+	public string mixer;
 
 
 	LineRenderer renderer;
@@ -57,22 +63,27 @@ public class ArrowScript : MonoBehaviour {
 
 		if (position == 0){
 
-			audio.clip = clips[0];
-			audio.Play ();
-
+			//audio.clip = clips[0];
+			//audio.Play ();
+			toneToPlay = first;
+			audioManager.PlayClip(toneToPlay, mixer);
 		} 
 			
 			if (position == 1) {
 				
-				audio.clip = clips[1];
-				audio.Play ();
+				//audio.clip = clips[1];
+				//audio.Play ();
+			    toneToPlay = second;
+			    audioManager.PlayClip(toneToPlay, mixer);
+
 			}
 
 				if (position == 2){
 
-					audio.clip = clips[2];
-					audio.Play ();
-
+					//audio.clip = clips[2];
+					//audio.Play ();
+			        toneToPlay = third;
+			        audioManager.PlayClip(toneToPlay, mixer);
 			}
 
 		position++;
