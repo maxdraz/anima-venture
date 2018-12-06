@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{740CE3D0-6E96-6F19-240C-255C3D04D62B}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu/WOF.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StringColliderScript.cs">
     <Files>
       <File FileName="Assets/Scripts/Menu/WOF.cs" Line="55" Column="20" />
       <File FileName="Assets/Scripts/Menu/ComingSoon.cs" Line="66" Column="6" />
