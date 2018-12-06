@@ -10638,7 +10638,9 @@ MonoBehaviour:
   particleSystemsToIntensify: []
   dolmenPS1: {fileID: 0}
   dolmenPS2: {fileID: 0}
-  hexAnim: {fileID: 427629857}
+  animators:
+  - {fileID: 427629857}
+  - {fileID: 1975124873}
   animator: {fileID: 823132731}
   continueBool: 0
   pressedMagnitude: 0.4
@@ -10790,6 +10792,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8116702}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 885646929}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -29736,6 +29749,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1975124872}
   - component: {fileID: 1975124871}
+  - component: {fileID: 1975124873}
+  - component: {fileID: 1975124874}
   m_Layer: 0
   m_Name: PlaceholderBackgroundGreen
   m_TagString: Untagged
@@ -29802,6 +29817,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1975124873
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975124870}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf8024b4be70d5f418a387f0c5abba31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1975124874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1975124870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0101a351792e4064e807465711153abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983245578 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1205456737164476, guid: 4e8631dca90403041bca7355bef528be,

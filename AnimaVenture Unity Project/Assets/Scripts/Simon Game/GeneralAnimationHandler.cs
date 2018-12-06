@@ -13,7 +13,12 @@ public class GeneralAnimationHandler : MonoBehaviour {
 
     public void ResetBool(string boolName)
     {
-        anim.SetBool(boolName, !anim.GetBool(boolName));
+        if(anim.GetBool(boolName) == true)
+        {
+            anim.SetBool(boolName, false);
+        }
+        else
+        anim.SetBool(boolName, true);
     }
 
 }
