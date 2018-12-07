@@ -23,5 +23,6 @@ public class SetActiveAfterTime : MonoBehaviour {
         {
             obj.SetActive(true);
         }
+        
     }
 }
