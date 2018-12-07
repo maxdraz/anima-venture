@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1.2_MainMenu_(J).unity
     guid: 111782a3faff32a45bfaa5f8737ecaab
+  - enabled: 1
+    path: Assets/Scenes/Headphone Scene.unity
+    guid: a6c99edf8730acf4e98feb586f06dde7
   m_configObjects: {}

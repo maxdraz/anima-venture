@@ -9735,7 +9735,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6f9ab62dd0a6d284c9c7b258df14ce85, type: 3}
-  m_Color: {r: 0.47450984, g: 1, b: 0.72253674, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10641,6 +10641,7 @@ MonoBehaviour:
   animators:
   - {fileID: 427629857}
   - {fileID: 1975124873}
+  - {fileID: 1576618224}
   animator: {fileID: 823132731}
   continueBool: 0
   pressedMagnitude: 0.4
@@ -12224,7 +12225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d54b1f2eff18f342bdc5fdd8075df8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 90
+  time: 2
   distance: 0
   distanceToTarget: 0
   speed: 0
@@ -14563,7 +14564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4575472, g: 1, b: 0.87218064, a: 0.72156864}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -27758,6 +27759,7 @@ GameObject:
   - component: {fileID: 1576618221}
   - component: {fileID: 1576618223}
   - component: {fileID: 1576618224}
+  - component: {fileID: 1576618225}
   m_Layer: 0
   m_Name: BottomShape
   m_TagString: Untagged
@@ -27887,6 +27889,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1576618225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1576618220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0101a351792e4064e807465711153abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593254605
 GameObject:
   m_ObjectHideFlags: 0

@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 607886692}
   - component: {fileID: 607886691}
   - component: {fileID: 607886690}
-  - component: {fileID: 607886694}
+  - component: {fileID: 607886695}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -360,36 +360,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &607886694
-MonoBehaviour:
+--- !u!95 &607886695
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 607886689}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cba9dd2af5e1a449966ed8982f6a7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  tooltips:
-  - Get yourself in a comfortable position, close your eyes and begin to observe the
-    sensations of breathing.
-  - Be spacious, and allow thoughts and emotions to settle.
-  - Try not to analyze or judge anything you experience or any thought that passes
-    through your mind. Simply observe.
-  - Sit quietly and allow thoughts to float freely in and out of your mind.
-  - "You should not be carried away by the dictation of the mind, but the mind should
-    be carried by your dictation. \u2013 A.C Bhaktivedanta Swami"
-  - "While meditating we are simply seeing what the mind has been doing all along.
-    \u2013 Allan Lokos"
-  - "If you want to conquer the anxiety of life, live in the moment, live in the breath.
-    \u2013 Amit Ray"
-  - "Meditate, Visualize and Create your own reality and the universe will simply
-    reflect back to you. \u2013 Amit Ray"
-  - "Silence is not an absence but a presence. \u2013 Anne D. LeClaire"
-  - "When meditation is mastered, the mind is unwavering like the flame of a candle
-    in a windless place. \u2013 Bhagavad Gita"
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b4974dd11dc4e14282724306905b312, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &638009862
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +466,7 @@ GameObject:
   - component: {fileID: 1470714713}
   - component: {fileID: 1470714712}
   m_Layer: 5
-  m_Name: Loading...
+  m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
