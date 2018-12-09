@@ -88,7 +88,7 @@ public class SkipAnimation : MonoBehaviour
                 tappedOnce = false;
                 tappedTwice = false;
                 skipText.SetActive(false);
-                DisableSkipping();
+                DisableSkipping(); 
                 yield break;
             }
             yield return null;
