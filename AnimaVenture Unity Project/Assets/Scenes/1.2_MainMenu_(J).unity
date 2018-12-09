@@ -821,6 +821,26 @@ Prefab:
       propertyPath: SubModule.subEmitters.Array.data[0].emitter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114631920144256158, guid: 28dbd31bcd157ae46900aa96392d81cf,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 112506228}
+    - target: {fileID: 114765718999017578, guid: 28dbd31bcd157ae46900aa96392d81cf,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 112506228}
+    - target: {fileID: 114565673434215544, guid: 28dbd31bcd157ae46900aa96392d81cf,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 112506228}
+    - target: {fileID: 114866665871621568, guid: 28dbd31bcd157ae46900aa96392d81cf,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 112506228}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28dbd31bcd157ae46900aa96392d81cf, type: 2}
   m_IsPrefabAsset: 0
@@ -944,6 +964,8 @@ GameObject:
   - component: {fileID: 640499874}
   - component: {fileID: 640499873}
   - component: {fileID: 640499872}
+  - component: {fileID: 640499878}
+  - component: {fileID: 640499877}
   m_Layer: 5
   m_Name: ToKingdomSelectButton
   m_TagString: Untagged
@@ -1061,6 +1083,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 640499878}
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &640499875
@@ -1099,6 +1132,33 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 640499870}
   m_CullTransparentMesh: 0
+--- !u!111 &640499877
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640499870}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 95c662a694697af458d059468e0893ab, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 95c662a694697af458d059468e0893ab, type: 2}
+  - {fileID: 7400000, guid: 85bef6c098e396742bc6797efb83ba7b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &640499878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640499870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556a5294a8bc50247b49b6f4d84caede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &773323686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3295142af9895bc44a499e43362c79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
+  sceneIndex: 0
   loadWithTimerBool: 0
   loadAfterTime: 1
 --- !u!114 &1111435708
@@ -3331,6 +3391,11 @@ Prefab:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199733151704382116, guid: dac7396a5b854244483d68571dc14af9,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c0b33823b10b8842818bd544e5bc144, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac7396a5b854244483d68571dc14af9, type: 2}
   m_IsPrefabAsset: 0
@@ -3612,3 +3677,50 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041199621}
   m_CullTransparentMesh: 0
+--- !u!1001 &2079241614
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 119.321014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 581.8818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.5934049
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980210052097954, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114125699598804154, guid: 4360aad163e660d42a7464e3610d1196,
+        type: 2}
+      propertyPath: sceneToLoadNext
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+  m_IsPrefabAsset: 0
