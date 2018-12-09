@@ -24,6 +24,7 @@ TagManager:
   - String
   - TouchTone
   - ParticleSystem
+  - Background
   layers:
   - Default
   - TransparentFX

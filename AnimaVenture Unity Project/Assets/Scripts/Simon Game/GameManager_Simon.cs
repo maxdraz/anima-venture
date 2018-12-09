@@ -86,6 +86,8 @@ public class GameManager_Simon : MonoBehaviour {
 
     public bool sequenceInProgress;
 
+    public Gradient partyGradient;
+
     private void Awake()
     {
         SharedInstance = this;
@@ -377,6 +379,7 @@ public class GameManager_Simon : MonoBehaviour {
                     CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                     //start dolmen
                     StartCoroutine(EventHandler.SharedInstance.StartDolmen());
+                 
                 } else if (colourSequence.Count == 3)
                 {
                     EventHandler.SharedInstance.startRainPS.Invoke();
@@ -385,10 +388,11 @@ public class GameManager_Simon : MonoBehaviour {
                 {
                     EventHandler.SharedInstance.startBottomPS.Invoke();
                 }
+              
                 // Sequence is correct!
 
                 //Shake the camera
-               // CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
+                // CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
                 StartCoroutine(score.Add(1));
                 //Subtract time from timer
@@ -474,6 +478,33 @@ public class GameManager_Simon : MonoBehaviour {
     public void LoadNewScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+    }
+
+        IEnumerator PartyMode()
+    {
+        while (true)
+        {
+            for (int i = 0; i < particleSystemsToIntensify.Count; i++)
+            {
+
+                var main = particleSystemsToIntensify[i].GetComponent<ParticleSystem>().main;
+                var startColour = main.startColor;
+                startColour.gradient = partyGradient;
+
+                if (i == particleSystemsToIntensify.Count - 1)
+                {
+                    foreach (Animator anim in animators)
+                    {
+                        if (anim.gameObject.tag == "Background")
+                        {
+                            anim.SetBool("partyModeBool", true);
+                            yield break;
+                        }
+                    }
+                }
+                yield return null;
+            }
+        }
     }
 
    // public void ContinueGame()
