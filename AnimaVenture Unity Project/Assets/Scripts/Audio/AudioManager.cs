@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
+    public static AudioManager SharedInstance;
 
     public AudioMixer mixer;
 
     [Header("Add all sounds here")]
     public List <AudioClip> audioClips;
-    
-    
+
+    private void Awake()
+    {
+        SharedInstance = this;
+    }
+
 
     public void PlayClip(int clipIndex) 
     {
@@ -144,6 +149,30 @@ public class AudioManager : MonoBehaviour {
             audioObject.GetComponent<AudioSource>().outputAudioMixerGroup = mixer.FindMatchingGroups(mixerGroup)[0];
             //populate audio source
             audioObject.GetComponent<AudioSource>().clip = audioClips[clipIndex];            
+            audioObject.GetComponent<AudioSource>().Play();
+
+            //Destroy after done playing
+            StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
+        }
+    }
+    public void PlayClip(int clipIndex, string mixerGroup, bool loop)
+    {
+        // get an audioObject from pooledObjects list
+        GameObject audioObject = ObjectPooler.SharedInstance.GetPooledObject("AudioObject");
+
+        //if an audioObject is available to use
+        if (audioObject != null)
+        {
+            //create a new gobj with an audio source and a destroy script
+            audioObject.transform.name = audioClips[clipIndex].name;
+
+            //set the audioObject to active
+            audioObject.SetActive(true);
+
+            audioObject.GetComponent<AudioSource>().outputAudioMixerGroup = mixer.FindMatchingGroups(mixerGroup)[0];
+            audioObject.GetComponent<AudioSource>().loop = loop;
+            //populate audio source
+            audioObject.GetComponent<AudioSource>().clip = audioClips[clipIndex];
             audioObject.GetComponent<AudioSource>().Play();
 
             //Destroy after done playing
