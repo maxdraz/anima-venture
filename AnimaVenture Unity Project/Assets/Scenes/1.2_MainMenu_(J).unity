@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 116766062}
+  startingButton: 0
 --- !u!1001 &172309649
 Prefab:
   m_ObjectHideFlags: 0
@@ -1243,6 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 640499879}
+  startingButton: 0
 --- !u!95 &640499879
 Animator:
   serializedVersion: 3
@@ -2663,6 +2665,18 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 95301181346437392, guid: 28dbd31bcd157ae46900aa96392d81cf,
     type: 2}
   m_PrefabInternal: {fileID: 468451688}
+--- !u!114 &1543578407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543578392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51aeb5d1e0f8848814165b0c983b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnStart: 1
 --- !u!1 &1546429945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1607262138}
+  startingButton: 0
 --- !u!95 &1607262138
 Animator:
   serializedVersion: 3

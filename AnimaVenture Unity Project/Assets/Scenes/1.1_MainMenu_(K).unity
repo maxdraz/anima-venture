@@ -193,6 +193,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1656308282669120, guid: 2a8ac61afed16ea4580017c18ec1c221,
     type: 2}
   m_PrefabInternal: {fileID: 1465672899}
+--- !u!1 &46906341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1177049160689858, guid: 28dbd31bcd157ae46900aa96392d81cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1352316870}
+--- !u!114 &46906343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46906341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51aeb5d1e0f8848814165b0c983b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnStart: 0
 --- !u!1 &78194174
 GameObject:
   m_ObjectHideFlags: 0
@@ -5901,7 +5918,7 @@ Prefab:
     - target: {fileID: 114214543803203752, guid: 2a8ac61afed16ea4580017c18ec1c221,
         type: 2}
       propertyPath: loadWithTimerBool
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114214543803203752, guid: 2a8ac61afed16ea4580017c18ec1c221,
         type: 2}
