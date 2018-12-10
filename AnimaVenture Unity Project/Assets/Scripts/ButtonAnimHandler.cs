@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ButtonAnimHandler : MonoBehaviour {
 
-	Animation anim;
+	public Animator anim;
+	public bool startingButton;
 
 	// Use this for initialization
 	void Awake () {
-		anim = GetComponent<Animation> ();	
-		FadeIn();
+		if (startingButton) {
+			FadeIn();
+		}
 	}
 		
 	
@@ -17,15 +19,15 @@ public class ButtonAnimHandler : MonoBehaviour {
 
 	public void FadeIn () {
 	
-		anim.clip = anim.GetClip ("Ui Button FadeIn");
-		anim.Play ();
+		anim.SetBool ("Wait", false);
+		anim.SetBool ("FadeIn", true);
 		Debug.Log ("FADED IN");
 	}
 
 	public void FadeOut () {
 
-		anim.clip = anim.GetClip ("Ui Button FadeOut");
-		anim.Play ();
+		anim.SetBool ("Wait", false);
+		anim.SetBool ("FadeIn", false);
 		Debug.Log ("FADED OUT");
 	}
 }
