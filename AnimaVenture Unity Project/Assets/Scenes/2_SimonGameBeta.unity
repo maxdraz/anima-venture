@@ -12254,7 +12254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d54b1f2eff18f342bdc5fdd8075df8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2
+  time: 90
   distance: 0
   distanceToTarget: 0
   speed: 0
@@ -24097,7 +24097,7 @@ Prefab:
     - target: {fileID: 114110454994253364, guid: b3a7defb89c36df4c86677dca8b45039,
         type: 2}
       propertyPath: audioClips.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4318947494223442, guid: b3a7defb89c36df4c86677dca8b45039, type: 2}
       propertyPath: m_LocalPosition.x
@@ -24162,6 +24162,16 @@ Prefab:
       value: 
       objectReference: {fileID: 24100000, guid: f1bc01d082fc04dcdb7238893eadcccb,
         type: 2}
+    - target: {fileID: 114110454994253364, guid: b3a7defb89c36df4c86677dca8b45039,
+        type: 2}
+      propertyPath: audioClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f249284313d2144ea6b81b714e4e1a8, type: 3}
+    - target: {fileID: 114110454994253364, guid: b3a7defb89c36df4c86677dca8b45039,
+        type: 2}
+      propertyPath: audioClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 34cf9ffe091e12c439894e587677abce, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a7defb89c36df4c86677dca8b45039, type: 2}
   m_IsPrefabAsset: 0

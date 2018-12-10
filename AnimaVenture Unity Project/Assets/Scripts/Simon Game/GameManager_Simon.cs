@@ -383,6 +383,7 @@ public class GameManager_Simon : MonoBehaviour {
                 } else if (colourSequence.Count == 3)
                 {
                     EventHandler.SharedInstance.startRainPS.Invoke();
+                    AudioManager.SharedInstance.PlayClip(6, "Simon Sfx", true);
                 }
                 else if (colourSequence.Count == 4)
                 {

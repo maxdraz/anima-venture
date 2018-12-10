@@ -152,7 +152,7 @@ public class AudioManager : MonoBehaviour {
             audioObject.GetComponent<AudioSource>().Play();
 
             //Destroy after done playing
-            StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
+           // StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
         }
     }
     public void PlayClip(int clipIndex, string mixerGroup, bool loop)
@@ -176,7 +176,7 @@ public class AudioManager : MonoBehaviour {
             audioObject.GetComponent<AudioSource>().Play();
 
             //Destroy after done playing
-            StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
+            //StartCoroutine(audioObject.GetComponent<Destroy>().DestroySelf(audioClips[clipIndex].length));
         }
     }
 
