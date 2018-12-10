@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Headphone Scene.unity
     guid: a6c99edf8730acf4e98feb586f06dde7
+  - enabled: 1
+    path: Assets/Scenes/0.2 MenuSelect (ReturnToMenu).unity
+    guid: 90bb032735a6aea46a7a2790f5ac7bdb
   m_configObjects: {}
