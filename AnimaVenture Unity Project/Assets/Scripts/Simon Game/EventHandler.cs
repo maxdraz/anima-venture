@@ -31,7 +31,7 @@ public class EventHandler : MonoBehaviour {
     private void Start()
     {
         //play backing track
-        AudioManager.SharedInstance.PlayClip(5, "Simon Music", true);
+        //AudioManager.SharedInstance.PlayClip(5, "Simon Music", true);
 
         if (testingMode)
         {

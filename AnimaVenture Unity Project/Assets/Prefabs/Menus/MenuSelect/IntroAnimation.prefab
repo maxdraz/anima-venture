@@ -1073,6 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec914d6a5b604f46905aba2f5b782e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   tappedOnce: 0
   tappedTwice: 0
   tapCooldown: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkipAnimation : MonoBehaviour
 {
 
-    Animator animator;
+    public Animator animator;
     [SerializeField] bool tappedOnce;
     [SerializeField] bool tappedTwice;
     [SerializeField] float tapCooldown = 2f;
@@ -18,7 +18,10 @@ public class SkipAnimation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        animator = GetComponent<Animator>();
+        if (animator == null && gameObject.GetComponent<Animator>() != null)
+        {
+            animator = GetComponent<Animator>();
+        }
         originalCooldown = tapCooldown;
 
 
