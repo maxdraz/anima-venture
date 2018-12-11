@@ -1889,7 +1889,7 @@ GameObject:
   - component: {fileID: 135447712466348318}
   m_Layer: 0
   m_Name: Forest Icon PNG1
-  m_TagString: Rainforest
+  m_TagString: Forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2257,7 +2257,7 @@ GameObject:
   - component: {fileID: 135189135995287088}
   m_Layer: 0
   m_Name: Rainforest Icon PNG1
-  m_TagString: Ocean
+  m_TagString: Rainforest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3578,8 +3578,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290241759005822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.015, y: 2.132, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.113454744}
+  m_LocalPosition: {x: -0.015, y: 2.254, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.113454744}
   m_Children: []
   m_Father: {fileID: 4998509026890882}
   m_RootOrder: 0
@@ -7218,7 +7218,7 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1244116385907394}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
@@ -8037,10 +8037,10 @@ MonoBehaviour:
   thirdTransform: {fileID: 1619671565997266}
   lerpSpeed: 3
   toneToPlay: 0
-  first: 19
-  second: 18
-  third: 17
-  mixer: Arrows
+  first: 0
+  second: 0
+  third: 0
+  mixer: 
 --- !u!114 &114483254060312356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8242,10 +8242,10 @@ MonoBehaviour:
   thirdTransform: {fileID: 1747828739089442}
   lerpSpeed: 3
   toneToPlay: 0
-  first: 17
-  second: 18
-  third: 19
-  mixer: Arrows
+  first: 0
+  second: 0
+  third: 0
+  mixer: 
 --- !u!114 &114665468830769128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11595,15 +11595,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6daaef1bf221bab43bc2bb593d1932c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b29e5fc7755b5ca4fbd17eaa22d76053, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8, y: 1.8}
+  m_Size: {x: 2.86, y: 2.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!212 &212972512452718004

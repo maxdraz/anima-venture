@@ -68,7 +68,7 @@ public class ComingSoon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Rainforest")
+        if (other.gameObject.tag == "Forest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
             glowSprite.sprite = forest.GetComponent<SpriteRenderer>().sprite;
@@ -80,7 +80,7 @@ public class ComingSoon : MonoBehaviour
             rainforest.SetActive(true);
         }
 
-        if (other.gameObject.tag == "Ocean")
+        if (other.gameObject.tag == "Rainforest")
         {
             kingdom = other.GetComponent<SpriteRenderer>();
             glowSprite.sprite = ocean.GetComponent<SpriteRenderer>().sprite;
@@ -138,7 +138,7 @@ public class ComingSoon : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Rainforest")
+        if (other.gameObject.tag == "Forest")
         {
             StartCoroutine("FadeOut");
             rainforest.SetActive(false);
@@ -147,7 +147,7 @@ public class ComingSoon : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Ocean")
+        if (other.gameObject.tag == "Rainforest")
         {
             StartCoroutine("FadeOut");
             comingSoon.SetActive(false);
