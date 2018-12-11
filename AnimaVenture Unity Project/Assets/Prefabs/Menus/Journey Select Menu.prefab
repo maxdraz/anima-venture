@@ -705,6 +705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4782688739590854}
   - component: {fileID: 95301181346437392}
+  - component: {fileID: 114842966155703448}
   m_Layer: 0
   m_Name: Rainforest Kingdom
   m_TagString: Untagged
@@ -11001,6 +11002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: fb2a2b26ef2a4fe4b92a3c919c284fc3, type: 3}
   - {fileID: 8300000, guid: f42ed079038373249a5a993390fe2d75, type: 3}
@@ -11010,6 +11012,11 @@ MonoBehaviour:
   secondTransform: {fileID: 1203741991553438}
   thirdTransform: {fileID: 1794636413732564}
   lerpSpeed: 3
+  toneToPlay: 0
+  first: 25
+  second: 24
+  third: 23
+  mixer: Arrows
 --- !u!114 &114571225293015596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11126,6 +11133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: fb2a2b26ef2a4fe4b92a3c919c284fc3, type: 3}
   - {fileID: 8300000, guid: f42ed079038373249a5a993390fe2d75, type: 3}
@@ -11135,6 +11143,11 @@ MonoBehaviour:
   secondTransform: {fileID: 1261280757014232}
   thirdTransform: {fileID: 1911910927233886}
   lerpSpeed: 3
+  toneToPlay: 0
+  first: 23
+  second: 24
+  third: 25
+  mixer: Arrows
 --- !u!114 &114633256716321414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11267,6 +11280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: fb2a2b26ef2a4fe4b92a3c919c284fc3, type: 3}
   - {fileID: 8300000, guid: f42ed079038373249a5a993390fe2d75, type: 3}
@@ -11276,6 +11290,11 @@ MonoBehaviour:
   secondTransform: {fileID: 1796164785958804}
   thirdTransform: {fileID: 1939012474844354}
   lerpSpeed: 3
+  toneToPlay: 0
+  first: 20
+  second: 21
+  third: 22
+  mixer: Arrows
 --- !u!114 &114772044427671214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11348,6 +11367,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b4b48b64c77644884f75e01408864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114842966155703448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177049160689858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51aeb5d1e0f8848814165b0c983b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnStart: 0
 --- !u!114 &114859023576186374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11370,6 +11401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152522cb5261cef4c9975c80552c9daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: fb2a2b26ef2a4fe4b92a3c919c284fc3, type: 3}
   - {fileID: 8300000, guid: f42ed079038373249a5a993390fe2d75, type: 3}
@@ -11379,6 +11411,11 @@ MonoBehaviour:
   secondTransform: {fileID: 1036929319150326}
   thirdTransform: {fileID: 1563177680990164}
   lerpSpeed: 3
+  toneToPlay: 0
+  first: 22
+  second: 21
+  third: 20
+  mixer: Arrows
 --- !u!114 &114893873468457156
 MonoBehaviour:
   m_ObjectHideFlags: 1
