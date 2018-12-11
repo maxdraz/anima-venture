@@ -393,6 +393,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2064351985}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &25787097
@@ -5324,6 +5335,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1162488998}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2064351985}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -12555,6 +12577,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 95213923836466604, guid: 420388241a193624fab357d06e77fdb9,
     type: 2}
   m_PrefabInternal: {fileID: 2089680622}
+--- !u!1 &2064351985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780738962229088, guid: 28dbd31bcd157ae46900aa96392d81cf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1352316870}
 --- !u!1 &2067970618
 GameObject:
   m_ObjectHideFlags: 0
