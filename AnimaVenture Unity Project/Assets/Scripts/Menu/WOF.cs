@@ -30,7 +30,8 @@ public class WOF : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		wofSprite = gameObject.GetComponent<SpriteRenderer>();       
+		wofSprite = gameObject.GetComponent<SpriteRenderer>();
+        startColor = gameObject.GetComponent<SpriteRenderer>().color;
         //currAngle = menu.transform.rotation;
     }
 
