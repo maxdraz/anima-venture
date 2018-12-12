@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
 
-    int loadingScreenIndex = 4;
+    public int loadingScreenIndex = 5;
     public int sceneIndex;
     public bool loadWithTimerBool = false;
     public float loadAfterTime = 2;

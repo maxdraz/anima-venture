@@ -11,16 +11,17 @@ public class PauseMenu : MonoBehaviour {
 
     public void TogglePauseMenu()
     {
+        rainforestInteractibles.BroadcastMessage("Deactivate");
         pauseMenu.SetActive(true);
         Time.timeScale = timeScaleSlowDown;
-        rainforestInteractibles.BroadcastMessage("Deactivate");
+        
     }
 
     public void Resume()
     {
+        rainforestInteractibles.BroadcastMessage("Activate");
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        rainforestInteractibles.BroadcastMessage("Activate");
 
     }
 }

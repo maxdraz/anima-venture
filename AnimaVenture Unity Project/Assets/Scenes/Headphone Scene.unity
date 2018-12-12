@@ -155,7 +155,16 @@ Prefab:
     - target: {fileID: 114125699598804154, guid: 4360aad163e660d42a7464e3610d1196,
         type: 2}
       propertyPath: sceneToLoadNext
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114125699598804154, guid: 4360aad163e660d42a7464e3610d1196,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1799710517542378, guid: 4360aad163e660d42a7464e3610d1196, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4360aad163e660d42a7464e3610d1196, type: 2}

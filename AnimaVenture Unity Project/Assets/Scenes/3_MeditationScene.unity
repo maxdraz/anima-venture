@@ -10163,6 +10163,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114272221649320984, guid: 59b2c0ce7a4b8b44e93483f5815b4774,
+        type: 2}
+      propertyPath: sceneIndex
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59b2c0ce7a4b8b44e93483f5815b4774, type: 2}
   m_IsPrefabAsset: 0
