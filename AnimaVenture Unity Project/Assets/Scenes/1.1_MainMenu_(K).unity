@@ -5361,6 +5361,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114549296670772848, guid: 28dbd31bcd157ae46900aa96392d81cf,
+        type: 2}
+      propertyPath: toSetInactive.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4064422921455932, guid: 28dbd31bcd157ae46900aa96392d81cf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5501,6 +5506,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114549296670772848, guid: 28dbd31bcd157ae46900aa96392d81cf,
+        type: 2}
+      propertyPath: toSetInactive.Array.data[0]
+      value: 
+      objectReference: {fileID: 1162488998}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28dbd31bcd157ae46900aa96392d81cf, type: 2}
   m_IsPrefabAsset: 0
@@ -5589,6 +5599,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1162488998}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
