@@ -267,6 +267,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114343264667131012, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4775514735895408, guid: 109eccb8022a97b40afd3c79ee41c8dd, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -378,6 +383,41 @@ Prefab:
         type: 2}
       propertyPath: BypassReverbZones
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343264667131012, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343264667131012, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343264667131012, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1421262661}
+    - target: {fileID: 114343264667131012, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Mute
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343264667131012, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114755238058735966, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1421262661}
+    - target: {fileID: 114755238058735966, guid: 109eccb8022a97b40afd3c79ee41c8dd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Mute
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 109eccb8022a97b40afd3c79ee41c8dd, type: 2}
