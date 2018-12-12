@@ -44,6 +44,8 @@ AudioMixerController:
     - 5c1916a1bd97347a39fae2bc7e9a6cab
     - f67560035077649b9b95bed451b58b8e
     - 7dd44aa320532434bb404f9283eb1383
+    - c8e343ab2839d14419478e6b8ef69704
+    - cc33c72b1296eff47941f33987af2e91
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -99,11 +101,13 @@ AudioMixerSnapshotController:
     fa9b81a2e2f85904e84fa24b0cf81e95: -8524
     9027a074028844b858dfb4aeefc8d041: -0.08374828
     773725c418d854093ae7c9d78f7d749f: -0.30163807
+    42b8ea154529a0f44bd204bf7232f22f: -35.30951
     492890e5c8db6417ba85ea804bb5c4ad: 0
     39215046c2a7141ada0741705e797822: 1.2
     f43c72b69535e4230a876affeba21c0d: 1
     554f90e67efb48d44ae0fffda6074eaa: 0.697
     618735779ccd14b5aa2ed752d7fea4db: -4.340657
+    9f3c0c18b9679ee44823b63842878916: -14.221903
     8c4645581a0834128af53010a92da69a: -3.8468595
     6aaa2758a1a0d1143897c91fc339fac4: -2012
     38b5d909ace2947898250ff5a62eac54: -4.560346
@@ -238,7 +242,9 @@ AudioMixerGroupController:
   m_Name: Simon Sfx
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 752da9799f9974d8dab2155ff0268910
-  m_Children: []
+  m_Children:
+  - {fileID: 243664844184867648}
+  - {fileID: 243989320424703986}
   m_Volume: a35c90cde1dd84545aa6adba82b76bec
   m_Pitch: 5ae6be285df2043088eb7056412a5c5c
   m_Effects:
@@ -297,6 +303,23 @@ AudioMixerGroupController:
   m_Pitch: dcc1e2ef3b8cb4acdb7530fb946665f4
   m_Effects:
   - {fileID: 244687843516014166}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &243664844184867648
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Birds
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c8e343ab2839d14419478e6b8ef69704
+  m_Children: []
+  m_Volume: 9f3c0c18b9679ee44823b63842878916
+  m_Pitch: 882ccd54bfde52f488e1fbced10e8d75
+  m_Effects:
+  - {fileID: 244014026864316228}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -413,6 +436,23 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &243989320424703986
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DolmenMagic
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: cc33c72b1296eff47941f33987af2e91
+  m_Children: []
+  m_Volume: e5bde1ee18a90c04480c5479c0645e0b
+  m_Pitch: 7baaa42be8ab4444caea12f8a7d299bf
+  m_Effects:
+  - {fileID: 244414452606676320}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243989324943189180
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -449,6 +489,19 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &244014026864316228
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 607b3d54f8b396745bee906823bdd406
+  m_EffectName: Attenuation
+  m_MixLevel: de7cb88eb64fc8649b09c832434ba701
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &244033214753511866
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -594,6 +647,19 @@ AudioMixerEffectController:
     m_GUID: 9f7335dddb3ef4192b02645afa5ffe9e
   - m_ParameterName: Feedback
     m_GUID: 257db2b64ee254e61a8ee8474f37ada8
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244414452606676320
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 6f43eb0a98545454287ed6646097be9a
+  m_EffectName: Attenuation
+  m_MixLevel: 7b40dcf4ccf639140b7cce3f811092cb
+  m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
