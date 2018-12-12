@@ -16,6 +16,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
     public GameObject jSettings;
 	public Animation journeyBackGroundFadeAnim;
 	public Animator journeyLinesFadeAnim;
+    public GameObject simonBegin;
 
 	public Animation KingdomSelectScaleAnim;
 
@@ -66,6 +67,7 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
         jSettings.SetActive(false);
 		journeyBackGroundFadeAnim.clip = journeyBackGroundFadeAnim.GetClip ("JourneyFadeOut");
 		journeyBackGroundFadeAnim.Play ();
+        simonBegin.SetActive(false);
 	}
 
 	public void ArriveAtJourney () {
@@ -77,9 +79,11 @@ public class KingdomSelectAnimationHandler : MonoBehaviour {
         AM.PlayClip(1, 0.1f, false);
         bigTrail.SetActive(false);
         smallTrail.SetActive(true);
+        simonBegin.SetActive(true);
+
     }
 
-	public void ScaleUpKingdomSelect () {
+    public void ScaleUpKingdomSelect () {
 		centralNode.GetComponent<Animation> ().clip = centralNode.GetComponent<Animation> ().GetClip ("CentralNodeScaleUp");
 		centralNode.GetComponent<Animation> ().Play ();
 		KingdomSelectScaleAnim.clip = KingdomSelectScaleAnim.GetClip ("ScaleUp");	

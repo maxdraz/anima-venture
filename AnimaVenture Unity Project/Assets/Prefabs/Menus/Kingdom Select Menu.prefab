@@ -8127,6 +8127,7 @@ MonoBehaviour:
   jSettings: {fileID: 0}
   journeyBackGroundFadeAnim: {fileID: 0}
   journeyLinesFadeAnim: {fileID: 0}
+  simonBegin: {fileID: 0}
   KingdomSelectScaleAnim: {fileID: 111244271124184396}
   cameraScript: {fileID: 0}
   AM: {fileID: 0}
