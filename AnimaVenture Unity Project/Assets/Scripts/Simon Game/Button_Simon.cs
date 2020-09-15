@@ -10,6 +10,7 @@ public class Button_Simon : MonoBehaviour {
     GameManager_Simon gm;
     Animation anim; 
     SpriteRenderer sRenderer;
+    [SerializeField]bool leftColliderBool = true;
 
     //assign the same index as in the array on gm
     public int ButtonIndex { get; set; }
@@ -23,50 +24,87 @@ public class Button_Simon : MonoBehaviour {
         
     }
 
-    private void OnMouseDown()
-    {
-        //animate
-        anim.clip = anim.GetClip("ButtonOnClick");
-        anim.Play();
-        //display button colour
-        DisplayButton();
-
-        //tell the GM which button was pressed
-        gm.ButtonPressed(ButtonIndex);
-    }
-
-    private void OnMouseUp()
-    {
-        //animate
+   // private void OnMouseDown()
+   // {
         
-        //reset button colour
-        StartCoroutine(ResetButton(lightUpTime));
-    }
+        //display button colour
+     //   DisplayButton();
+        
+  //  }
+
+    
 
     void DisplayButton()
     {
-        sRenderer.color = new Color(
-            sRenderer.color.r,
-            sRenderer.color.g,
-            sRenderer.color.b,
-            1.0f);
+        //animate
+        anim.clip = anim.GetClip("ButtonOnClick");
+        anim.Play(); ;
 
         ps.transform.gameObject.SetActive(true);
         ps.Play();
+
+        //tell the GM which button was pressed
+        gm.ButtonPressed(ButtonIndex);
+
+    }
+
+    public void EnableCollider()
+    {
+        Debug.Log("EnableButtons called");
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;       
+
+
+    }
+
+    public void DisableCollider()
+    {
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         
 
-
     }
 
-    IEnumerator ResetButton(float t)
+    IEnumerator DisableColliderForTime(float t)
     {
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(t);
-        sRenderer.color = new Color(
-            sRenderer.color.r,
-            sRenderer.color.g,
-            sRenderer.color.b,
-            0.5f);
-
-       
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MouseTrail" && leftColliderBool == true)
+        {
+           
+           // StartCoroutine(DisableColliderForTime(anim.GetClip("ButtonOnClick").length));
+            DisplayButton();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "MouseTrail")
+        {
+            leftColliderBool = false;
+        }
+        else
+        {
+            leftColliderBool = true;
+        }
+    }
+
+     private void OnTriggerExit2D(Collider2D collision)
+     {
+      if (collision.gameObject.tag == "MouseTrail")
+     {
+      leftColliderBool = true;
+     }
+    }
+
+
+
+
+
+
+
+
 }

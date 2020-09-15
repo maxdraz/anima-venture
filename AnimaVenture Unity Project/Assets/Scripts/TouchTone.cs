@@ -14,9 +14,15 @@ public class TouchTone : MonoBehaviour {
 
 	}
 
-	void OnMouseEnter(){
+//	void OnTriggerEnter2D(Collider2D col){
+//
+//				audio.PlayClip (ToneToPlay, "Harp");
+//				particle.Play ();
+//	}
 
-				audio.PlayClip (ToneToPlay, "Harp");
-				particle.Play ();
+	public void CallTouchTone () {
+	
+		audio.PlayClip (ToneToPlay, "Harp");
+		particle.Play ();
 	}
 }

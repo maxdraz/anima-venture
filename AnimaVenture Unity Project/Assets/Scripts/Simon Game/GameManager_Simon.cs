@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using EZCameraShake;
 
 public class GameManager_Simon : MonoBehaviour {
+
+    public static GameManager_Simon SharedInstance;
+
     [Header("Tweakable Variables")]
     
     [SerializeField] float gameStartDelay = 2f;
@@ -45,9 +48,27 @@ public class GameManager_Simon : MonoBehaviour {
     [SerializeField] Timer_Simon timer;
     [SerializeField] GameObject endGameMenu;
     [SerializeField] Dolmen_Simon dolmen;
+    public bool dolmenFullyRisenBool;
+    public bool dolmenAlmostRisenBool;
+    public ContinueSimon cs;
+
+    [Space(15)]
+
+    [Header("ParticleSystems")]
+
+    GameObject[] particleSystems;
+    [SerializeField]
+    List<IntensifyParticleSystem> particleSystemsToIntensify;
+
+    [SerializeField]IntensifyParticleSystem dolmenPS1;
+    [SerializeField]IntensifyParticleSystem dolmenPS2;
+
     [Space(15)]
     [Header("Animations")]
     //Animations
+    [SerializeField]
+    List<Animator> animators;
+    Animator hexAnim;
     [SerializeField] Animator animator;
     public bool continueBool;
     AudioManager AM;
@@ -63,14 +84,30 @@ public class GameManager_Simon : MonoBehaviour {
     public float sequenceCorrectFadeInTime;
     public float sequenceCorrectFadeOutTime;
 
+    public bool sequenceInProgress;
 
+    public Gradient partyGradient;
 
     private void Awake()
     {
+        SharedInstance = this;
         //initialize all references
         startButton = GameObject.Find("StartButton");
         restartButton = GameObject.Find("RestartButton");
         AM = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+
+        particleSystems = GameObject.FindGameObjectsWithTag("ParticleSystem");
+
+        for(int i = 0; i < particleSystems.Length; i++)
+        {
+            if(particleSystems[i].GetComponent<IntensifyParticleSystem>() != null)
+            {
+               particleSystemsToIntensify.Add(particleSystems[i].GetComponent<IntensifyParticleSystem>());
+                
+            }
+
+            particleSystems[i].SetActive(false);
+        }
         
         //score = GameObject.Find("Score").GetComponent<Score_Simon>();
 
@@ -113,15 +150,24 @@ public class GameManager_Simon : MonoBehaviour {
 
     }
 
-    IEnumerator PlayGame()
+     public IEnumerator PlayGame()
     {
-       
+
+        yield return null;
+        //if dolmen is finished moving
+        if (cs.dolmenCompleteBool)
+        {
+            positionInSequence = 0;
+            DisableButtons();
+
+            yield break;
+        }
         //make start button disappear       
         //startButton.SetActive(false);
         //make restart button appear        
         //restartButton.SetActive(true);
         //reset the current input position in sequence
-        if(colourSequence.Count < 2)
+        if (colourSequence.Count < 2)
         {
             yield return new WaitForSeconds(2f);
         }
@@ -130,12 +176,14 @@ public class GameManager_Simon : MonoBehaviour {
         //Play back sequence
         foreach (int colourIndex in colourSequence)
         {
+            sequenceInProgress = true;  
+
             //if dolmen is finished moving
-            if (dolmen.pauseGameBool)
+            if (cs.dolmenCompleteBool)
             {
                 positionInSequence = 0;
-                DisableButtons();
-                dolmen.pauseGameBool = false;
+                DisableButtons();               
+                
                 yield break;
             }
             //whatever colour is stored in the list, display the corresponding telegraph
@@ -169,12 +217,31 @@ public class GameManager_Simon : MonoBehaviour {
 
     IEnumerator PlayBackSequence()
     {
+
+       
         yield return new WaitForSeconds(delayBetweenTelegraphs);
+
+        //if dolmen is finished moving
+        if (cs.dolmenCompleteBool)
+        {
+            positionInSequence = 0;
+            DisableButtons();
+
+            yield break;
+        }
 
         positionInSequence = 0;
         //for every number stored in the list
         foreach(int colourIndex in colourSequence)
         {
+            sequenceInProgress = true;
+            if (cs.dolmenCompleteBool)
+            {
+                positionInSequence = 0;
+                DisableButtons();
+
+                yield break;
+            }
             //get shooting star from pool and store in a reference
             GameObject shootingStar = ObjectPooler.SharedInstance.GetPooledObject("ShootingStar");
             shootingStar.GetComponent<ShootingStar>().endTrans = telegraphEndTransforms[0];
@@ -218,6 +285,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     void EnableButtons()
     {
+        sequenceInProgress = false;
         animator.SetBool("incorrectBool", false);
         if(colourSequence.Count < 2)
         {
@@ -244,6 +312,7 @@ public class GameManager_Simon : MonoBehaviour {
 
     void PickRandomColour()
     {
+        sequenceInProgress = true;
         
         int randomColourIndex = Random.Range(0, telegraphs.Length);
         //display telegraph
@@ -258,7 +327,7 @@ public class GameManager_Simon : MonoBehaviour {
         //set object active
         shootingStar.SetActive(true);
         
-        Debug.Log("GM " + randomColourIndex);
+
         //set telegraph colour index
         shootingStar.GetComponent<ShootingStar>().telegraphIndex = randomColourIndex;
         // make the star move
@@ -269,6 +338,7 @@ public class GameManager_Simon : MonoBehaviour {
         //Enable Buttons here
         //I envoke for visual purposes only, so that the collider enables only after telegraph animation is finished
         Invoke("EnableButtons", enableButtonsDelay);
+        
     }
 
     public void RestartGame()
@@ -309,25 +379,45 @@ public class GameManager_Simon : MonoBehaviour {
                     CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                     //start dolmen
                     StartCoroutine(EventHandler.SharedInstance.StartDolmen());
+                 
                 } else if (colourSequence.Count == 3)
                 {
                     EventHandler.SharedInstance.startRainPS.Invoke();
+                    AudioManager.SharedInstance.PlayClip(6, "Simon Sfx", true);
                 }
                 else if (colourSequence.Count == 4)
                 {
                     EventHandler.SharedInstance.startBottomPS.Invoke();
                 }
+              
                 // Sequence is correct!
 
                 //Shake the camera
-               // CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
+                // CameraShaker.Instance.ShakeOnce(sequenceCorrectMagnitude, sequenceCorrectRoughness, sequenceCorrectFadeInTime, sequenceCorrectFadeOutTime);
                 //Add one to score
                 StartCoroutine(score.Add(1));
                 //Subtract time from timer
                 // timer.SubtractTime(timeToSubtract);
 
+                //Intensify Particle systems
+                for(int i = 0; i < particleSystemsToIntensify.Count; i ++)
+                {
+                    
+                    particleSystemsToIntensify[0].gameObject.SetActive(true);
+                    
+
+                    StartCoroutine(particleSystemsToIntensify[i].Intensify());
+                }
+
                 //play sound
                 AM.PlayClip(4, "Simon Sfx");
+
+                //play All Correct Animations
+                foreach(Animator anim in animators){
+                    anim.SetBool("correctBool", true);
+                }
+
+               // hexAnim.SetBool("correctBool", true);
 
                 //add speed boost
                 StartCoroutine(dolmen.SpeedUpDolmen(speedBoostMultiplier, speedBoostTime));
@@ -336,14 +426,20 @@ public class GameManager_Simon : MonoBehaviour {
                 StartCoroutine(PlayGame());
             }
         }
-        else
+        else if(positionInSequence != colourSequence.Count)
         {
-            //disable buttons
-            //DisableButtons();
+            //INCORRECT INPUT HAS BEEN MADE
 
-            //PLAY BUTTON INCORRECT ANIM
+            //PLAY BUTTON INCORRECT ANIMS
             animator.SetBool("incorrectBool", true);
             animator.SetBool("enabledBool", false);
+
+            foreach(Animator anim in animators)
+            {
+                anim.SetBool("incorrectBool", true);
+            }
+
+          //  hexAnim.SetBool("incorrectBool", true);
             
             
 
@@ -383,6 +479,33 @@ public class GameManager_Simon : MonoBehaviour {
     public void LoadNewScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+    }
+
+        IEnumerator PartyMode()
+    {
+        while (true)
+        {
+            for (int i = 0; i < particleSystemsToIntensify.Count; i++)
+            {
+
+                var main = particleSystemsToIntensify[i].GetComponent<ParticleSystem>().main;
+                var startColour = main.startColor;
+                startColour.gradient = partyGradient;
+
+                if (i == particleSystemsToIntensify.Count - 1)
+                {
+                    foreach (Animator anim in animators)
+                    {
+                        if (anim.gameObject.tag == "Background")
+                        {
+                            anim.SetBool("partyModeBool", true);
+                            yield break;
+                        }
+                    }
+                }
+                yield return null;
+            }
+        }
     }
 
    // public void ContinueGame()

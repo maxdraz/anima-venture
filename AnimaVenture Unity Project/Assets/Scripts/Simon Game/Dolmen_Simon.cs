@@ -11,15 +11,21 @@ public class Dolmen_Simon : MonoBehaviour {
     [SerializeField] float distance;
     [SerializeField] float distanceToTarget;
     [SerializeField] float speed;
-    public bool pauseGameBool;
+    public bool pauseDolmenBool;
     
     public bool moveDolmenBool;
     [SerializeField] GameObject meditationButton;
-    
+    [SerializeField] GameObject meditationButtonImage;
+
 
     [SerializeField] Transform targetTransform;
 
+
     public ParticleSystem ps;
+
+    public GameObject continueSimon;
+    public GameObject whiteDolmen;
+    public GameObject dolmenGlow;
 
     private void Awake()
     {
@@ -36,17 +42,25 @@ public class Dolmen_Simon : MonoBehaviour {
     private void FixedUpdate()
     {
         distanceToTarget = CalculateDistance(targetTransform.position.y, transform.position.y);
+
+
+
         
+
         if (moveDolmenBool)
         { 
             MoveDolmen();
         }
         
+        
+
         if(distanceToTarget <= 0)
         {
-            meditationButton.SetActive(true);
+            StartCoroutine(EnableMeditationButton(4.5f));
+            
             moveDolmenBool = false;
-            pauseGameBool = true;
+            pauseDolmenBool = true;
+            continueSimon.GetComponent<ContinueSimon>().enabled = true;
 
             StopParticleEffect();
         }
@@ -71,10 +85,27 @@ public class Dolmen_Simon : MonoBehaviour {
 
     public IEnumerator SpeedUpDolmen(float spdMultiplier, float t)
     {
+        if (!pauseDolmenBool)
+        {
+            whiteDolmen.SetActive(true);
+        }
+
         float oldSpeed = speed;
         speed *= spdMultiplier;
         yield return new WaitForSeconds(t);
         speed = oldSpeed;
+        
+
+    }
+
+    IEnumerator EnableMeditationButton(float t)
+    {
+        yield return new WaitForSeconds(t);
+        meditationButtonImage.SetActive(true);
+        meditationButton.SetActive(true);
+        dolmenGlow.SetActive(true);
+
+
     }
 
     void StopParticleEffect()

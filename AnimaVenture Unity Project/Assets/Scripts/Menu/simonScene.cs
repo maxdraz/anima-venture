@@ -15,12 +15,12 @@ public class simonScene : MonoBehaviour {
 	{
 		if(Input.GetKey(KeyCode.A))
 		{
-			SceneManager.LoadScene("2_SimonGamePrototype", LoadSceneMode.Single);
+			SceneManager.LoadScene("2_SimonGameBeta", LoadSceneMode.Single);
 		}
 	}
 
 	private void OnMouseDown()
 	{
-		SceneManager.LoadScene("2_SimonGamePrototype", LoadSceneMode.Single);
+		SceneManager.LoadScene("2_SimonGameBeta", LoadSceneMode.Single);
 	}
 }

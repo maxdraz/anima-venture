@@ -34,6 +34,7 @@ public class PetalScript : MonoBehaviour {
 
 	void Deactivate () {
 		collider.enabled = false;
+        Debug.Log("broadcasted");
 	}
 
 	void OnMouseEnter () {

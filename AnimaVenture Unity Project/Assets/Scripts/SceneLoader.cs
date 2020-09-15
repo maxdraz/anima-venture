@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour {
 
     public int sceneToLoad;
     public float timeDelay;
+    
 
     private void Start()
     {

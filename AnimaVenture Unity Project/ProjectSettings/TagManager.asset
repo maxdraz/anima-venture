@@ -21,6 +21,10 @@ TagManager:
   - Ocean
   - MouseTrail
   - RipplePS
+  - String
+  - TouchTone
+  - ParticleSystem
+  - Background
   layers:
   - Default
   - TransparentFX
@@ -31,8 +35,8 @@ TagManager:
   - 
   - 
   - Menu_Arrow
-  - 
-  - 
+  - NoCollisionLayer
+  - MouseTrail
   - 
   - 
   - 

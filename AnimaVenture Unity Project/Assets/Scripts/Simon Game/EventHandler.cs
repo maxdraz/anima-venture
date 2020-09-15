@@ -19,6 +19,7 @@ public class EventHandler : MonoBehaviour {
     public UnityEngine.Events.UnityEvent startDolmenPS;
     public UnityEngine.Events.UnityEvent startRainPS;
     public UnityEngine.Events.UnityEvent startBottomPS;
+    public UnityEngine.Events.UnityEvent tip3Trigger;
 
 
     private void Awake()
@@ -29,6 +30,8 @@ public class EventHandler : MonoBehaviour {
 
     private void Start()
     {
+        //play backing track
+        //AudioManager.SharedInstance.PlayClip(5, "Simon Music", true);
 
         if (testingMode)
         {
@@ -70,6 +73,7 @@ public class EventHandler : MonoBehaviour {
 
     public IEnumerator StartDolmen()
     {
+      
         groundExplosionTrigger.Invoke();
         yield return new WaitForSeconds(0.5f);
         startDolmenPS.Invoke();
